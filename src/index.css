@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #2d3748;
+  background-color: #f9f6f0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply m-0 bg-cream text-slate antialiased;
+  background-image: radial-gradient(circle at 8% 10%, rgba(221, 184, 146, 0.23), transparent 36%),
+    radial-gradient(circle at 85% 14%, rgba(139, 168, 136, 0.2), transparent 34%),
+    radial-gradient(circle at 50% 90%, rgba(226, 149, 120, 0.12), transparent 40%);
+}
+
+* {
+  @apply box-border;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.glass-card {
+  @apply rounded-3xl border border-white/60 bg-white/75 backdrop-blur-md shadow-soft;
+}
