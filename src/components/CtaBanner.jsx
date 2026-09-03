@@ -36,7 +36,7 @@ function CtaBanner() {
               href="mailto:hello@saarzya.com"
               className="rounded-full border border-white/45 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
-              hello@saarzya.com
+              saarzya@gmail.com
             </a>
           </div>
         </div>
