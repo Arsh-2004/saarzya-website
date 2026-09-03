@@ -54,15 +54,6 @@ function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
-          <a
-            href="#contact"
-            className="inline-flex items-center rounded-full bg-moss px-6 py-3 text-sm font-semibold text-white shadow-glow transition duration-300 hover:scale-105 hover:bg-sage"
-          >
-            Book a Session
-          </a>
-        </div>
-
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
@@ -108,14 +99,6 @@ function Navbar() {
                 </li>
               ))}
             </ul>
-
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="mt-8 inline-flex w-full justify-center rounded-full bg-moss px-5 py-3 text-sm font-semibold text-white"
-            >
-              Book a Session
-            </a>
           </motion.div>
         )}
       </AnimatePresence>

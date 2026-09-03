@@ -76,7 +76,7 @@ function Hero() {
             animate={{ y: [0, -8, 0] }}
             transition={{ repeat: Infinity, duration: 4.8, ease: "easeInOut" }}
           >
-            1:1 Session • Workshops • Assessments
+            Session • Workshops • Assessments
           </motion.div>
         </motion.div>
       </div>
