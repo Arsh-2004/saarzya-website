@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 const founders = [
   {
     name: "Aarzoo Singh",
-    role: "Co-founder, Managing Director",
-    bio: "Aarzoo focuses on building safe spaces where people can speak freely, explore identity, and grow through compassionate, practical, and culturally aware support.",
-    quote: "A safe space is where growth begins without fear of judgment.",
-    tags: ["Emotional Safety", "Growth Coaching", "Youth Wellness"],
+    role: "Co-founder & Managing Director",
+    bio: "Aarzoo is dedicated to building an accessible, transparent, and stigma-free mental health ecosystem where every individual receives compassionate, professional care.",
+    quote: "Mental healthcare shouldn't feel like entering a cold clinic. SAARZYA was born out of a desire to make quality support accessible without complex barriers, We provide the trusted ecosystem and administrative care so you can focus entirely on your personal growth alongside qualified, empaneled professionals.",
+    tags: ["Emotional Safety", "Administrative Care", "Youth & Professional Support"],
     initials: "AS",
     image: "/assets/aarzoo.jpg",
   },
