@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ClipboardCheck, HeartHandshake, Sparkles } from "lucide-react";
+import { BookOpen, ClipboardCheck, Sparkles } from "lucide-react";
 
 const services = [
   {
@@ -11,6 +11,11 @@ const services = [
     title: "Wellness and Mindfulness Workshops",
     description: "Holistic workshops that build resilience, mindful habits, and healthier daily routines.",
     icon: Sparkles,
+  },
+  {
+    title: "Blog / Insights / Resources",
+    description: "Sharing articles, mental health tips, or wellness guides positions your team as experts, boosts search engine visibility (SEO), and provides free value to visitors before they book.",
+    icon: BookOpen,
   },
 ];
 
@@ -27,7 +32,7 @@ function Services() {
         <h2 className="m-0 font-heading text-3xl text-slate sm:text-4xl">Care models built for your pace and needs.</h2>
       </motion.div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
