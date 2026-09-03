@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 
 function Footer() {
   return (
@@ -38,8 +38,8 @@ function Footer() {
 
             <div className="mt-4 flex items-center gap-2">
               <a
-                className="rounded-full border border-moss/20 p-2 text-moss"
-                href="https://instagram.com/saarzya"
+                className="rounded-full border border-moss/20 p-2 text-moss transition hover:border-moss hover:bg-moss/10"
+                href="https://www.instagram.com/saarzya?igsi=MXB6eThvdGtkNXZlaA=="
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -47,15 +47,37 @@ function Footer() {
                 <Instagram size={16} />
               </a>
               <a
-                className="rounded-full border border-moss/20 p-2 text-moss"
-                href="https://linkedin.com/company/saarzya"
+                className="rounded-full border border-moss/20 p-2 text-moss transition hover:border-moss hover:bg-moss/10"
+                href="https://www.linkedin.com/in/saarzya-undefined-735324431?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={16} />
               </a>
-              <a className="rounded-full border border-moss/20 p-2 text-moss" href="mailto:hello@saarzya.com" aria-label="Email">
+              <a
+                className="rounded-full border border-moss/20 p-2 text-moss transition hover:border-moss hover:bg-moss/10"
+                href="https://www.facebook.com/share/1JAAnU7oVV/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+              >
+                <Facebook size={16} />
+              </a>
+              <a
+                className="rounded-full border border-moss/20 p-2 text-moss transition hover:border-moss hover:bg-moss/10"
+                href="https://x.com/Saarzya"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Twitter"
+              >
+                <Twitter size={16} />
+              </a>
+              <a
+                className="rounded-full border border-moss/20 p-2 text-moss transition hover:border-moss hover:bg-moss/10"
+                href="mailto:hello@saarzya.com"
+                aria-label="Email"
+              >
                 <Mail size={16} />
               </a>
             </div>

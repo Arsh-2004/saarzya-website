@@ -3,11 +3,6 @@ import { ClipboardCheck, HeartHandshake, Sparkles } from "lucide-react";
 
 const services = [
   {
-    title: "Individual Counselling and Therapy",
-    description: "One-on-one personalized sessions focused on emotional regulation, stress, and mental clarity.",
-    icon: HeartHandshake,
-  },
-  {
     title: "Psychological Assessments and Guidance",
     description: "Structured assessments and tailored guidance to support informed mental health decisions.",
     icon: ClipboardCheck,
@@ -32,7 +27,7 @@ function Services() {
         <h2 className="m-0 font-heading text-3xl text-slate sm:text-4xl">Care models built for your pace and needs.</h2>
       </motion.div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-10 grid gap-6 md:grid-cols-2">
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
