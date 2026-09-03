@@ -10,9 +10,9 @@ function VisionMission() {
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss">Vision and Mission</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss">SAARZYA</p>
         <h2 className="m-0 max-w-3xl font-heading text-3xl text-slate sm:text-4xl">
-          Compassion-led mental healthcare designed for real life.
+          Vision & Mission
         </h2>
       </motion.div>
 
@@ -22,16 +22,20 @@ function VisionMission() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="glass-card p-7 sm:p-8"
+          className="glass-card flex flex-col justify-between p-7 sm:p-8"
         >
-          <div className="mb-4 inline-flex rounded-2xl bg-sage/20 p-3 text-moss">
-            <Eye size={22} />
+          <div>
+            <div className="mb-4 inline-flex rounded-2xl bg-sage/20 p-3 text-moss">
+              <Eye size={24} />
+            </div>
+            <h3 className="m-0 font-heading text-2xl text-slate">Vision</h3>
+            <blockquote className="my-4 border-l-2 border-moss/40 pl-4 text-base italic leading-relaxed text-slate/90">
+              "To create a world where mental health is understood, valued, and accessible to all—where every individual feels safe to seek support, empowered to understand themselves, and encouraged to grow beyond their struggles."
+            </blockquote>
+            <p className="mb-0 mt-4 leading-relaxed text-slate/80">
+              We envision Saarzya as a trusted space where <strong className="font-semibold text-slate">psychology meets humanity</strong>, bringing together awareness, professional support, education, and community to make mental wellbeing a natural and essential part of everyday life.
+            </p>
           </div>
-          <h3 className="m-0 font-heading text-2xl text-slate">Our Vision</h3>
-          <p className="mb-0 mt-4 leading-8 text-slate/80">
-            Normalizing mental health care with accessible, compassionate, and stigma-free support
-            where everyone feels seen, heard, and understood.
-          </p>
         </motion.article>
 
         <motion.article
@@ -39,16 +43,17 @@ function VisionMission() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.08 }}
-          className="glass-card p-7 sm:p-8"
+          className="glass-card flex flex-col justify-between p-7 sm:p-8"
         >
-          <div className="mb-4 inline-flex rounded-2xl bg-blush/20 p-3 text-[#b96647]">
-            <Flag size={22} />
+          <div>
+            <div className="mb-4 inline-flex rounded-2xl bg-blush/20 p-3 text-[#b96647]">
+              <Flag size={24} />
+            </div>
+            <h3 className="m-0 font-heading text-2xl text-slate">Mission</h3>
+            <p className="mb-0 mt-4 text-lg font-medium leading-relaxed text-slate">
+              <strong className="font-semibold text-slate">Saarzya’s mission is to make psychological understanding more accessible, ethical, inclusive, and human.</strong>
+            </p>
           </div>
-          <h3 className="m-0 font-heading text-2xl text-slate">Our Mission</h3>
-          <p className="mb-0 mt-4 leading-8 text-slate/80">
-            Empowering individuals through evidence-based psychology, personalized therapy,
-            and holistic wellness practices that nurture long-term growth.
-          </p>
         </motion.article>
       </div>
     </section>
