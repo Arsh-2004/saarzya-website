@@ -1,40 +1,42 @@
-import { motion } from "framer-motion";
-import { BookOpen, FileText, Sparkles, ArrowUpRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { BookOpen, FileText, Sparkles, ArrowUpRight, X, Calendar, User } from "lucide-react";
+import { getStoredPosts } from "../utils/postsStorage";
 
-const publications = [
-  {
-    type: "Magazine",
-    title: "Saarzya Wellness Edition Vol. 1",
-    description:
-      "Our flagship digital magazine exploring student mental health, emotional resilience, and modern self-discovery.",
-    badge: "Latest Release",
-    icon: BookOpen,
-  },
-  {
-    type: "Article / Blog",
-    title: "Finding Your Core in a Noisy World",
-    description:
-      "Practical psychological insights on peeling back external pressures and returning to what truly matters—your core self.",
-    badge: "Popular Read",
-    icon: FileText,
-  },
-  {
-    type: "Resource Guide",
-    title: "Mindfulness & Daily Balance Handbook",
-    description:
-      "Actionable self-care tools, reflection prompts, and stress management routines tailored for young seekers.",
-    badge: "Free Download",
-    icon: Sparkles,
-  },
-];
+const getIconForType = (type) => {
+  switch (type) {
+    case "Magazine":
+      return BookOpen;
+    case "Resource Guide":
+      return Sparkles;
+    default:
+      return FileText;
+  }
+};
 
 function MagazinesBlogs() {
+  const [posts, setPosts] = useState([]);
+  const [activePost, setActivePost] = useState(null);
+
+  useEffect(() => {
+    // Load posts on mount
+    setPosts(getStoredPosts());
+
+    // Listen for live updates from admin portal
+    const handlePostsUpdated = () => {
+      setPosts(getStoredPosts());
+    };
+
+    window.addEventListener("saarzya_posts_updated", handlePostsUpdated);
+    return () => window.removeEventListener("saarzya_posts_updated", handlePostsUpdated);
+  }, []);
+
   return (
     <section id="magazines" className="section-shell py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.6 }}
       >
         <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss">
@@ -48,42 +50,128 @@ function MagazinesBlogs() {
         </p>
       </motion.div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
-        {publications.map((item, index) => {
-          const Icon = item.icon;
+      {/* Publications Grid */}
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((item, index) => {
+          const Icon = getIconForType(item.type);
           return (
             <motion.article
-              key={item.title}
+              key={item.id || item.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
-              transition={{ duration: 0.55, delay: index * 0.1 }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
               className="group flex flex-col justify-between rounded-3xl border border-moss/15 bg-white/80 p-7 shadow-soft transition duration-300 hover:-translate-y-1.5 hover:border-moss/35 hover:bg-white"
             >
               <div>
-                <div className="mb-5 flex items-center justify-between">
-                  <div className="inline-flex rounded-2xl bg-moss/10 p-3 text-moss transition group-hover:bg-moss group-hover:text-white">
-                    <Icon size={22} />
-                  </div>
-                  <span className="rounded-full border border-moss/20 bg-sage/10 px-3 py-1 text-xs font-semibold text-moss">
-                    {item.badge}
-                  </span>
+                <div className="relative mb-5 h-48 w-full overflow-hidden rounded-2xl border border-moss/10 bg-cream/60">
+                  <img
+                    src={item.image || "/assets/logo.jpg"}
+                    alt={item.title}
+                    className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                  />
+                  {item.badge && (
+                    <span className="absolute right-3 top-3 rounded-full bg-moss px-3 py-1 text-xs font-semibold text-white shadow">
+                      {item.badge}
+                    </span>
+                  )}
                 </div>
-                <p className="mb-1 text-xs font-bold uppercase tracking-[0.14em] text-moss/80">
-                  {item.type}
-                </p>
+
+                <div className="mb-3 flex items-center justify-between text-xs text-moss font-semibold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Icon size={14} /> {item.type}
+                  </span>
+                  <span>{item.date}</span>
+                </div>
+
                 <h3 className="m-0 font-heading text-2xl text-slate">{item.title}</h3>
-                <p className="mb-0 mt-3 text-sm leading-7 text-slate/80">{item.description}</p>
+                <p className="mb-0 mt-3 line-clamp-3 text-sm leading-7 text-slate/80">{item.description}</p>
               </div>
 
-              <div className="mt-6 flex items-center gap-1 text-sm font-semibold text-moss transition group-hover:translate-x-1">
-                <span>Read Feature</span>
-                <ArrowUpRight size={16} />
+              <div className="mt-6 flex items-center justify-between border-t border-moss/10 pt-4">
+                <span className="text-xs text-slate/60">By {item.author || "Saarzya Team"}</span>
+                <button
+                  onClick={() => setActivePost(item)}
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-moss transition group-hover:translate-x-1"
+                >
+                  <span>Read Feature</span>
+                  <ArrowUpRight size={16} />
+                </button>
               </div>
             </motion.article>
           );
         })}
       </div>
+
+      {/* Reader Modal Overlay */}
+      <AnimatePresence>
+        {activePost && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-md"
+            onClick={() => setActivePost(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.25 }}
+              className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl bg-white p-6 sm:p-10 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between border-b border-moss/15 pb-4">
+                <span className="inline-flex items-center gap-2 rounded-full border border-moss/20 bg-moss/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-moss">
+                  {activePost.type}
+                </span>
+                <button
+                  onClick={() => setActivePost(null)}
+                  className="rounded-full border border-moss/20 p-2 text-slate hover:bg-slate/10"
+                  aria-label="Close reader"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="mt-6">
+                <h2 className="font-heading text-3xl text-slate sm:text-4xl lg:text-5xl">{activePost.title}</h2>
+                <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-medium text-slate/70">
+                  <span className="flex items-center gap-1.5"><User size={14} className="text-moss" /> {activePost.author || "Saarzya Team"}</span>
+                  <span>•</span>
+                  <span className="flex items-center gap-1.5"><Calendar size={14} className="text-moss" /> {activePost.date}</span>
+                </div>
+              </div>
+
+              {activePost.image && (
+                <div className="mt-6 overflow-hidden rounded-3xl border border-moss/15 shadow-md">
+                  <img
+                    src={activePost.image}
+                    alt={activePost.title}
+                    className="max-h-[420px] w-full object-cover object-top"
+                  />
+                </div>
+              )}
+
+              <div className="mt-8 space-y-4 border-t border-moss/15 pt-6 leading-relaxed text-slate/90">
+                <p className="text-lg font-medium italic text-moss">{activePost.description}</p>
+                <div className="whitespace-pre-line text-base leading-8 text-slate/85">
+                  {activePost.content || "Full article content coming soon."}
+                </div>
+              </div>
+
+              <div className="mt-10 flex items-center justify-end border-t border-moss/15 pt-6">
+                <button
+                  onClick={() => setActivePost(null)}
+                  className="rounded-full bg-moss px-7 py-3 text-sm font-semibold text-white shadow hover:bg-sage"
+                >
+                  Close Article
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
