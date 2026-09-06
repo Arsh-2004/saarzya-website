@@ -6,6 +6,7 @@ import {
   resetPostsToDefault,
   getAdminPasscode,
   setAdminPasscode,
+  compressImage,
 } from "../../utils/postsStorage";
 import { navigateTo } from "../../utils/router";
 import {
@@ -103,14 +104,20 @@ function AdminPortal() {
     setIsModalOpen(true);
   };
 
-  const handleImageUpload = (e) => {
+  const handleImageUpload = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData((prev) => ({ ...prev, image: reader.result }));
-      };
-      reader.readAsDataURL(file);
+      try {
+        const compressedDataUrl = await compressImage(file, 800, 800, 0.75);
+        setFormData((prev) => ({ ...prev, image: compressedDataUrl }));
+      } catch (err) {
+        console.error("Compression failed, fallback to FileReader:", err);
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setFormData((prev) => ({ ...prev, image: reader.result }));
+        };
+        reader.readAsDataURL(file);
+      }
     }
   };
 
