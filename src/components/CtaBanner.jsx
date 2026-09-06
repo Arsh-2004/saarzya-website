@@ -18,7 +18,7 @@ function CtaBanner() {
 
         <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Book Your First Step</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Begin Your Journey</p>
             <h2 className="m-0 max-w-2xl font-heading text-3xl sm:text-4xl">Ready to take your first step?</h2>
             <p className="mb-0 mt-3 text-white/90">Connect with us on WhatsApp or schedule a private consultation today.</p>
           </div>
@@ -33,7 +33,7 @@ function CtaBanner() {
               WhatsApp Us
             </a>
             <a
-              href="mailto:hello@saarzya.com"
+              href="mailto:saarzya@gmail.com"
               className="rounded-full border border-white/45 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
             >
               saarzya@gmail.com
