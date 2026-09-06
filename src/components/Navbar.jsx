@@ -69,37 +69,56 @@ function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-y-0 right-0 z-50 w-72 border-l border-moss/15 bg-cream p-6 shadow-2xl md:hidden"
+            className="fixed inset-0 z-[100] flex h-full w-full flex-col overflow-y-auto bg-[#f9f6f0] p-6 shadow-2xl md:hidden"
           >
-            <div className="mb-8 flex items-center justify-between">
-              <p className="font-heading text-2xl text-moss">Menu</p>
+            <div className="flex items-center justify-between border-b border-moss/20 pb-5">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/assets/logo.jpg"
+                  alt="Saarzya logo"
+                  className="h-12 w-12 rounded-xl border border-moss/20 bg-white p-0.5 object-contain shadow-sm"
+                />
+                <div>
+                  <h2 className="m-0 font-heading text-2xl text-moss">Saarzya</h2>
+                  <p className="m-0 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate/60">
+                    Psychology • Counselling • Wellness
+                  </p>
+                </div>
+              </div>
               <button
                 type="button"
                 aria-label="Close menu"
-                className="rounded-full border border-moss/20 p-2"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-moss/25 bg-white text-slate shadow-sm"
                 onClick={() => setIsOpen(false)}
               >
-                <X size={18} />
+                <X size={22} />
               </button>
             </div>
 
-            <ul className="space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="block rounded-2xl border border-moss/10 bg-white/65 px-4 py-3 font-semibold"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="my-auto py-8">
+              <ul className="space-y-4">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="group flex items-center justify-between rounded-2xl border border-moss/15 bg-white px-6 py-4 text-lg font-bold text-slate shadow-sm transition hover:border-moss hover:bg-moss hover:text-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span>{link.label}</span>
+                      <span className="text-moss transition group-hover:text-white">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-auto border-t border-moss/20 pt-6 text-center text-xs font-semibold uppercase tracking-widest text-slate/60">
+              © {new Date().getFullYear()} Saarzya. All rights reserved.
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
