@@ -29,9 +29,9 @@ function VisionMission() {
               <Eye size={24} />
             </div>
             <h3 className="m-0 font-heading text-2xl text-slate">Vision</h3>
-            <blockquote className="my-4 border-l-2 border-moss/40 pl-4 text-base italic leading-relaxed text-slate/90">
-              "To create a world where mental health is understood, valued, and accessible to all—where every individual feels safe to seek support, empowered to understand themselves, and encouraged to grow beyond their struggles."
-            </blockquote>
+            <p className="mb-0 mt-4 text-lg font-medium leading-relaxed text-slate">
+              <strong className="font-semibold text-slate">To create a world where mental health is understood, valued, and accessible to all—where every individual feels safe to seek support, empowered to understand themselves, and encouraged to grow beyond their struggles.</strong>
+            </p>
           </div>
         </motion.article>
 
