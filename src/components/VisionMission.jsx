@@ -32,9 +32,6 @@ function VisionMission() {
             <blockquote className="my-4 border-l-2 border-moss/40 pl-4 text-base italic leading-relaxed text-slate/90">
               "To create a world where mental health is understood, valued, and accessible to all—where every individual feels safe to seek support, empowered to understand themselves, and encouraged to grow beyond their struggles."
             </blockquote>
-            <p className="mb-0 mt-4 leading-relaxed text-slate/80">
-              We envision Saarzya as a trusted space where <strong className="font-semibold text-slate">psychology meets humanity</strong>, bringing together awareness, professional support, education, and community to make mental wellbeing a natural and essential part of everyday life.
-            </p>
           </div>
         </motion.article>
 
