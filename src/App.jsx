@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import VisionMission from "./components/VisionMission";
 import Founders from "./components/Founders";
+import WhyWeBuiltThis from "./components/WhyWeBuiltThis";
 import Services from "./components/Services";
 import SafeSpacePromise from "./components/SafeSpacePromise";
 import CtaBanner from "./components/CtaBanner";
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <VisionMission />
         <Founders />
+        <WhyWeBuiltThis />
         <Services />
         <SafeSpacePromise />
         <CtaBanner />
