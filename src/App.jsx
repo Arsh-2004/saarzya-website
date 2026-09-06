@@ -4,6 +4,7 @@ import VisionMission from "./components/VisionMission";
 import Founders from "./components/Founders";
 import WhyWeBuiltThis from "./components/WhyWeBuiltThis";
 import Services from "./components/Services";
+import MagazinesBlogs from "./components/MagazinesBlogs";
 import SafeSpacePromise from "./components/SafeSpacePromise";
 import CtaBanner from "./components/CtaBanner";
 import Footer from "./components/Footer";
@@ -18,6 +19,7 @@ function App() {
         <Founders />
         <WhyWeBuiltThis />
         <Services />
+        <MagazinesBlogs />
         <SafeSpacePromise />
         <CtaBanner />
       </main>

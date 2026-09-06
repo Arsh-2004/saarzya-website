@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function CtaBanner() {
   const whatsappUrl =
-    "https://wa.me/919999999999?text=Hi%20Saarzya%2C%20I%20want%20to%20book%20a%20session.";
+    "https://wa.me/6386897602?text=Hi%20Saarzya%2C%20I%20want%20to%20book%20a%20session.";
 
   return (
     <section id="contact" className="section-shell py-20">
