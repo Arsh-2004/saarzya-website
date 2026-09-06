@@ -32,12 +32,12 @@ function WhyWeBuiltThis() {
         transition={{ duration: 0.6 }}
         className="rounded-3xl border border-moss/15 bg-white/80 p-8 sm:p-10 lg:p-12 shadow-soft"
       >
-        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-moss">
-          Why We Built This
-        </p>
         <h2 className="m-0 font-heading text-3xl text-slate sm:text-4xl lg:text-5xl">
-          A Compassionate Sanctuary for Human Connection
+          Why We Built This
         </h2>
+        <p className="mb-0 mt-3 font-heading text-xl text-moss sm:text-2xl">
+          A Compassionate Sanctuary for Human Connection
+        </p>
 
         <p className="mb-0 mt-6 text-base sm:text-lg leading-8 text-slate/85">
           Saarzya was built as a compassionate sanctuary to prioritize genuine vulnerability and human connection over cold, distant clinical support.
