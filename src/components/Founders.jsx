@@ -31,7 +31,7 @@ function Founders() {
         transition={{ duration: 0.6 }}
         className="mb-14 rounded-3xl border border-moss/15 bg-white/80 p-8 sm:p-10 shadow-soft"
       >
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-moss sm:text-base">About Saarzya</p>
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss">ABOUT SAARZYA</p>
         <h2 className="m-0 font-heading text-3xl text-slate sm:text-4xl lg:text-5xl">
           Welcome to Saarzya: Finding Your Core in a Noisy World
         </h2>
