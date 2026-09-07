@@ -6,24 +6,31 @@ const DEFAULT_POSTS = [
   {
     id: "post-1",
     type: "Magazine",
-    title: "Saarzya Wellness Edition Vol. 1",
+    title: "Quarterly Magazine — Ψ-COLOGY (Issue 01)",
     description:
-      "Our flagship digital magazine exploring student mental health, emotional resilience, and modern self-discovery.",
-    content: `Welcome to the inaugural volume of the Saarzya Wellness Edition!
+      "Subscribe to our quarterly magazine dedicated to psychology and mental health which keeps you up-to-date in latest psychology trends, research, ongoing opportunities, and fun activities.",
+    content: `Welcome to the inaugural edition of Ψ-COLOGY by Saarzya!
 
-In this issue, we dive deep into the unique challenges faced by students and young professionals navigating today's fast-paced, high-pressure environments. From managing academic stress and burnout to cultivating authentic self-awareness, our articles bridge the gap between academic psychology and real-life emotional wellness.
+OUR VISION:
+• Filling the Gap: Bridging practical and theoretical psychological knowledge with real-world updates.
+• Research & Insights: Promoting psychology research among youth and experts.
+• Mirror of Youth & Psychologist: Giving opportunities to young minds to express themselves.
+• Fun Corner: Interactive games, quizzes, and psychological facts.
 
-Highlights of this Edition:
-• Navigating Digital Pressure & Social Comparisons
-• Building Daily Mindful Routines for Focus & Calm
-• Understanding Emotional Boundaries in Relationships
-• Practical Exercises for Grounding & Stress Reduction
+PURPOSE & ROLE:
+• Latest Psychology Trends & News
+• Research Highlights in Mental Health
+• Critical Thinking & Case Studies
+• Youth Opportunities & Professional Branding
 
-Read through our curated features, reflect on the guided exercises, and remember: taking care of your mind is a daily journey of small, intentional steps.`,
-    badge: "Latest Release",
+Read the full interactive PDF issue below or download your copy!`,
+    badge: "Quarterly Magazine",
     image: "/assets/logo.jpg",
-    date: "Sep 2026",
+    pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
+    buttonText: "Know More Or Subscribe",
+    date: "July 2026",
     author: "Saarzya Editorial Team",
+    downloadable: true,
   },
   {
     id: "post-2",
@@ -43,8 +50,11 @@ Three Ways to Reconnect with Your Core Self:
 Remember, self-growth isn't about becoming someone new; it's about returning home to your true self.`,
     badge: "Popular Read",
     image: "/assets/sanyukta.jpg",
+    pdfUrl: "",
+    buttonText: "Read Article",
     date: "Sep 2026",
     author: "Sanyukta Sherry",
+    downloadable: false,
   },
   {
     id: "post-3",
@@ -63,8 +73,11 @@ What's Inside:
 Download or bookmark this guide to keep essential wellness practices accessible whenever you need a moment of calm.`,
     badge: "Free Download",
     image: "/assets/aarzoo.jpg",
+    pdfUrl: "",
+    buttonText: "View Handbook",
     date: "Sep 2026",
     author: "Aarzoo Singh",
+    downloadable: false,
   },
 ];
 

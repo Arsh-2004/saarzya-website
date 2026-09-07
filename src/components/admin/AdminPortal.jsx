@@ -38,11 +38,13 @@ function AdminPortal() {
   // Form State
   const [formData, setFormData] = useState({
     id: "",
-    type: "Article / Blog",
+    type: "Magazine",
     title: "",
-    badge: "Featured",
+    badge: "Quarterly Edition",
     author: "Saarzya Team",
     image: "",
+    pdfUrl: "",
+    buttonText: "Know More Or Subscribe",
     description: "",
     content: "",
   });
@@ -77,11 +79,13 @@ function AdminPortal() {
   const openCreateModal = () => {
     setFormData({
       id: "",
-      type: "Article / Blog",
+      type: "Magazine",
       title: "",
-      badge: "Featured",
+      badge: "Quarterly Edition",
       author: "Saarzya Team",
       image: "/assets/logo.jpg",
+      pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
+      buttonText: "Know More Or Subscribe",
       description: "",
       content: "",
     });
@@ -97,6 +101,8 @@ function AdminPortal() {
       badge: post.badge || "Featured",
       author: post.author || "Saarzya Team",
       image: post.image || "",
+      pdfUrl: post.pdfUrl || "",
+      buttonText: post.buttonText || (post.type === "Magazine" ? "Know More Or Subscribe" : "Read Article"),
       description: post.description || "",
       content: post.content || "",
     });
@@ -384,7 +390,7 @@ function AdminPortal() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-slate/70">Cover Image</label>
+                <label className="block text-xs font-semibold uppercase tracking-wider text-slate/70">Cover Showcase Image</label>
                 <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <input
                     type="file"
@@ -404,9 +410,34 @@ function AdminPortal() {
                 {formData.image && (
                   <div className="mt-3 flex items-center gap-3">
                     <img src={formData.image} alt="Preview" className="h-16 w-16 rounded-xl border border-moss/20 object-cover object-top" />
-                    <span className="text-xs text-slate/60">Image preview</span>
+                    <span className="text-xs text-slate/60">Front Cover Preview</span>
                   </div>
                 )}
+              </div>
+
+              {/* Magazine PDF Link & Button Text */}
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate/70">Full Magazine PDF Link / URL</label>
+                  <input
+                    type="text"
+                    value={formData.pdfUrl}
+                    onChange={(e) => setFormData({ ...formData, pdfUrl: e.target.value })}
+                    placeholder="e.g. /assets/saarzya-magazine-issue-01.pdf"
+                    className="mt-2 w-full rounded-2xl border border-moss/20 bg-cream/30 px-4 py-3 text-xs outline-none focus:border-moss"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate/70">Button Label on Front Page</label>
+                  <input
+                    type="text"
+                    value={formData.buttonText}
+                    onChange={(e) => setFormData({ ...formData, buttonText: e.target.value })}
+                    placeholder="e.g. Know More Or Subscribe"
+                    className="mt-2 w-full rounded-2xl border border-moss/20 bg-cream/30 px-4 py-3 text-xs outline-none focus:border-moss"
+                  />
+                </div>
               </div>
 
               <div>
