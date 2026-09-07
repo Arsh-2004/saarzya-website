@@ -2,6 +2,9 @@ const STORAGE_KEY = "saarzya_posts_v1";
 const ADMIN_PASSCODE_KEY = "saarzya_admin_passcode_v1";
 const DEFAULT_PASSCODE = "saarzya2026";
 
+const FIREBASE_POSTS_URL = "https://saarzya-61994-default-rtdb.firebaseio.com/posts.json";
+const FIREBASE_PASSCODE_URL = "https://saarzya-61994-default-rtdb.firebaseio.com/admin_passcode.json";
+
 const DEFAULT_POSTS = [
   {
     id: "post-1",
@@ -81,6 +84,70 @@ Download or bookmark this guide to keep essential wellness practices accessible 
   },
 ];
 
+// Asynchronously sync remote posts from Firebase DB
+export async function syncPostsFromRemote() {
+  try {
+    const res = await fetch(FIREBASE_POSTS_URL);
+    if (!res.ok) return;
+    const remotePosts = await res.json();
+
+    if (Array.isArray(remotePosts) && remotePosts.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(remotePosts));
+      window.dispatchEvent(new Event("saarzya_posts_updated"));
+      return remotePosts;
+    } else if (remotePosts === null) {
+      // Seed defaults if empty
+      await pushPostsToRemote(DEFAULT_POSTS);
+    }
+  } catch (err) {
+    console.warn("Firebase posts sync fallback to local storage:", err);
+  }
+}
+
+// Asynchronously sync passcode from Firebase DB
+export async function syncPasscodeFromRemote() {
+  try {
+    const res = await fetch(FIREBASE_PASSCODE_URL);
+    if (!res.ok) return;
+    const remotePasscode = await res.json();
+    if (typeof remotePasscode === "string" && remotePasscode.trim()) {
+      localStorage.setItem(ADMIN_PASSCODE_KEY, remotePasscode);
+    }
+  } catch (err) {
+    console.warn("Firebase passcode sync fallback:", err);
+  }
+}
+
+// Trigger background sync on page load
+if (typeof window !== "undefined") {
+  syncPostsFromRemote();
+  syncPasscodeFromRemote();
+}
+
+async function pushPostsToRemote(posts) {
+  try {
+    await fetch(FIREBASE_POSTS_URL, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(posts),
+    });
+  } catch (err) {
+    console.error("Failed to push posts to Firebase DB:", err);
+  }
+}
+
+async function pushPasscodeToRemote(passcode) {
+  try {
+    await fetch(FIREBASE_PASSCODE_URL, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(passcode),
+    });
+  } catch (err) {
+    console.error("Failed to push passcode to Firebase DB:", err);
+  }
+}
+
 export function getStoredPosts() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -152,6 +219,8 @@ export function savePost(postData) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPosts));
     window.dispatchEvent(new Event("saarzya_posts_updated"));
+    // Push updated posts array globally to Firebase DB
+    pushPostsToRemote(updatedPosts);
     return updatedPosts;
   } catch (err) {
     console.error("Quota exceeded or failed to save post:", err);
@@ -165,12 +234,16 @@ export function deletePost(id) {
   const updatedPosts = posts.filter((p) => p.id !== id);
   localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPosts));
   window.dispatchEvent(new Event("saarzya_posts_updated"));
+  // Sync deletion globally
+  pushPostsToRemote(updatedPosts);
   return updatedPosts;
 }
 
 export function resetPostsToDefault() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_POSTS));
   window.dispatchEvent(new Event("saarzya_posts_updated"));
+  // Reset Firebase DB
+  pushPostsToRemote(DEFAULT_POSTS);
   return DEFAULT_POSTS;
 }
 
@@ -178,8 +251,6 @@ export function getEmbeddablePdfUrl(url) {
   if (!url) return "/assets/saarzya-magazine-issue-01.pdf";
 
   // Handle Google Drive links
-  // e.g. https://drive.google.com/file/d/1ABC123xyz/view?usp=sharing
-  // or https://drive.google.com/open?id=1ABC123xyz
   const driveMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
   if (driveMatch && driveMatch[1]) {
     return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
@@ -206,5 +277,7 @@ export function getAdminPasscode() {
 
 export function setAdminPasscode(newPasscode) {
   localStorage.setItem(ADMIN_PASSCODE_KEY, newPasscode);
+  pushPasscodeToRemote(newPasscode);
 }
+
 

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookOpen, FileText, Sparkles, ArrowUpRight, X, Calendar, User } from "lucide-react";
-import { getStoredPosts } from "../utils/postsStorage";
+import { getStoredPosts, syncPostsFromRemote } from "../utils/postsStorage";
 import { navigateTo } from "../utils/router";
 
 const getIconForType = (type) => {
@@ -20,10 +20,13 @@ function MagazinesBlogs() {
   const [activePost, setActivePost] = useState(null);
 
   useEffect(() => {
-    // Load posts on mount
+    // Load local posts first for 0ms initial render
     setPosts(getStoredPosts());
 
-    // Listen for live updates from admin portal
+    // Sync remote posts from Firebase DB
+    syncPostsFromRemote();
+
+    // Listen for live updates from admin portal or remote sync
     const handlePostsUpdated = () => {
       setPosts(getStoredPosts());
     };
