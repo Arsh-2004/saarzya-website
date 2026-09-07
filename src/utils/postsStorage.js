@@ -174,6 +174,32 @@ export function resetPostsToDefault() {
   return DEFAULT_POSTS;
 }
 
+export function getEmbeddablePdfUrl(url) {
+  if (!url) return "/assets/saarzya-magazine-issue-01.pdf";
+
+  // Handle Google Drive links
+  // e.g. https://drive.google.com/file/d/1ABC123xyz/view?usp=sharing
+  // or https://drive.google.com/open?id=1ABC123xyz
+  const driveMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (driveMatch && driveMatch[1]) {
+    return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+  }
+
+  return url;
+}
+
+export function getDirectDownloadPdfUrl(url) {
+  if (!url) return "/assets/saarzya-magazine-issue-01.pdf";
+
+  // Convert Google Drive share link to direct download link
+  const driveMatch = url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+  if (driveMatch && driveMatch[1]) {
+    return `https://drive.google.com/uc?export=download&id=${driveMatch[1]}`;
+  }
+
+  return url;
+}
+
 export function getAdminPasscode() {
   return localStorage.getItem(ADMIN_PASSCODE_KEY) || DEFAULT_PASSCODE;
 }
@@ -181,3 +207,4 @@ export function getAdminPasscode() {
 export function setAdminPasscode(newPasscode) {
   localStorage.setItem(ADMIN_PASSCODE_KEY, newPasscode);
 }
+

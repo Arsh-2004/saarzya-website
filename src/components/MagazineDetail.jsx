@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Download, ExternalLink, BookOpen, CheckCircle, Sparkles } from "lucide-react";
+import { getEmbeddablePdfUrl, getDirectDownloadPdfUrl } from "../utils/postsStorage";
 
 function MagazineDetail({ magazine, onBack }) {
   const [email, setEmail] = useState("");
@@ -8,7 +9,9 @@ function MagazineDetail({ magazine, onBack }) {
 
   if (!magazine) return null;
 
-  const pdfPath = magazine.pdfUrl || "/assets/saarzya-magazine-issue-01.pdf";
+  const rawPdf = magazine.pdfUrl || "/assets/saarzya-magazine-issue-01.pdf";
+  const embedPdfUrl = getEmbeddablePdfUrl(rawPdf);
+  const downloadPdfUrl = getDirectDownloadPdfUrl(rawPdf);
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -87,9 +90,9 @@ function MagazineDetail({ magazine, onBack }) {
                   <BookOpen size={18} /> Read Magazine Below
                 </a>
 
-                {pdfPath && (
+                {downloadPdfUrl && (
                   <a
-                    href={pdfPath}
+                    href={downloadPdfUrl}
                     download="Saarzya-Magazine-Issue-01.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -171,7 +174,7 @@ function MagazineDetail({ magazine, onBack }) {
 
               <div className="flex items-center gap-3">
                 <a
-                  href={pdfPath}
+                  href={embedPdfUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-moss/20 bg-cream/50 px-4 py-2 text-xs font-bold text-moss hover:bg-moss hover:text-white"
@@ -179,7 +182,9 @@ function MagazineDetail({ magazine, onBack }) {
                   <ExternalLink size={14} /> Full Screen
                 </a>
                 <a
-                  href={pdfPath}
+                  href={downloadPdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   download="Saarzya-Magazine-Issue-01.pdf"
                   className="inline-flex items-center gap-1.5 rounded-full bg-moss px-4 py-2 text-xs font-bold text-white shadow hover:bg-sage"
                 >
@@ -190,30 +195,38 @@ function MagazineDetail({ magazine, onBack }) {
 
             {/* PDF View Container */}
             <div className="relative w-full overflow-hidden rounded-2xl border border-moss/15 bg-[#525659] shadow-inner h-[650px] sm:h-[750px] lg:h-[850px]">
-              <object
-                data={`${pdfPath}#toolbar=1&navpanes=1&scrollbar=1`}
-                type="application/pdf"
-                className="w-full h-full"
-              >
-                {/* Fallback iframe / download link if object tag fails */}
+              {embedPdfUrl.includes("drive.google.com") ? (
                 <iframe
-                  src={`${pdfPath}#toolbar=1`}
+                  src={embedPdfUrl}
                   title="Saarzya Magazine Reader"
-                  className="w-full h-full border-0"
+                  className="w-full h-full border-0 rounded-2xl"
+                  allow="autoplay"
+                />
+              ) : (
+                <object
+                  data={`${embedPdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
+                  type="application/pdf"
+                  className="w-full h-full"
                 >
-                  <div className="p-8 text-center bg-white text-slate">
-                    <p className="text-base font-bold">PDF preview is unavailable directly in your browser.</p>
-                    <a
-                      href={pdfPath}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-2 rounded-full bg-moss px-6 py-3 text-sm font-bold text-white"
-                    >
-                      Click Here to View & Download PDF
-                    </a>
-                  </div>
-                </iframe>
-              </object>
+                  <iframe
+                    src={`${embedPdfUrl}#toolbar=1`}
+                    title="Saarzya Magazine Reader"
+                    className="w-full h-full border-0"
+                  >
+                    <div className="p-8 text-center bg-white text-slate">
+                      <p className="text-base font-bold">PDF preview is unavailable directly in your browser.</p>
+                      <a
+                        href={embedPdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-2 rounded-full bg-moss px-6 py-3 text-sm font-bold text-white"
+                      >
+                        Click Here to View & Download PDF
+                      </a>
+                    </div>
+                  </iframe>
+                </object>
+              )}
             </div>
           </div>
         </section>

@@ -127,6 +127,20 @@ function AdminPortal() {
     }
   };
 
+  const handlePdfFileUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert("For large PDF files (>5MB), please paste a Google Drive share link instead of direct file upload to prevent browser memory issues.");
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormData((prev) => ({ ...prev, pdfUrl: reader.result }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleSavePost = (e) => {
     e.preventDefault();
     if (!formData.title || !formData.description) {
@@ -415,17 +429,33 @@ function AdminPortal() {
                 )}
               </div>
 
-              {/* Magazine PDF Link & Button Text */}
+              {/* Magazine PDF Link / File & Button Text */}
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate/70">Full Magazine PDF Link / URL</label>
-                  <input
-                    type="text"
-                    value={formData.pdfUrl}
-                    onChange={(e) => setFormData({ ...formData, pdfUrl: e.target.value })}
-                    placeholder="e.g. /assets/saarzya-magazine-issue-01.pdf"
-                    className="mt-2 w-full rounded-2xl border border-moss/20 bg-cream/30 px-4 py-3 text-xs outline-none focus:border-moss"
-                  />
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-slate/70">
+                    Full Magazine PDF (Google Drive Link or File)
+                  </label>
+                  <div className="mt-2 space-y-2">
+                    <input
+                      type="text"
+                      value={formData.pdfUrl}
+                      onChange={(e) => setFormData({ ...formData, pdfUrl: e.target.value })}
+                      placeholder="Paste Google Drive link or PDF URL here..."
+                      className="w-full rounded-2xl border border-moss/20 bg-cream/30 px-4 py-2.5 text-xs outline-none focus:border-moss"
+                    />
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] text-slate/50">or Upload PDF:</span>
+                      <input
+                        type="file"
+                        accept="application/pdf"
+                        onChange={handlePdfFileUpload}
+                        className="block w-full text-[10px] text-slate/70 file:mr-2 file:rounded-full file:border-0 file:bg-moss/10 file:px-3 file:py-1 file:text-[10px] file:font-semibold file:text-moss hover:file:bg-moss/20"
+                      />
+                    </div>
+                  </div>
+                  <p className="mt-1 text-[10px] text-moss font-semibold">
+                    ✓ Google Drive share links (e.g. https://drive.google.com/file/d/...) work automatically!
+                  </p>
                 </div>
 
                 <div>
@@ -437,6 +467,9 @@ function AdminPortal() {
                     placeholder="e.g. Know More Or Subscribe"
                     className="mt-2 w-full rounded-2xl border border-moss/20 bg-cream/30 px-4 py-3 text-xs outline-none focus:border-moss"
                   />
+                  <p className="mt-1 text-[10px] text-slate/50">
+                    The action button text displayed on the main page card.
+                  </p>
                 </div>
               </div>
 
