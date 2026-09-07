@@ -9,6 +9,7 @@ import SafeSpacePromise from "./components/SafeSpacePromise";
 import CtaBanner from "./components/CtaBanner";
 import Footer from "./components/Footer";
 import AdminPortal from "./components/admin/AdminPortal";
+import FullMagazineReaderPage from "./components/FullMagazineReaderPage";
 import { usePathname } from "./utils/router";
 
 function App() {
@@ -16,6 +17,14 @@ function App() {
 
   if (pathname === "/admin" || pathname === "/admin/") {
     return <AdminPortal />;
+  }
+
+  if (
+    pathname.startsWith("/pdf_reader_magazine") ||
+    pathname.startsWith("/magazine-reader") ||
+    pathname.startsWith("/pdf-reader")
+  ) {
+    return <FullMagazineReaderPage />;
   }
 
   return (

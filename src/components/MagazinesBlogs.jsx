@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BookOpen, FileText, Sparkles, ArrowUpRight, X, Calendar, User } from "lucide-react";
 import { getStoredPosts } from "../utils/postsStorage";
-import MagazineDetail from "./MagazineDetail";
+import { navigateTo } from "../utils/router";
 
 const getIconForType = (type) => {
   switch (type) {
@@ -18,7 +18,6 @@ const getIconForType = (type) => {
 function MagazinesBlogs() {
   const [posts, setPosts] = useState([]);
   const [activePost, setActivePost] = useState(null);
-  const [selectedMagazine, setSelectedMagazine] = useState(null);
 
   useEffect(() => {
     // Load posts on mount
@@ -32,11 +31,6 @@ function MagazinesBlogs() {
     window.addEventListener("saarzya_posts_updated", handlePostsUpdated);
     return () => window.removeEventListener("saarzya_posts_updated", handlePostsUpdated);
   }, []);
-
-  // If a magazine issue is selected, render the dedicated full Magazine Reader Page
-  if (selectedMagazine) {
-    return <MagazineDetail magazine={selectedMagazine} onBack={() => setSelectedMagazine(null)} />;
-  }
 
   return (
     <section id="magazines" className="section-shell py-20">
@@ -66,7 +60,7 @@ function MagazinesBlogs() {
 
           const handleCardClick = () => {
             if (isMagazine) {
-              setSelectedMagazine(item);
+              navigateTo(`/pdf_reader_magazine?id=${item.id}`);
             } else {
               setActivePost(item);
             }
