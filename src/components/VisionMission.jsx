@@ -5,32 +5,52 @@ function VisionMission() {
   return (
     <section id="vision" className="py-16 sm:py-24">
       <div className="section-shell">
-        {/* VISION SECTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-4xl mx-auto"
-        >
-          <h2 className="font-heading text-4xl sm:text-5xl text-slate font-medium">
-            Vision
-          </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate/80 font-normal">
-            Our vision is two fold:
-          </p>
+        {/* VISION SECTION (Horizontally Overlapping Layout) */}
+        <div className="relative grid items-center lg:grid-cols-12 gap-6 lg:gap-0 max-w-5xl mx-auto">
+          {/* Left Column: Overlapping Green Box */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 z-10 relative overflow-hidden rounded-3xl bg-gradient-to-br from-moss via-sage to-[#587B6D] p-8 sm:p-10 text-center text-white shadow-xl lg:-mr-10 flex flex-col justify-center min-h-[200px] lg:min-h-[280px]"
+          >
+            <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/15 blur-xl" />
+            <div className="pointer-events-none absolute -left-12 -bottom-12 h-40 w-40 rounded-full bg-black/10 blur-xl" />
+            
+            <div className="relative z-10">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white">
+                Vision
+              </h2>
+              <p className="mt-3 text-base sm:text-lg font-medium text-white/95">
+                Our vision is two fold:
+              </p>
+            </div>
+          </motion.div>
 
-          <div className="mt-8 text-left max-w-3xl mx-auto space-y-4">
-            <ul className="space-y-4 text-base sm:text-lg leading-relaxed text-slate/90 font-medium list-disc pl-6">
-              <li>
+          {/* Right Column: Overlapping Merged White Points Box */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="lg:col-span-7 z-0 bg-white p-7 sm:p-10 lg:py-12 lg:pl-16 lg:pr-10 shadow-xl rounded-3xl border border-white/90 space-y-5 text-left"
+          >
+            <div className="flex items-start gap-3.5">
+              <span className="mt-2.5 h-2.5 w-2.5 shrink-0 rounded-full bg-moss" />
+              <p className="text-base sm:text-lg leading-relaxed text-slate/90 font-normal">
                 To create a world where mental health is <strong className="font-semibold text-slate">understood, valued, and accessible to all</strong>—where every individual feels safe to seek support.
-              </li>
-              <li>
+              </p>
+            </div>
+
+            <div className="flex items-start gap-3.5 pt-5 border-t border-slate/10">
+              <span className="mt-2.5 h-2.5 w-2.5 shrink-0 rounded-full bg-moss" />
+              <p className="text-base sm:text-lg leading-relaxed text-slate/90 font-normal">
                 To empower individuals to <strong className="font-semibold text-slate">understand themselves, grow beyond their struggles</strong>, and receive compassionate, high-quality care.
-              </li>
-            </ul>
-          </div>
-        </motion.div>
+              </p>
+            </div>
+          </motion.div>
+        </div>
 
         {/* DIVIDER */}
         <div className="my-16 sm:my-20 mx-auto w-24 h-px bg-slate/15" />
