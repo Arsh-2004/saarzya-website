@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const badgeList = ["🌱 100% Confidential", "✨ Safe & Inclusive Space", "🧠 Evidence-Based Care"];
+const badgeList = ["100% Confidential", "Safe & Inclusive Space", "Evidence-Based Care"];
 
 function Hero() {
   return (
