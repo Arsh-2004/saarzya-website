@@ -113,7 +113,7 @@ function VisionMission() {
           <div className="mt-12 grid gap-8 sm:gap-10 md:grid-cols-3">
             {/* Pillar 1 */}
             <div className="flex flex-col items-center text-center p-4">
-              <VideoIcon src="/assets/Psychology_processed.mp4" bgClass="bg-moss/10" scaleClass="scale-[1.65]" />
+              <VideoIcon src="/assets/Psychology_processed.mp4" bgClass="bg-moss/10" scaleClass="scale-[1.1]" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Make psychological knowledge simple, relatable, and useful so that people can apply it to their everyday lives—not just encounter it in textbooks or clinical settings.
               </p>
