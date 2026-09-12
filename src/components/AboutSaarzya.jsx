@@ -20,14 +20,14 @@ function AboutSaarzya() {
             Saarzya represents the idea of essence, inner truth, and a steady, harmonious flow—a return to your authentic self beneath the noise of expectations, pressure, and fear.
           </p>
 
-          <blockquote className="relative border-l-4 border-[#a36849] bg-[#F7F4EE] p-5 sm:p-6 italic text-slate/90 text-base sm:text-lg leading-relaxed">
+          <blockquote className="relative border-l-4 border-moss bg-[#F7F4EE] p-5 sm:p-6 italic text-slate/90 text-base sm:text-lg leading-relaxed">
             “Saarzya is a space to reconnect with your essence, understand your inner world, and move through life with greater clarity, compassion, and balance.”
           </blockquote>
 
           <div className="pt-2">
             <a
               href="#founders"
-              className="inline-block rounded-none bg-[#a36849] px-8 py-3.5 text-sm font-bold text-white shadow-md transition duration-300 hover:bg-[#8b5437]"
+              className="inline-block rounded-none bg-moss px-8 py-3.5 text-sm font-bold text-white shadow-md transition duration-300 hover:bg-sage"
             >
               Read More
             </a>

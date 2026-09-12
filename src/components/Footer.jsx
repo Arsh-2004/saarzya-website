@@ -8,7 +8,7 @@ function Footer() {
           <div>
             <h3 className="m-0 font-heading text-3xl text-moss">Saarzya</h3>
             <p className="mb-0 mt-3 max-w-md text-sm leading-7 text-slate/80">
-              Psychology, Counselling and Wellness support for individuals seeking understanding,
+              Psychology, Assessment and Wellness support for individuals seeking understanding,
               healing, and meaningful growth.
             </p>
           </div>

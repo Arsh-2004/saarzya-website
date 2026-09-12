@@ -58,7 +58,7 @@ function Navbar() {
                 Saarzya
               </span>
               <p className="m-0 text-[9px] font-medium uppercase tracking-[0.14em] text-slate/70 sm:text-[10px] sm:tracking-[0.16em]">
-                Psychology • Counselling • Wellness
+                Psychology • Assessment • Wellness
               </p>
             </div>
           </a>
@@ -113,7 +113,7 @@ function Navbar() {
                     <div>
                       <h2 className="m-0 font-serif text-2xl font-bold text-moss">Saarzya</h2>
                       <p className="m-0 text-[9px] font-semibold uppercase tracking-[0.14em] text-slate/60">
-                        Psychology • Counselling • Wellness
+                        Psychology • Assessment • Wellness
                       </p>
                     </div>
                   </div>
