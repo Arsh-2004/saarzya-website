@@ -28,7 +28,7 @@ PURPOSE & ROLE:
 
 Read the full interactive PDF issue below or download your copy!`,
     badge: "Quarterly Magazine",
-    image: "/assets/logo.jpg",
+    image: "/assets/saarzya_magazine_cover.jpg",
     pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
     buttonText: "Know More",
     date: "July 2026",
@@ -92,9 +92,11 @@ export async function syncPostsFromRemote() {
     const remotePosts = await res.json();
 
     if (Array.isArray(remotePosts) && remotePosts.length > 0) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(remotePosts));
+      // Ensure post-1 uses new magazine cover
+      const updated = remotePosts.map(p => p.id === 'post-1' ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More" } : p);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       window.dispatchEvent(new Event("saarzya_posts_updated"));
-      return remotePosts;
+      return updated;
     } else if (remotePosts === null) {
       // Seed defaults if empty
       await pushPostsToRemote(DEFAULT_POSTS);
@@ -155,7 +157,9 @@ export function getStoredPosts() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_POSTS));
       return DEFAULT_POSTS;
     }
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    const updated = parsed.map(p => p.id === 'post-1' ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More" } : p);
+    return updated;
   } catch (err) {
     console.error("Failed to read stored posts:", err);
     return DEFAULT_POSTS;
