@@ -32,7 +32,7 @@ function AboutSaarzyaPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-4 mb-8 border-b border-moss/15 pb-6"
+          className="space-y-6 mb-8 border-b border-moss/15 pb-6"
         >
           <p className="inline-flex rounded-full border border-moss/20 bg-moss/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-moss">
             About Us
@@ -40,6 +40,12 @@ function AboutSaarzyaPage() {
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate">
             About Saarzya
           </h1>
+
+          <blockquote className="relative border-l-4 border-moss bg-[#F7F4EE] p-6 sm:p-7 italic text-slate text-base sm:text-lg leading-relaxed shadow-sm rounded-r-2xl">
+            <p className="m-0 font-medium">
+              “The name Saarzya draws inspiration from the idea of essence, core truth, and a harmonious, steady flow. We exist to help you peel back the external pressure and return to what truly matters—your core self.”
+            </p>
+          </blockquote>
         </motion.div>
 
         {/* Main Content Body */}
