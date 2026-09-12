@@ -47,7 +47,7 @@ function AboutSaarzya() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="relative flex justify-center"
         >
-          <div className="relative overflow-hidden rounded-3xl border-4 border-white bg-cream shadow-2xl max-w-[480px] w-full transition duration-500 hover:scale-[1.02]">
+          <div className="relative overflow-hidden rounded-none shadow-2xl max-w-[480px] w-full transition duration-500 hover:scale-[1.02]">
             <img
               src="/assets/about-saarzya.jpg"
               alt="About Saarzya - Same mind, Kind heart, Better tomorrow"
