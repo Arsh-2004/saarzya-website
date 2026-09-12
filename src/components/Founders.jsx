@@ -15,14 +15,15 @@ const founders = [
     role: "Co-Founder & Executive Director | Author | Writer",
     bio: "Sanyukta Sherry is a writer, author and emerging psychology professional with a deep interest in understanding the human mind, emotions and the stories that shape our lives.",
     paragraphs: [
-      "Sanyukta Sherry is a writer, author and emerging psychology professional with a deep interest in understanding the human mind, emotions and the stories that shape our lives. As the Co-Founder and Executive Director of Saarzya, she works towards building a space where psychology, wellbeing, research, creativity and meaningful human connection can come together.",
-      "Currently pursuing her Master's in Clinical Psychology, Sanyukta brings together her academic interest in psychology with her long-standing passion for writing and storytelling. She believes that psychological knowledge should not remain confined to classrooms and textbooks—it should become something people can understand, relate to and carry into their everyday lives.",
+      "Sanyukta Sherry is a writer, author and emerging psychology professional with a deep interest in understanding the human mind, emotions and the stories that shape our lives.",
+      "She has published two books: Rooh and Soul – An Inner Journey & My Five Fairly Conservative.",
+      "As the Co-Founder and Executive Director of Saarzya, she works towards building a space where psychology, wellbeing, research, creativity and meaningful human connection can come together. She completed her UG from Sunbeam Women's College Varuna, and is currently pursuing her Master's in Clinical Psychology.",
+      "Sanyukta brings together her academic interest in psychology with her long-standing passion for writing and storytelling. She believes that psychological knowledge should not remain confined to classrooms and textbooks—it should become something people can understand, relate to and carry into their everyday lives.",
       "As an author, she is particularly drawn towards themes of human emotions, relationships, self-discovery, hope and personal growth. Her approach to writing reflects a simple belief: sometimes, a few honest words can help someone understand a feeling they could never quite name.",
       "Through Saarzya, Sanyukta hopes to contribute to a culture where conversations around mental health are approached with curiosity rather than fear, compassion rather than judgement, and understanding rather than assumptions.",
       "Her vision is to help create a generation that does not simply learn about mental health, but learns to listen to themselves, understand others and grow with greater emotional awareness."
     ],
     quote: "Her vision is to help create a generation that does not simply learn about mental health, but learns to listen to themselves, understand others and grow with greater emotional awareness.",
-    tags: ["Author & Writer", "Clinical Psychology", "Self-Discovery & Hope", "Emotional Awareness"],
     initials: "SS",
     image: "/assets/sanyukta.jpg",
   },
@@ -54,10 +55,10 @@ function Founders() {
                 </div>
               )}
               <div className="flex flex-1 flex-col justify-center">
-                <div className="inline-block self-start rounded-full border border-moss/20 bg-moss/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-moss">
+                <h3 className="m-0 font-heading text-3xl text-slate sm:text-4xl lg:text-5xl">{founder.name}</h3>
+                <div className="mt-3 inline-block self-start rounded-full border border-moss/20 bg-moss/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-moss">
                   {founder.role}
                 </div>
-                <h3 className="m-0 mt-3 font-heading text-3xl text-slate sm:text-4xl lg:text-5xl">{founder.name}</h3>
 
                 {founder.paragraphs ? (
                   <div className="mt-6 space-y-4 text-base leading-8 text-slate/85 sm:text-lg sm:leading-8">
@@ -74,17 +75,6 @@ function Founders() {
                     "{founder.quote}"
                   </blockquote>
                 )}
-
-                <div className="mt-6 flex flex-wrap gap-2.5">
-                  {founder.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-moss/20 bg-sage/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-moss"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
             </div>
           </motion.article>
