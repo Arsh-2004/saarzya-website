@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function VideoIcon({ src, bgClass = "bg-moss/10", scaleClass = "scale-[1.35]" }) {
+function VideoIcon({ src, bgClass = "bg-moss/10", scaleClass = "scale-[1.35]", filterClass = "" }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function VideoIcon({ src, bgClass = "bg-moss/10", scaleClass = "scale-[1.35]" })
           e.currentTarget.muted = true;
           e.currentTarget.play().catch(() => {});
         }}
-        className={`h-full w-full object-cover rounded-full pointer-events-none mix-blend-multiply ${scaleClass}`}
+        className={`h-full w-full object-cover rounded-full pointer-events-none mix-blend-multiply ${scaleClass} ${filterClass}`}
       >
         <source src={src} type="video/mp4" />
       </video>
@@ -129,7 +129,7 @@ function VisionMission() {
 
             {/* Pillar 3 */}
             <div className="flex flex-col items-center text-center p-4">
-              <VideoIcon src="/assets/download.mp4" bgClass="bg-moss/10" scaleClass="scale-[1.75]" />
+              <VideoIcon src="/assets/download.mp4" bgClass="bg-[#d7ddd2]" scaleClass="scale-[1.4] translate-y-3" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Advocate learning, guidance, practical exposure, and growth opportunities for psychology students and emerging professionals—helping strengthen the bridge between education and meaningful real-world impact.
               </p>
