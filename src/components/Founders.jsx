@@ -24,36 +24,7 @@ const founders = [
 function Founders() {
   return (
     <section id="founders" className="section-shell py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
-        className="mb-14 rounded-3xl border border-moss/15 bg-white/80 p-8 sm:p-10 shadow-soft"
-      >
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss">ABOUT SAARZYA</p>
-        <h2 className="m-0 font-heading text-3xl text-slate sm:text-4xl lg:text-5xl">
-          Welcome to Saarzya: Finding Your Core in a Noisy World
-        </h2>
-        <p className="mb-0 mt-5 text-base sm:text-lg leading-8 text-slate/85">
-          In a world filled with endless digital noise and overwhelming expectations, taking care of your mind shouldn’t feel complicated. <strong className="font-semibold text-slate">Saarzya</strong> was born out of a simple yet powerful belief: mental well-being and self-growth begin when complex psychological insights are made accessible, relatable, and deeply human.
-        </p>
-        <p className="mb-0 mt-4 text-base sm:text-lg leading-8 text-slate/85">
-          The name <em>Saarzya</em> draws inspiration from the idea of essence, core truth, and a harmonious, steady flow. We exist to help you peel back the external pressure and return to what truly matters—<strong className="font-semibold text-slate">your core self</strong>.
-        </p>
-
-        <div className="mt-8 border-t border-moss/15 pt-8">
-          <h3 className="m-0 font-heading text-2xl text-slate sm:text-3xl">Our Journey & Purpose</h3>
-          <p className="mb-0 mt-4 text-base sm:text-lg leading-8 text-slate/85">
-            Founded by <strong className="font-semibold text-slate">Aarzoo Singh</strong> and <strong className="font-semibold text-slate">Sanyukta Sherry</strong>, Saarzya started with a shared vision to bridge the gap between academic psychology and everyday life. While traditional mental health conversations often feel clinical or intimidating, we set out to build a compassionate, digital safe space centered on psychoeducation, personal growth, and practical student resources.
-          </p>
-          <p className="mb-0 mt-4 text-base sm:text-lg leading-8 text-slate/85">
-            Rather than offering quick fixes or rigid direct therapy, Saarzya focuses on empowering you through knowledge, mindful tools, and honest storytelling. We believe that when you understand your mind, you gain the clarity to navigate life with confidence and resilience.
-          </p>
-        </div>
-      </motion.div>
-
-      <div className="mt-12 flex flex-col gap-10">
+      <div className="flex flex-col gap-10">
         {founders.map((founder, index) => (
           <motion.article
             key={founder.name}

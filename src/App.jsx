@@ -11,6 +11,7 @@ import CtaBanner from "./components/CtaBanner";
 import Footer from "./components/Footer";
 import AdminPortal from "./components/admin/AdminPortal";
 import FullMagazineReaderPage from "./components/FullMagazineReaderPage";
+import AboutSaarzyaPage from "./components/AboutSaarzyaPage";
 import { usePathname } from "./utils/router";
 
 function App() {
@@ -18,6 +19,15 @@ function App() {
 
   if (pathname === "/admin" || pathname === "/admin/") {
     return <AdminPortal />;
+  }
+
+  if (
+    pathname === "/about-saarzya" ||
+    pathname === "/about-saarzya/" ||
+    pathname === "/about" ||
+    pathname === "/about/"
+  ) {
+    return <AboutSaarzyaPage />;
   }
 
   if (

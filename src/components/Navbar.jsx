@@ -3,12 +3,14 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 
+import { navigateTo } from "../utils/router";
+
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Magazines & Blogs", href: "#magazines" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-saarzya" },
+  { label: "Services", href: "/#services" },
+  { label: "Magazines & Blogs", href: "/#magazines" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 function Navbar() {
@@ -18,6 +20,39 @@ function Navbar() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    if (href === "/about-saarzya") {
+      navigateTo("/about-saarzya");
+      return;
+    }
+
+    if (window.location.pathname !== "/") {
+      navigateTo("/");
+      if (href.includes("#")) {
+        const hash = href.split("#")[1];
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+      return;
+    }
+
+    if (href === "/" || href === "/#home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    if (href.includes("#")) {
+      const hash = href.split("#")[1];
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -46,7 +81,11 @@ function Navbar() {
     <>
       <header className="sticky top-0 z-50 border-b border-white/50 bg-cream/80 backdrop-blur-xl">
         <nav className="section-shell flex h-[5.5rem] items-center justify-between py-2" aria-label="Main navigation">
-          <a href="#home" className="flex items-center gap-3 sm:gap-4">
+          <a
+            href="/"
+            onClick={(e) => handleNavClick(e, "/")}
+            className="flex items-center gap-3 sm:gap-4"
+          >
             <img
               src="/assets/logo.jpg"
               alt="Saarzya logo"
@@ -65,9 +104,10 @@ function Navbar() {
 
           <ul className="hidden items-center gap-8 md:flex">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.label}>
                 <a
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="text-sm font-semibold text-slate/85 transition hover:text-moss"
                 >
                   {link.label}
@@ -134,11 +174,11 @@ function Navbar() {
                   </p>
                   <ul className="flex flex-col gap-3">
                     {navLinks.map((link) => (
-                      <li key={link.href}>
+                      <li key={link.label}>
                         <a
                           href={link.href}
                           className="group flex items-center justify-between rounded-2xl border border-moss/15 bg-white px-6 py-4 text-lg font-bold text-slate shadow-sm transition hover:border-moss hover:bg-moss hover:text-white active:scale-[0.98]"
-                          onClick={() => setIsOpen(false)}
+                          onClick={(e) => handleNavClick(e, link.href)}
                         >
                           <span>{link.label}</span>
                           <ArrowRight className="h-5 w-5 text-moss transition-transform group-hover:translate-x-1 group-hover:text-white" />

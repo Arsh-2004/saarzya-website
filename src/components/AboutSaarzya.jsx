@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
+import { navigateTo } from "../utils/router";
 
 function AboutSaarzya() {
+  const handleReadMore = (e) => {
+    e.preventDefault();
+    navigateTo("/about-saarzya");
+  };
+
   return (
     <section id="about" className="section-shell py-16 lg:py-24">
       <div className="relative grid items-center lg:grid-cols-12 gap-8 lg:gap-0">
@@ -26,8 +32,9 @@ function AboutSaarzya() {
 
           <div className="pt-2">
             <a
-              href="#founders"
-              className="inline-block rounded-none bg-moss px-8 py-3.5 text-sm font-bold text-white shadow-md transition duration-300 hover:bg-sage"
+              href="/about-saarzya"
+              onClick={handleReadMore}
+              className="inline-block rounded-none bg-moss px-8 py-3.5 text-sm font-bold text-white shadow-md transition duration-300 hover:bg-sage cursor-pointer"
             >
               Read More
             </a>
