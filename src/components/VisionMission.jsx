@@ -1,5 +1,44 @@
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, ShieldCheck, HeartHandshake } from "lucide-react";
+
+function VideoIcon({ src, bgClass, borderClass }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.play().catch(() => {});
+    }
+  }, [src]);
+
+  return (
+    <div className={`mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full ${bgClass} border-2 ${borderClass} shadow-md transition-transform duration-300 hover:scale-105 shrink-0`}>
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted
+        defaultMuted
+        playsInline
+        preload="auto"
+        onLoadedMetadata={(e) => {
+          e.currentTarget.muted = true;
+          e.currentTarget.play().catch(() => {});
+        }}
+        onCanPlay={(e) => {
+          e.currentTarget.muted = true;
+          e.currentTarget.play().catch(() => {});
+        }}
+        className="h-full w-full object-cover rounded-full pointer-events-none"
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    </div>
+  );
+}
 
 function VisionMission() {
   return (
@@ -72,76 +111,25 @@ function VisionMission() {
 
           {/* 3 Pillars / Icons & Video Grid */}
           <div className="mt-12 grid gap-8 sm:gap-10 md:grid-cols-3">
-            {/* Pillar 1 (With Video Clip) */}
+            {/* Pillar 1 */}
             <div className="flex flex-col items-center text-center p-4">
-              <div className="mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-sage/20 border-2 border-sage/40 shadow-md transition-transform duration-300 hover:scale-105">
-                <video
-                  ref={(el) => {
-                    if (el) {
-                      el.muted = true;
-                      el.play().catch(() => {});
-                    }
-                  }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="h-full w-full object-cover rounded-full pointer-events-none"
-                >
-                  <source src="/assets/Psychology_processed.mp4" type="video/mp4" />
-                </video>
-              </div>
+              <VideoIcon src="/assets/Psychology_processed.mp4" bgClass="bg-sage/20" borderClass="border-sage/40" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Make psychological knowledge simple, relatable, and useful so that people can apply it to their everyday lives—not just encounter it in textbooks or clinical settings.
               </p>
             </div>
 
-            {/* Pillar 2 (With culture.mp4 Video Clip) */}
+            {/* Pillar 2 */}
             <div className="flex flex-col items-center text-center p-4">
-              <div className="mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-moss/15 border-2 border-moss/40 shadow-md transition-transform duration-300 hover:scale-105">
-                <video
-                  ref={(el) => {
-                    if (el) {
-                      el.muted = true;
-                      el.play().catch(() => {});
-                    }
-                  }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="h-full w-full object-cover rounded-full pointer-events-none"
-                >
-                  <source src="/assets/culture.mp4" type="video/mp4" />
-                </video>
-              </div>
+              <VideoIcon src="/assets/culture.mp4" bgClass="bg-moss/15" borderClass="border-moss/40" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Create a culture where reaching out for psychological support is seen as an act of courage and self-care, not weakness or something to be ashamed of.
               </p>
             </div>
 
-            {/* Pillar 3 (With download.mp4 Video Clip) */}
+            {/* Pillar 3 */}
             <div className="flex flex-col items-center text-center p-4">
-              <div className="mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-blush/20 border-2 border-blush/40 shadow-md transition-transform duration-300 hover:scale-105">
-                <video
-                  ref={(el) => {
-                    if (el) {
-                      el.muted = true;
-                      el.play().catch(() => {});
-                    }
-                  }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="h-full w-full object-cover rounded-full pointer-events-none"
-                >
-                  <source src="/assets/download.mp4" type="video/mp4" />
-                </video>
-              </div>
+              <VideoIcon src="/assets/download.mp4" bgClass="bg-blush/20" borderClass="border-blush/40" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Advocate learning, guidance, practical exposure, and growth opportunities for psychology students and emerging professionals—helping strengthen the bridge between education and meaningful real-world impact.
               </p>
