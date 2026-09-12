@@ -28,8 +28,9 @@ function Services() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss">Core Offerings</p>
-        <h2 className="m-0 font-heading text-3xl text-slate sm:text-4xl">Care models built for your pace and needs.</h2>
+        <h2 className="font-heading text-3xl sm:text-4xl text-slate font-medium tracking-wide uppercase">
+          CORE OFFERINGS
+        </h2>
       </motion.div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
