@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function VideoIcon({ src, bgClass, borderClass }) {
+function VideoIcon({ src, bgClass = "bg-sage/20", borderClass = "border-sage/40" }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function VideoIcon({ src, bgClass, borderClass }) {
   }, [src]);
 
   return (
-    <div className={`mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full ${bgClass} border-2 ${borderClass} shadow-md transition-transform duration-300 hover:scale-105 shrink-0`}>
+    <div className={`mb-5 relative flex h-24 w-24 sm:h-28 sm:w-28 items-center justify-center overflow-hidden rounded-full ${bgClass} border-[3px] ${borderClass} shadow-md transition-transform duration-300 hover:scale-105 shrink-0`}>
       <video
         ref={videoRef}
         src={src}
@@ -32,7 +32,7 @@ function VideoIcon({ src, bgClass, borderClass }) {
           e.currentTarget.muted = true;
           e.currentTarget.play().catch(() => {});
         }}
-        className="h-full w-full object-cover rounded-full pointer-events-none scale-110 mix-blend-multiply"
+        className="h-full w-full object-cover rounded-full pointer-events-none mix-blend-multiply"
       >
         <source src={src} type="video/mp4" />
       </video>
@@ -129,7 +129,7 @@ function VisionMission() {
 
             {/* Pillar 3 */}
             <div className="flex flex-col items-center text-center p-4">
-              <VideoIcon src="/assets/download.mp4" bgClass="bg-blush/20" borderClass="border-blush/40" />
+              <VideoIcon src="/assets/download.mp4" bgClass="bg-sage/20" borderClass="border-sage/40" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Advocate learning, guidance, practical exposure, and growth opportunities for psychology students and emerging professionals—helping strengthen the bridge between education and meaningful real-world impact.
               </p>
