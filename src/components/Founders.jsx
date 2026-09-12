@@ -23,7 +23,7 @@ const founders = [
       "Through Saarzya, Sanyukta hopes to contribute to a culture where conversations around mental health are approached with curiosity rather than fear, compassion rather than judgement, and understanding rather than assumptions.",
       "Her vision is to help create a generation that does not simply learn about mental health, but learns to listen to themselves, understand others and grow with greater emotional awareness."
     ],
-    quote: "Her vision is to help create a generation that does not simply learn about mental health, but learns to listen to themselves, understand others and grow with greater emotional awareness.",
+    tags: ["Author & Writer", "Clinical Psychology", "Self-Discovery & Hope", "Emotional Awareness"],
     initials: "SS",
     image: "/assets/sanyukta.jpg",
   },
