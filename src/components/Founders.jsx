@@ -4,9 +4,11 @@ const founders = [
   {
     name: "Aarzoo Singh",
     role: "Co-founder & Managing Director",
-    bio: "Aarzoo is dedicated to building an accessible, transparent, and stigma-free mental health ecosystem where every individual receives compassionate, professional care.",
-    quote: "Mental healthcare shouldn't feel like entering a cold clinic. SAARZYA was born out of a desire to make quality support accessible without complex barriers, We provide the trusted ecosystem and administrative care so you can focus entirely on your personal growth alongside qualified, empaneled professionals.",
-    tags: ["Emotional Safety", "Administrative Care", "Youth & Professional Support"],
+    paragraphs: [
+      "Aarzoo holds a Bachelor’s in Psychology Honours and a Master’s in Clinical Psychology. Driven by a deep interest in human behavior, emotional wellbeing, and personal growth, she co-founded Saarzya to bridge the gap between academic psychology and everyday life.",
+      "She is committed to transforming complex psychological concepts into accessible, responsible, and practical tools that support interpersonal relationships and self-understanding. Through her leadership at Saarzya, Aarzoo aims to build a credible, purpose-driven platform that fosters human connection and cultivates a culture where mental wellbeing is approached with empathy, dignity, and true psychological awareness."
+    ],
+    tags: ["Clinical Psychology", "Emotional Wellbeing", "Youth & Professional Support"],
     initials: "AS",
     image: "/assets/aarzoo.jpg",
   },
