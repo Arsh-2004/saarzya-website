@@ -29,7 +29,7 @@ function Hero() {
               href="#founders"
               className="rounded-full border border-moss/25 bg-white/80 px-7 py-3 text-sm font-semibold text-slate transition hover:border-moss/45 hover:bg-white"
             >
-              Meet Our Founders
+              About Us
             </a>
           </div>
         </motion.div>
