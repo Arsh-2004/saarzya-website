@@ -1,57 +1,52 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 function AboutSaarzya() {
   return (
     <section id="about" className="section-shell py-16 lg:py-24">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
-        {/* Left Column: Text & Quote */}
+      <div className="relative grid items-center lg:grid-cols-12 gap-8 lg:gap-0">
+        {/* Left Column: Overlapping White Content Card */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="space-y-6"
+          className="lg:col-span-7 z-10 bg-white p-8 sm:p-12 lg:p-16 shadow-xl lg:-mr-12 rounded-none space-y-6"
         >
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-slate">
             About Saarzya
           </h2>
 
-          <p className="text-base sm:text-lg leading-relaxed text-slate/85">
+          <p className="text-base sm:text-lg leading-relaxed text-slate/80">
             Saarzya represents the idea of essence, inner truth, and a steady, harmonious flow—a return to your authentic self beneath the noise of expectations, pressure, and fear.
           </p>
 
-          <blockquote className="relative rounded-2xl border-l-4 border-moss bg-cream/70 p-6 sm:p-7 shadow-sm">
-            <p className="font-serif text-lg sm:text-xl italic leading-relaxed text-slate/90 m-0">
-              “Saarzya is a space to reconnect with your essence, understand your inner world, and move through life with greater clarity, compassion, and balance.”
-            </p>
+          <blockquote className="relative border-l-4 border-[#a36849] bg-[#F7F4EE] p-5 sm:p-6 italic text-slate/90 text-base sm:text-lg leading-relaxed">
+            “Saarzya is a space to reconnect with your essence, understand your inner world, and move through life with greater clarity, compassion, and balance.”
           </blockquote>
 
-          {/* Read More Button (redirects to detailed section) */}
-          <div className="pt-3">
+          <div className="pt-2">
             <a
               href="#founders"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#a36849] px-7 py-3.5 text-sm font-bold text-white shadow-md transition duration-300 hover:bg-[#8b5437] hover:shadow-lg active:scale-95"
+              className="inline-block rounded-none bg-[#a36849] px-8 py-3.5 text-sm font-bold text-white shadow-md transition duration-300 hover:bg-[#8b5437]"
             >
-              <span>Read More</span>
-              <ArrowRight size={16} />
+              Read More
             </a>
           </div>
         </motion.div>
 
-        {/* Right Column: Image */}
+        {/* Right Column: Square Image */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="relative flex justify-center"
+          className="lg:col-span-5 z-0"
         >
-          <div className="relative overflow-hidden rounded-none shadow-2xl max-w-[480px] w-full transition duration-500 hover:scale-[1.02]">
+          <div className="w-full h-full overflow-hidden shadow-2xl rounded-none">
             <img
               src="/assets/about-saarzya.jpg"
               alt="About Saarzya - Same mind, Kind heart, Better tomorrow"
-              className="h-full w-full object-cover object-center max-h-[560px]"
+              className="w-full h-full object-cover object-center scale-[1.04] origin-center min-h-[380px] lg:min-h-[520px]"
             />
           </div>
         </motion.div>
@@ -61,5 +56,6 @@ function AboutSaarzya() {
 }
 
 export default AboutSaarzya;
+
 
 
