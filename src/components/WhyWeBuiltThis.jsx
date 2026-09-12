@@ -31,10 +31,10 @@ function WhyWeBuiltThis() {
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
       >
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-moss">
+        <p className="mb-3 text-base sm:text-lg font-bold uppercase tracking-[0.2em] text-moss">
           WHY WE BUILT THIS
         </p>
-        <h2 className="m-0 max-w-3xl font-heading text-3xl text-slate sm:text-4xl">
+        <h2 className="m-0 max-w-3xl font-heading text-2xl text-slate sm:text-3xl leading-snug">
           A compassionate sanctuary for genuine vulnerability and human connection.
         </h2>
         <p className="mb-0 mt-5 max-w-4xl leading-8 text-slate/80">
