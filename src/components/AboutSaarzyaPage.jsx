@@ -32,13 +32,13 @@ function AboutSaarzyaPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-4 mb-12 border-b border-moss/15 pb-8"
+          className="space-y-4 mb-8 border-b border-moss/15 pb-6"
         >
           <p className="inline-flex rounded-full border border-moss/20 bg-moss/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-moss">
-            About Saarzya
+            About Us
           </p>
           <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-slate">
-            Welcome to Saarzya: Finding Your Core in a Noisy World
+            About Saarzya
           </h1>
         </motion.div>
 
@@ -49,18 +49,8 @@ function AboutSaarzyaPage() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="space-y-8 text-slate/85 text-base sm:text-lg leading-relaxed font-body"
         >
-          <p>
-            In a world filled with endless digital noise and overwhelming expectations, taking care of your mind shouldn’t feel complicated. Saarzya was born out of a simple yet powerful belief: mental well-being and self-growth begin when complex psychological insights are made accessible, relatable, and deeply human.
-          </p>
-
-          <blockquote className="relative border-l-4 border-moss bg-[#F7F4EE] p-6 sm:p-8 italic text-slate text-lg sm:text-xl leading-relaxed shadow-sm">
-            <p className="m-0 font-medium">
-              “The name Saarzya draws inspiration from the idea of essence, core truth, and a harmonious, steady flow. We exist to help you peel back the external pressure and return to what truly matters—your core self.”
-            </p>
-          </blockquote>
-
           {/* Section Divider / Title: Our Journey */}
-          <div className="pt-8 border-t border-moss/15">
+          <div>
             <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate mb-6 flex items-center gap-3">
               <Sparkles className="w-7 h-7 text-moss" /> Our Journey
             </h2>
