@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
 
 function CtaBanner() {
-  const whatsappUrl =
-    "https://wa.me/6386897602?text=Hi%20Saarzya%2C%20I%20want%20to%20book%20a%20session.";
-
   return (
     <section id="contact" className="section-shell py-20">
       <motion.div
@@ -20,23 +17,15 @@ function CtaBanner() {
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80">Begin Your Journey</p>
             <h2 className="m-0 max-w-2xl font-heading text-3xl sm:text-4xl">Ready to take your first step?</h2>
-            <p className="mb-0 mt-3 text-white/90">Connect with us on WhatsApp or schedule a private consultation today.</p>
+            <p className="mb-0 mt-3 text-white/90">Get in touch with us to schedule a private consultation today.</p>
           </div>
 
           <div className="flex flex-wrap gap-3">
             <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-moss transition hover:scale-105"
-            >
-              WhatsApp Us
-            </a>
-            <a
               href="mailto:saarzya@gmail.com"
-              className="rounded-full border border-white/45 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-moss transition hover:scale-105 shadow-md"
             >
-              saarzya@gmail.com
+              Email Us: saarzya@gmail.com
             </a>
           </div>
         </div>
