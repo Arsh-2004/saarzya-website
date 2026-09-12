@@ -59,7 +59,7 @@ function Footer() {
               </a>
               <a
                 className="rounded-full border border-moss/20 p-2 text-moss transition hover:border-moss hover:bg-moss/10"
-                href="https://www.linkedin.com/in/saarzya-undefined-735324431?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                href="https://www.linkedin.com/in/saarzya-psychological-wellness-735324431/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
