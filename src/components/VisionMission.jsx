@@ -92,7 +92,6 @@ function VisionMission() {
                   <source src="/assets/Psychology_processed.mp4" type="video/mp4" />
                 </video>
               </div>
-              <h3 className="font-heading text-xl text-slate font-medium">Accessible Care</h3>
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Make psychological knowledge simple, relatable, and useful so that people can apply it to their everyday lives—not just encounter it in textbooks or clinical settings.
               </p>
