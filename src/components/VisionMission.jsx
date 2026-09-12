@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
-function VideoIcon({ src, bgClass = "bg-sage/20" }) {
+function VideoIcon({ src, bgClass = "bg-moss/10", scaleClass = "scale-[1.35]" }) {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function VideoIcon({ src, bgClass = "bg-sage/20" }) {
           e.currentTarget.muted = true;
           e.currentTarget.play().catch(() => {});
         }}
-        className="h-full w-full object-cover rounded-full pointer-events-none mix-blend-multiply"
+        className={`h-full w-full object-cover rounded-full pointer-events-none mix-blend-multiply ${scaleClass}`}
       >
         <source src={src} type="video/mp4" />
       </video>
@@ -113,7 +113,7 @@ function VisionMission() {
           <div className="mt-12 grid gap-8 sm:gap-10 md:grid-cols-3">
             {/* Pillar 1 */}
             <div className="flex flex-col items-center text-center p-4">
-              <VideoIcon src="/assets/Psychology_processed.mp4" bgClass="bg-sage/20" />
+              <VideoIcon src="/assets/Psychology_processed.mp4" bgClass="bg-moss/10" scaleClass="scale-[1.65]" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Make psychological knowledge simple, relatable, and useful so that people can apply it to their everyday lives—not just encounter it in textbooks or clinical settings.
               </p>
@@ -121,7 +121,7 @@ function VisionMission() {
 
             {/* Pillar 2 */}
             <div className="flex flex-col items-center text-center p-4">
-              <VideoIcon src="/assets/culture.mp4" bgClass="bg-moss/15" />
+              <VideoIcon src="/assets/culture.mp4" bgClass="bg-moss/10" scaleClass="scale-[1.35]" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Create a culture where reaching out for psychological support is seen as an act of courage and self-care, not weakness or something to be ashamed of.
               </p>
@@ -129,7 +129,7 @@ function VisionMission() {
 
             {/* Pillar 3 */}
             <div className="flex flex-col items-center text-center p-4">
-              <VideoIcon src="/assets/download.mp4" bgClass="bg-sage/20" />
+              <VideoIcon src="/assets/download.mp4" bgClass="bg-moss/10" scaleClass="scale-[1.75]" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Advocate learning, guidance, practical exposure, and growth opportunities for psychology students and emerging professionals—helping strengthen the bridge between education and meaningful real-world impact.
               </p>
