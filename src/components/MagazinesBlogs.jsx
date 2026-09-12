@@ -47,7 +47,7 @@ function MagazinesBlogs() {
           Read & Explore
         </p>
         <h2 className="m-0 font-heading text-3xl text-slate sm:text-4xl">
-          Magazines & Blogs
+          Magazines
         </h2>
         <p className="mb-0 mt-4 max-w-2xl text-base leading-8 text-slate/80 sm:text-lg">
           Thoughtful articles, digital magazines, and practical wellness guides designed to inspire self-growth and deep psychological understanding.

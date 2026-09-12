@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-saarzya" },
   { label: "Services", href: "/#services" },
-  { label: "Magazines & Blogs", href: "/magazines" },
+  { label: "Magazines", href: "/magazines" },
   { label: "Contact", href: "/#contact" },
 ];
 

@@ -29,7 +29,7 @@ function MagazinesBlogsPage() {
           </motion.button>
         </div>
 
-        {/* Magazines & Blogs Full Component */}
+        {/* Magazines Full Component */}
         <MagazinesBlogs />
       </main>
 

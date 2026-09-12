@@ -160,7 +160,7 @@ function AdminPortal() {
   };
 
   const handleResetDefaults = () => {
-    if (window.confirm("Reset all magazines & blogs to default sample posts?")) {
+    if (window.confirm("Reset all magazines to default sample posts?")) {
       const updated = resetPostsToDefault();
       setPosts(updated);
     }
@@ -192,7 +192,7 @@ function AdminPortal() {
             </div>
             <h1 className="font-heading text-3xl text-slate">Saarzya Admin Portal</h1>
             <p className="mt-2 text-sm text-slate/70">
-              Enter your passcode to manage magazines, blogs & resources.
+              Enter your passcode to manage magazines & resources.
             </p>
           </div>
 
@@ -241,7 +241,7 @@ function AdminPortal() {
             <img src="/assets/logo.jpg" alt="Saarzya logo" className="h-10 w-10 rounded-xl border border-moss/20 object-contain" />
             <div>
               <h1 className="font-heading text-xl text-moss">Saarzya Admin</h1>
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-slate/60">Magazines & Blogs Management</p>
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-slate/60">Magazines Management</p>
             </div>
           </div>
 
