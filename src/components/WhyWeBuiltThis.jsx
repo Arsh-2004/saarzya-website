@@ -92,7 +92,7 @@ function WhyWeBuiltThis() {
 
                     {/* Floating Overlapping Circular Badge */}
                     <div
-                      className={`flex absolute top-1/2 -translate-y-1/2 h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full bg-cream shadow-2xl border-4 border-[#587B6D] transition-transform duration-300 group-hover:scale-110 ${
+                      className={`flex absolute top-1/2 -translate-y-1/2 h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full bg-cream shadow-2xl transition-transform duration-300 group-hover:scale-110 ${
                         isLeft ? "-right-7 sm:-right-12" : "-left-7 sm:-left-12"
                       }`}
                     >
