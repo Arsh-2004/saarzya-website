@@ -78,7 +78,7 @@ function VisionMission() {
             <div className="flex items-start gap-3.5">
               <span className="mt-2.5 h-2.5 w-2.5 shrink-0 rounded-full bg-moss" />
               <p className="text-base sm:text-lg leading-relaxed text-slate/90 font-normal">
-                To create a world where mental health is <strong className="font-semibold text-slate">understood, valued, and accessible to all</strong>—where every individual feels safe to seek support.
+                To create a world where mental health is <strong className="font-semibold text-slate">understood, valued, and accessible to all</strong>, where every individual feels safe to seek support.
               </p>
             </div>
 
@@ -115,7 +115,7 @@ function VisionMission() {
             <div className="flex flex-col items-center text-center p-4">
               <VideoIcon src="/assets/Psychology_processed.mp4" bgClass="bg-moss/10" scaleClass="scale-[1.1]" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
-                Make psychological knowledge simple, relatable, and useful so that people can apply it to their everyday lives—not just encounter it in textbooks or clinical settings.
+                Make psychological knowledge simple, relatable, and useful so that people can apply it to their everyday lives, not just encounter it in textbooks or clinical settings.
               </p>
             </div>
 
@@ -131,7 +131,7 @@ function VisionMission() {
             <div className="flex flex-col items-center text-center p-4">
               <VideoIcon src="/assets/download.mp4" bgClass="bg-[#d7ddd2]" scaleClass="scale-[1.4] translate-y-3" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
-                Advocate learning, guidance, practical exposure, and growth opportunities for psychology students and emerging professionals—helping strengthen the bridge between education and meaningful real-world impact.
+                Advocate learning, guidance, practical exposure, and growth opportunities for psychology students and emerging professionals, helping strengthen the bridge between education and meaningful real-world impact.
               </p>
             </div>
           </div>

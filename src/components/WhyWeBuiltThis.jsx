@@ -51,7 +51,7 @@ function WhyWeBuiltThis() {
               WHY WE BUILT THIS
             </h2>
             <p className="mt-4 text-base sm:text-lg text-white/90 leading-relaxed font-normal">
-              Saarzya addresses the overwhelming noise of digital filters and staged perfection by offering authentic psychoeducation, self-growth resources, and a non-judgmental community—specifically tailored for students and young seekers.
+              Saarzya addresses the overwhelming noise of digital filters and staged perfection by offering authentic psychoeducation, self-growth resources, and a non-judgmental community, specifically tailored for students and young seekers.
             </p>
           </motion.div>
 
