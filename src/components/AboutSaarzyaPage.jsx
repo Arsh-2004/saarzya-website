@@ -43,7 +43,7 @@ function AboutSaarzyaPage() {
 
           <blockquote className="relative border-l-4 border-moss bg-[#F7F4EE] p-6 sm:p-7 italic text-slate text-base sm:text-lg leading-relaxed shadow-sm rounded-r-2xl">
             <p className="m-0 font-medium">
-              “The name Saarzya draws inspiration from the idea of essence, core truth, and a harmonious, steady flow. We exist to help you peel back the external pressure and return to what truly matters—your core self.”
+              “The name Saarzya draws inspiration from the idea of essence, core truth, and a harmonious, steady flow. We exist to help you peel back the external pressure and return to what truly matters: your core self.”
             </p>
           </blockquote>
         </motion.div>
@@ -67,7 +67,7 @@ function AboutSaarzyaPage() {
               </p>
 
               <p>
-                We had spent years studying the mind, writing research papers, and pouring our hearts into psychology. But as graduation approached, a quiet anxiety started creeping in: <span className="italic font-medium text-slate">What if we don&apos;t get clients? What if, after all these years of dedication, we struggle to make a real impact? And worse—what about the students coming after us? How can we make sure they don&apos;t have to navigate this same uncertainty alone?</span>
+                We had spent years studying the mind, writing research papers, and pouring our hearts into psychology. But as graduation approached, a quiet anxiety started creeping in: <span className="italic font-medium text-slate">What if we don&apos;t get clients? What if, after all these years of dedication, we struggle to make a real impact? And worse, what about the students coming after us? How can we make sure they don&apos;t have to navigate this same uncertainty alone?</span>
               </p>
 
               <p>

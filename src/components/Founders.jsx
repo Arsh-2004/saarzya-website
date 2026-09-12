@@ -16,8 +16,8 @@ const founders = [
     name: "Sanyukta Sherry",
     role: "Co-Founder & Executive Director | Author | Writer",
     paragraphs: [
-      "Sanyukta Sherry is a writer, author, and emerging psychology professional pursuing her Master's in Clinical Psychology. She is the author of two books: Rooh and Soul – An Inner Journey & My Five Fairly Conservative.",
-      "Blending her background in storytelling with academic psychology, she explores themes of emotion, relationships, self-discovery, and personal growth. As Co-Founder and Executive Director of Saarzya, she works to bridge psychology, creativity, and human connection—transforming psychological knowledge into everyday understanding. Sanyukta’s vision is to foster a culture where mental health is approached with compassion, curiosity, and deep emotional awareness."
+      "Sanyukta Sherry is a writer, author, and emerging psychology professional pursuing her Master's in Clinical Psychology. She is the author of two books: Rooh and Soul: An Inner Journey & My Five Fairly Conservative.",
+      "Blending her background in storytelling with academic psychology, she explores themes of emotion, relationships, self-discovery, and personal growth. As Co-Founder and Executive Director of Saarzya, she works to bridge psychology, creativity, and human connection, transforming psychological knowledge into everyday understanding. Sanyukta’s vision is to foster a culture where mental health is approached with compassion, curiosity, and deep emotional awareness."
     ],
     tags: ["Author & Writer", "Clinical Psychology", "Self-Discovery & Hope", "Emotional Awareness"],
     initials: "SS",

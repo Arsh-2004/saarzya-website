@@ -23,7 +23,7 @@ function AboutSaarzya() {
           </h2>
 
           <p className="text-base sm:text-lg leading-relaxed text-slate/80">
-            Saarzya represents the idea of essence, inner truth, and a steady, harmonious flow—a return to your authentic self beneath the noise of expectations, pressure, and fear.
+            Saarzya represents the idea of essence, inner truth, and a steady, harmonious flow, helping you return to your authentic self beneath the noise of expectations, pressure, and fear.
           </p>
 
           <blockquote className="relative border-l-4 border-moss bg-[#F7F4EE] p-5 sm:p-6 italic text-slate/90 text-base sm:text-lg leading-relaxed">
