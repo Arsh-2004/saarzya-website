@@ -82,14 +82,14 @@ function MagazinesBlogs() {
               onClick={handleCardClick}
             >
               <div>
-                <div className="relative mb-5 h-52 w-full overflow-hidden rounded-2xl border border-moss/10 bg-cream/60">
+                <div className="relative mb-5 h-64 sm:h-72 w-full overflow-hidden rounded-2xl border border-moss/10 bg-[#F5F2EC] flex items-center justify-center p-2">
                   <img
                     src={item.image || "/assets/logo.jpg"}
                     alt={item.title}
-                    className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                    className="h-full w-full object-contain rounded-xl transition duration-500 group-hover:scale-105"
                   />
                   {item.badge && (
-                    <span className="absolute right-3 top-3 rounded-full bg-moss px-3 py-1 text-xs font-semibold text-white shadow">
+                    <span className="absolute right-3 top-3 z-10 rounded-full bg-moss px-3 py-1 text-xs font-semibold text-white shadow">
                       {item.badge}
                     </span>
                   )}
@@ -173,11 +173,11 @@ function MagazinesBlogs() {
               </div>
 
               {activePost.image && (
-                <div className="mt-6 overflow-hidden rounded-3xl border border-moss/15 shadow-md">
+                <div className="mt-6 overflow-hidden rounded-3xl border border-moss/15 shadow-md flex justify-center bg-[#F5F2EC] p-3">
                   <img
                     src={activePost.image}
                     alt={activePost.title}
-                    className="max-h-[420px] w-full object-cover object-top"
+                    className="max-h-[500px] w-full object-contain rounded-2xl"
                   />
                 </div>
               )}

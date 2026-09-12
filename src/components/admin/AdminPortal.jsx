@@ -299,8 +299,8 @@ function AdminPortal() {
           {posts.map((post) => (
             <div key={post.id} className="flex flex-col justify-between rounded-3xl border border-moss/20 bg-white p-6 shadow-sm">
               <div>
-                <div className="relative mb-4 h-48 w-full overflow-hidden rounded-2xl border border-moss/10 bg-cream">
-                  <img src={post.image || "/assets/logo.jpg"} alt={post.title} className="h-full w-full object-cover object-top" />
+                <div className="relative mb-4 h-60 w-full overflow-hidden rounded-2xl border border-moss/10 bg-[#F5F2EC] flex items-center justify-center p-2">
+                  <img src={post.image || "/assets/logo.jpg"} alt={post.title} className="h-full w-full object-contain rounded-xl" />
                   <span className="absolute right-3 top-3 rounded-full bg-moss px-3 py-1 text-xs font-semibold text-white shadow">
                     {post.badge}
                   </span>
