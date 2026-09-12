@@ -70,7 +70,7 @@ function WhyWeBuiltThis() {
                   transition={{ duration: 0.7, ease: "easeOut" }}
                   className={`w-full max-w-2xl ${isLeft ? "mr-auto" : "ml-auto"}`}
                 >
-                  <div className={`group relative rounded-3xl bg-white text-slate shadow-xl border border-white/90 transition duration-300 hover:shadow-2xl py-7 sm:py-10 ${
+                  <div className={`group relative rounded-none bg-white text-slate shadow-xl border border-white/90 transition duration-300 hover:shadow-2xl py-7 sm:py-10 ${
                     isLeft 
                       ? "pl-7 sm:pl-10 pr-20 sm:pr-24 lg:pr-28" 
                       : "pr-7 sm:pr-10 pl-20 sm:pl-24 lg:pl-28"
