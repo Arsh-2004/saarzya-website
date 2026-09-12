@@ -22,21 +22,8 @@ function Footer() {
           </div>
 
           <div>
-            <p className="m-0 text-sm font-semibold text-slate">Stay connected</p>
-            <form className="mt-3 flex w-full max-w-sm items-center gap-2" onSubmit={(e) => e.preventDefault()}>
-              <label htmlFor="email-subscription" className="sr-only">Email address</label>
-              <input
-                id="email-subscription"
-                type="email"
-                placeholder="Your email"
-                className="h-11 w-full rounded-full border border-moss/20 bg-white px-4 text-sm outline-none placeholder:text-slate/50 focus:border-moss"
-              />
-              <button className="rounded-full bg-moss px-4 py-2.5 text-sm font-semibold text-white" type="submit">
-                Join
-              </button>
-            </form>
-
-            <div className="mt-4 flex items-center gap-2">
+            <p className="m-0 text-sm font-semibold text-slate">Connect with us</p>
+            <div className="mt-3 flex items-center gap-2">
               <a
                 className="rounded-full border border-moss/20 p-2 text-moss transition hover:border-moss hover:bg-moss/10"
                 href="https://chat.whatsapp.com/Ll7GsKRozMA8TMlDD8lQyF"
