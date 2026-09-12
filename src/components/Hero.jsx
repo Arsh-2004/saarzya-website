@@ -26,7 +26,7 @@ function Hero() {
               Begin Your Journey
             </a>
             <a
-              href="#founders"
+              href="#about"
               className="rounded-full border border-moss/25 bg-white/80 px-7 py-3 text-sm font-semibold text-slate transition hover:border-moss/45 hover:bg-white"
             >
               About Us
