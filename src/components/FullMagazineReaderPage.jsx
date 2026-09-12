@@ -50,11 +50,17 @@ function FullMagazineReaderPage() {
       <header className="flex h-16 w-full items-center justify-between border-b border-white/10 bg-[#161a20] px-4 sm:px-6">
         <div className="flex items-center gap-3 sm:gap-4">
           <button
-            onClick={() => navigateTo("/")}
+            onClick={() => {
+              navigateTo("/magazines");
+              setTimeout(() => {
+                const el = document.getElementById("magazines");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
             className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-bold text-white transition hover:bg-white/20 active:scale-95"
           >
             <ArrowLeft size={16} />
-            <span className="hidden sm:inline">Back to Website</span>
+            <span className="hidden sm:inline">Back to Magazines</span>
           </button>
 
           <div className="h-5 w-[1px] bg-white/20 hidden sm:block" />
