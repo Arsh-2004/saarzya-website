@@ -15,7 +15,7 @@ const pillars = [
     title: "Empowering Growth",
     description:
       "Providing actionable tools and knowledge to help people navigate their emotions with resilience.",
-    image: "/assets/empowering_growth.png",
+    image: "/assets/safe_digital_ecosystem.png",
     align: "right",
   },
   {
@@ -23,7 +23,7 @@ const pillars = [
     title: "A Safe Digital Ecosystem",
     description:
       "Creating a space where individuals can reflect, learn, and grow without the pressure of artificial social expectations.",
-    image: "/assets/safe_digital_ecosystem.png",
+    image: "/assets/empowering_growth.png",
     align: "left",
   },
 ];
