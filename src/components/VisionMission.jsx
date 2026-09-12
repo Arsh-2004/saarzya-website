@@ -70,12 +70,27 @@ function VisionMission() {
             We, at <strong className="font-semibold text-slate">Saarzya</strong>, have been cultivating this vision since our founding:
           </p>
 
-          {/* 3 Pillars / Icons Grid */}
+          {/* 3 Pillars / Icons & Video Grid */}
           <div className="mt-12 grid gap-8 sm:gap-10 md:grid-cols-3">
-            {/* Pillar 1 */}
+            {/* Pillar 1 (With Video Clip) */}
             <div className="flex flex-col items-center text-center p-4">
-              <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-sage/20 text-moss transition-transform duration-300 hover:scale-105">
-                <Sparkles size={36} className="stroke-[1.75]" />
+              <div className="mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-sage/20 border-2 border-sage/40 shadow-md transition-transform duration-300 hover:scale-105">
+                <video
+                  ref={(el) => {
+                    if (el) {
+                      el.muted = true;
+                      el.play().catch(() => {});
+                    }
+                  }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="h-full w-full object-cover rounded-full pointer-events-none"
+                >
+                  <source src="/assets/Psychology_processed.mp4" type="video/mp4" />
+                </video>
               </div>
               <h3 className="font-heading text-xl text-slate font-medium">Accessible Care</h3>
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
