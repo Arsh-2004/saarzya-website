@@ -15,7 +15,7 @@ const pillars = [
     title: "Empowering Growth",
     description:
       "Providing actionable tools and knowledge to help people navigate their emotions with resilience.",
-    icon: Zap,
+    image: "/assets/empowering_growth.png",
     align: "right",
   },
   {
