@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import AdminPortal from "./components/admin/AdminPortal";
 import FullMagazineReaderPage from "./components/FullMagazineReaderPage";
 import AboutSaarzyaPage from "./components/AboutSaarzyaPage";
+import MagazinesBlogsPage from "./components/MagazinesBlogsPage";
 import { usePathname } from "./utils/router";
 
 function App() {
@@ -30,6 +31,19 @@ function App() {
   }
 
   if (
+    pathname === "/magazines" ||
+    pathname === "/magazines/" ||
+    pathname === "/magazines-blogs" ||
+    pathname === "/magazines-blogs/" ||
+    pathname === "/magazine" ||
+    pathname === "/magazine/" ||
+    pathname === "/blogs" ||
+    pathname === "/blogs/"
+  ) {
+    return <MagazinesBlogsPage />;
+  }
+
+  if (
     pathname.startsWith("/pdf_reader_magazine") ||
     pathname.startsWith("/magazine-reader") ||
     pathname.startsWith("/pdf-reader")
@@ -46,7 +60,6 @@ function App() {
         <VisionMission />
         <WhyWeBuiltThis />
         <Services />
-        <MagazinesBlogs />
         <SafeSpacePromise />
         <CtaBanner />
       </main>

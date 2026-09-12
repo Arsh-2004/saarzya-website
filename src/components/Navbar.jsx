@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-saarzya" },
   { label: "Services", href: "/#services" },
-  { label: "Magazines & Blogs", href: "/#magazines" },
+  { label: "Magazines & Blogs", href: "/magazines" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -27,6 +27,11 @@ function Navbar() {
 
     if (href === "/about-saarzya") {
       navigateTo("/about-saarzya");
+      return;
+    }
+
+    if (href === "/magazines" || href === "/#magazines") {
+      navigateTo("/magazines");
       return;
     }
 
