@@ -195,13 +195,6 @@ function Navbar() {
 
                 {/* Footer section of overlay */}
                 <div className="mt-auto border-t border-moss/15 pt-6 text-center">
-                  <a
-                    href="#contact"
-                    className="mb-4 inline-flex w-full items-center justify-center rounded-full bg-moss px-6 py-3.5 text-center text-sm font-bold text-white shadow-md transition active:scale-95"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Book a Consultation
-                  </a>
                   <p className="m-0 text-xs font-medium text-slate/50">
                     © {new Date().getFullYear()} Saarzya. All rights reserved.
                   </p>
