@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Founders from "./Founders";
 import { navigateTo } from "../utils/router";
-import { ArrowLeft, Heart, Compass, Sparkles } from "lucide-react";
+import { ArrowLeft, Heart, Compass, Sparkles, Users } from "lucide-react";
 
 function AboutSaarzyaPage() {
   useEffect(() => {
@@ -99,6 +100,14 @@ function AboutSaarzyaPage() {
                 We started Saarzya out of a need for clarity in our own lives, and today, we run it to bring that same clarity, empathy, and direction to yours. Welcome to our space.
               </p>
             </div>
+          </div>
+
+          {/* Co-Founders Section */}
+          <div className="pt-10 border-t border-moss/15 mt-12">
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-slate mb-4 flex items-center gap-3">
+              <Users className="w-7 h-7 text-moss" /> Meet Our Founders
+            </h2>
+            <Founders />
           </div>
 
           {/* Bottom Call To Action */}

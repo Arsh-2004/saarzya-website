@@ -12,10 +12,17 @@ const founders = [
   },
   {
     name: "Sanyukta Sherry",
-    role: "Co-founder & Executive Director",
-    bio: "Sanyukta is passionate about guiding students and young minds towards self-awareness, emotional balance, and personal resilience.",
-    quote: "You are not a problem to be fixed; you are a story unfolding. Mental health awareness isn't about clinical labels or heavy medical rooms — it's about self-awareness, daily balance and giving yourself permission to take a pause. SAARZYA was designed with students and young minds in mind: to offer a warm, welcoming space where you can speak your truth, build resilience and step into your full potential.",
-    tags: ["Youth Resilience", "Self-Awareness", "Mindful Balance"],
+    role: "Co-Founder & Executive Director | Author | Writer",
+    bio: "Sanyukta Sherry is a writer, author and emerging psychology professional with a deep interest in understanding the human mind, emotions and the stories that shape our lives.",
+    paragraphs: [
+      "Sanyukta Sherry is a writer, author and emerging psychology professional with a deep interest in understanding the human mind, emotions and the stories that shape our lives. As the Co-Founder and Executive Director of Saarzya, she works towards building a space where psychology, wellbeing, research, creativity and meaningful human connection can come together.",
+      "Currently pursuing her Master's in Clinical Psychology, Sanyukta brings together her academic interest in psychology with her long-standing passion for writing and storytelling. She believes that psychological knowledge should not remain confined to classrooms and textbooks—it should become something people can understand, relate to and carry into their everyday lives.",
+      "As an author, she is particularly drawn towards themes of human emotions, relationships, self-discovery, hope and personal growth. Her approach to writing reflects a simple belief: sometimes, a few honest words can help someone understand a feeling they could never quite name.",
+      "Through Saarzya, Sanyukta hopes to contribute to a culture where conversations around mental health are approached with curiosity rather than fear, compassion rather than judgement, and understanding rather than assumptions.",
+      "Her vision is to help create a generation that does not simply learn about mental health, but learns to listen to themselves, understand others and grow with greater emotional awareness."
+    ],
+    quote: "Her vision is to help create a generation that does not simply learn about mental health, but learns to listen to themselves, understand others and grow with greater emotional awareness.",
+    tags: ["Author & Writer", "Clinical Psychology", "Self-Discovery & Hope", "Emotional Awareness"],
     initials: "SS",
     image: "/assets/sanyukta.jpg",
   },
@@ -23,7 +30,7 @@ const founders = [
 
 function Founders() {
   return (
-    <section id="founders" className="section-shell py-20">
+    <div id="founders" className="py-6">
       <div className="flex flex-col gap-10">
         {founders.map((founder, index) => (
           <motion.article
@@ -52,10 +59,21 @@ function Founders() {
                 </div>
                 <h3 className="m-0 mt-3 font-heading text-3xl text-slate sm:text-4xl lg:text-5xl">{founder.name}</h3>
 
-                <p className="mb-0 mt-6 text-base leading-8 text-slate/85 sm:text-lg sm:leading-9">{founder.bio}</p>
-                <blockquote className="mb-0 mt-6 rounded-3xl border border-moss/20 bg-white/90 p-5 sm:p-6 italic text-slate/90 shadow-sm text-base sm:text-lg leading-relaxed">
-                  "{founder.quote}"
-                </blockquote>
+                {founder.paragraphs ? (
+                  <div className="mt-6 space-y-4 text-base leading-8 text-slate/85 sm:text-lg sm:leading-8">
+                    {founder.paragraphs.map((p, i) => (
+                      <p key={i}>{p}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mb-0 mt-6 text-base leading-8 text-slate/85 sm:text-lg sm:leading-9">{founder.bio}</p>
+                )}
+
+                {founder.quote && (
+                  <blockquote className="mb-0 mt-6 rounded-3xl border border-moss/20 bg-white/90 p-5 sm:p-6 italic text-slate/90 shadow-sm text-base sm:text-lg leading-relaxed">
+                    "{founder.quote}"
+                  </blockquote>
+                )}
 
                 <div className="mt-6 flex flex-wrap gap-2.5">
                   {founder.tags.map((tag) => (
@@ -72,7 +90,7 @@ function Founders() {
           </motion.article>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 
