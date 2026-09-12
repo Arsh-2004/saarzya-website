@@ -32,7 +32,7 @@ function VideoIcon({ src, bgClass, borderClass }) {
           e.currentTarget.muted = true;
           e.currentTarget.play().catch(() => {});
         }}
-        className="h-full w-full object-cover rounded-full pointer-events-none"
+        className="h-full w-full object-cover rounded-full pointer-events-none scale-110 mix-blend-multiply"
       >
         <source src={src} type="video/mp4" />
       </video>
