@@ -7,7 +7,7 @@ const pillars = [
     title: "Bridging the Gap",
     description:
       "Connecting academic psychology with everyday, practical life so individuals can better understand themselves.",
-    icon: Compass,
+    image: "/assets/bridging_the_gap.png",
     align: "left",
   },
   {
@@ -92,13 +92,21 @@ function WhyWeBuiltThis() {
 
                     {/* Floating Overlapping Circular Badge */}
                     <div
-                      className={`flex absolute top-1/2 -translate-y-1/2 h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full bg-cream shadow-2xl transition-transform duration-300 group-hover:scale-110 ${
+                      className={`flex absolute top-1/2 -translate-y-1/2 h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full bg-cream shadow-2xl overflow-hidden transition-transform duration-300 group-hover:scale-110 ${
                         isLeft ? "-right-7 sm:-right-12" : "-left-7 sm:-left-12"
                       }`}
                     >
-                      <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-sage/20 text-moss">
-                        <Icon className="h-6 w-6 sm:h-8 sm:w-8 stroke-[1.75]" />
-                      </div>
+                      {pillar.image ? (
+                        <img
+                          src={pillar.image}
+                          alt={pillar.title}
+                          className="h-full w-full object-contain p-1.5 mix-blend-multiply rounded-full"
+                        />
+                      ) : (
+                        <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-sage/20 text-moss">
+                          {Icon && <Icon className="h-6 w-6 sm:h-8 sm:w-8 stroke-[1.75]" />}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>
