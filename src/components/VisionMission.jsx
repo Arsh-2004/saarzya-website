@@ -97,14 +97,28 @@ function VisionMission() {
               </p>
             </div>
 
-            {/* Pillar 2 */}
+            {/* Pillar 2 (With culture.mp4 Video Clip) */}
             <div className="flex flex-col items-center text-center p-4">
-              <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-moss/15 text-moss transition-transform duration-300 hover:scale-105">
-                <ShieldCheck size={36} className="stroke-[1.75]" />
+              <div className="mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-moss/15 border-2 border-moss/40 shadow-md transition-transform duration-300 hover:scale-105">
+                <video
+                  ref={(el) => {
+                    if (el) {
+                      el.muted = true;
+                      el.play().catch(() => {});
+                    }
+                  }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="h-full w-full object-cover rounded-full pointer-events-none"
+                >
+                  <source src="/assets/culture.mp4" type="video/mp4" />
+                </video>
               </div>
-              <h3 className="font-heading text-xl text-slate font-medium">Ethical Standards</h3>
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
-                Delivering high-quality therapy and care with qualified, empaneled professionals.
+                Create a culture where reaching out for psychological support is seen as an act of courage and self-care, not weakness or something to be ashamed of.
               </p>
             </div>
 
