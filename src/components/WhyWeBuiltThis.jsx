@@ -23,7 +23,7 @@ const pillars = [
     title: "A Safe Digital Ecosystem",
     description:
       "Creating a space where individuals can reflect, learn, and grow without the pressure of artificial social expectations.",
-    icon: ShieldCheck,
+    image: "/assets/safe_digital_ecosystem.png",
     align: "left",
   },
 ];
