@@ -77,18 +77,6 @@ function AboutSaarzyaPage() {
                   That uncertainty became the spark for Saarzya.
                 </p>
               </div>
-
-              <p>
-                We set out to create a safe, compassionate digital home a place that breaks down complex psychological insights into relatable, everyday tools, while creating honest opportunities and practical resources for students and practitioners alike.
-              </p>
-
-              <p>
-                The name Saarzya comes from the idea of essence, core truth, and a steady, harmonious flow. We built this to help you strip away the overwhelming noise of expectations and re-ground yourself in what actually matters: your true, core self.
-              </p>
-
-              <p className="font-medium text-slate text-lg pt-4">
-                We started Saarzya out of a need for clarity in our own lives, and today, we run it to bring that same clarity, empathy, and direction to yours. Welcome to our space.
-              </p>
             </div>
           </div>
 
