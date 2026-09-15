@@ -12,6 +12,7 @@ import AdminPortal from "./components/admin/AdminPortal";
 import FullMagazineReaderPage from "./components/FullMagazineReaderPage";
 import AboutSaarzyaPage from "./components/AboutSaarzyaPage";
 import MagazinesBlogsPage from "./components/MagazinesBlogsPage";
+import FullBrochureReaderPage from "./components/FullBrochureReaderPage";
 import { usePathname } from "./utils/router";
 
 function App() {
@@ -41,6 +42,13 @@ function App() {
     pathname === "/blogs/"
   ) {
     return <MagazinesBlogsPage />;
+  }
+
+  if (
+    pathname.startsWith("/brochure") ||
+    pathname.startsWith("/pdf-reader-brochure")
+  ) {
+    return <FullBrochureReaderPage />;
   }
 
   if (
