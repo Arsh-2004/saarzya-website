@@ -13,7 +13,7 @@ function FullBrochureReaderPage() {
   const handleBack = () => {
     navigateTo("/");
     setTimeout(() => {
-      const el = document.getElementById("brochures") || document.getElementById("services");
+      const el = document.getElementById("about") || document.getElementById("services");
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
       }

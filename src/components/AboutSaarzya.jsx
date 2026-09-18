@@ -30,7 +30,7 @@ function AboutSaarzya() {
             “Saarzya is a space to reconnect with your essence, understand your inner world, and move through life with greater clarity, compassion, and balance.”
           </blockquote>
 
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap items-center gap-4">
             <a
               href="/about-saarzya"
               onClick={handleReadMore}
@@ -38,6 +38,13 @@ function AboutSaarzya() {
             >
               Read More
             </a>
+            <button
+              type="button"
+              onClick={() => navigateTo("/brochure-reader")}
+              className="inline-block rounded-none border-2 border-moss bg-white px-8 py-3 text-sm font-bold text-moss shadow-sm transition duration-300 hover:bg-moss hover:text-white cursor-pointer"
+            >
+              Read Brochure
+            </button>
           </div>
         </motion.div>
 

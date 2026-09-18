@@ -119,40 +119,6 @@ function Services() {
         </motion.div>
 
       </div>
-
-      {/* Brochure CTA Section / Line directly below Core Offerings */}
-      <motion.div
-        id="brochures"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-14 border-t border-moss/20 pt-10"
-      >
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-white/70 p-6 sm:p-8 border border-moss/20 shadow-sm transition duration-300 hover:border-moss/40 hover:shadow-md">
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-moss/10 text-moss">
-              <FileText className="h-6 w-6 stroke-[1.75]" />
-            </div>
-            <div>
-              <h3 className="font-heading text-xl sm:text-2xl font-medium text-slate">
-                Read More Brochures
-              </h3>
-              <p className="text-sm sm:text-base text-slate/75 mt-1 font-normal leading-relaxed">
-                Explore our official Saarzya brochure to discover our mission, vision, and full spectrum of psychology & wellness programs.
-              </p>
-            </div>
-          </div>
-
-          <button
-            onClick={() => navigateTo("/brochure-reader")}
-            className="inline-flex shrink-0 items-center gap-2.5 bg-moss px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition duration-300 hover:bg-[#3D4C3A] hover:shadow-md active:scale-95 uppercase tracking-wide"
-          >
-            <span>Read Brochure</span>
-            <ArrowRight className="h-4 w-4" />
-          </button>
-        </div>
-      </motion.div>
     </section>
   );
 }
