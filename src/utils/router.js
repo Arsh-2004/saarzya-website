@@ -18,4 +18,7 @@ export function usePathname() {
 export function navigateTo(path) {
   window.history.pushState({}, "", path);
   window.dispatchEvent(new PopStateEvent("popstate"));
+  if (!path.includes("#")) {
+    window.scrollTo(0, 0);
+  }
 }

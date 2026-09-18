@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Heart } from "lucide-react";
+import { navigateTo } from "../utils/router";
 
 function Footer() {
   return (
@@ -11,6 +12,19 @@ function Footer() {
               Psychology, Assessment and Wellness support for individuals seeking understanding,
               healing, and meaningful growth.
             </p>
+            <div className="mt-4">
+              <a
+                href="/unsaid-words"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo("/unsaid-words");
+                }}
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8c4a5b] hover:underline"
+              >
+                <Heart size={14} fill="#8c4a5b" />
+                <span>Saarzya: The Unsaid Words →</span>
+              </a>
+            </div>
           </div>
 
           <div className="max-w-sm text-sm leading-7 text-slate/80">

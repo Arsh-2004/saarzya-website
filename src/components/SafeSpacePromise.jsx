@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Fingerprint, Heart, Lock, UserRoundCog, ShieldCheck } from "lucide-react";
+import { navigateTo } from "../utils/router";
 
 const pillars = [
   {
@@ -86,6 +87,38 @@ function SafeSpacePromise() {
             );
           })}
         </div>
+
+        {/* The Unsaid Words Callout Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="relative z-10 mt-12 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-3xl border border-[#cf9fa8]/40 bg-gradient-to-r from-[#f7ede3] via-[#fbf4ec] to-[#f3e4dd] p-7 sm:p-9 shadow-md"
+        >
+          <div className="flex items-center gap-4 text-center sm:text-left">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#8c4a5b] text-white shadow-sm">
+              <Heart size={22} fill="white" />
+            </div>
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8c4a5b]">Anonymous Expression Space</span>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#3a2e2a]">
+                Saarzya: The Unsaid Words
+              </h3>
+              <p className="mt-1 text-xs sm:text-sm text-[#6b5c54] max-w-xl">
+                Share what you carry quietly — thoughts, stories, fears, and feelings that never found the right words. 100% anonymous & judgment-free.
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={() => navigateTo("/unsaid-words")}
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#8c4a5b] hover:bg-[#7a3f4e] px-7 py-3.5 text-xs font-bold text-white shadow-md transition duration-300 active:scale-95 uppercase tracking-wider"
+          >
+            <span>Explore Unsaid Words</span>
+            <span>→</span>
+          </button>
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -10,6 +10,7 @@ const navLinks = [
   { label: "About Us", href: "/about-saarzya" },
   { label: "Services", href: "/#services" },
   { label: "Magazines", href: "/magazines" },
+  { label: "The Unsaid Words", href: "/unsaid-words" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -32,6 +33,11 @@ function Navbar() {
 
     if (href === "/magazines" || href === "/#magazines") {
       navigateTo("/magazines");
+      return;
+    }
+
+    if (href === "/unsaid-words" || href === "/the-unsaid-words") {
+      navigateTo("/unsaid-words");
       return;
     }
 

@@ -13,6 +13,7 @@ import FullMagazineReaderPage from "./components/FullMagazineReaderPage";
 import AboutSaarzyaPage from "./components/AboutSaarzyaPage";
 import MagazinesBlogsPage from "./components/MagazinesBlogsPage";
 import FullBrochureReaderPage from "./components/FullBrochureReaderPage";
+import UnsaidWordsPage from "./components/UnsaidWordsPage";
 import { usePathname } from "./utils/router";
 
 function App() {
@@ -20,6 +21,17 @@ function App() {
 
   if (pathname === "/admin" || pathname === "/admin/") {
     return <AdminPortal />;
+  }
+
+  if (
+    pathname === "/unsaid-words" ||
+    pathname === "/unsaid-words/" ||
+    pathname === "/the-unsaid-words" ||
+    pathname === "/the-unsaid-words/" ||
+    pathname === "/unsaid" ||
+    pathname === "/unsaid/"
+  ) {
+    return <UnsaidWordsPage />;
   }
 
   if (
