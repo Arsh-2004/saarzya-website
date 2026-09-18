@@ -9,8 +9,8 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-saarzya" },
   { label: "Services", href: "/#services" },
-  { label: "Magazines", href: "/magazines" },
   { label: "The Unsaid Words", href: "/unsaid-words" },
+  { label: "Magazines", href: "/magazines" },
   { label: "Contact", href: "/#contact" },
 ];
 
