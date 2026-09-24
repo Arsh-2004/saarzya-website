@@ -212,11 +212,11 @@ function GuftaguArticlePage() {
                 </p>
 
                 <p className="mb-5">
-                  Human infants are born unfinished. We cannot cling, walk or feed ourselves; we arrive with almost nothing except an exquisite ability to summon a caregiver and to read their face. In the middle of the last century, the British psychiatrist John Bowlby argued that this was not merely helplessness but design — children are born with a behavioural system that keeps a protective adult close, because for most of human history, proximity was survival. Crying, reaching, following, clinging: not manipulation, but a distress signal with a purpose.
+                  Human infants are born unfinished. We cannot cling, walk or feed ourselves; we arrive with almost nothing except an exquisite ability to summon a caregiver and to read their face. In the middle of the last century, the British psychiatrist John Bowlby argued that this was not merely helplessness but design: children are born with a behavioural system that keeps a protective adult close, because for most of human history, proximity was survival. Crying, reaching, following, clinging: not manipulation, but a distress signal with a purpose.
                 </p>
 
                 <p className="mb-5">
-                  What Bowlby noticed next is the part that still shapes adult life. A child does not only need the caregiver to be present. The child is constantly, unconsciously asking one question: <em>if I need you, will you come?</em> The answer — repeated across thousands of ordinary Tuesdays — hardens into expectation. Not a memory you can recall, but a template. Bowlby called these internal working models: a private map of what closeness costs, what it delivers, and how much of yourself you must hide to keep it.
+                  What Bowlby noticed next is the part that still shapes adult life. A child does not only need the caregiver to be present. The child is constantly, unconsciously asking one question: <em>if I need you, will you come?</em> The answer, repeated across thousands of ordinary Tuesdays, hardens into expectation. Not a memory you can recall, but a template. Bowlby called these internal working models: a private map of what closeness costs, what it delivers, and how much of yourself you must hide to keep it.
                 </p>
 
                 <blockquote className="my-9 pl-5 border-l-2 border-l-[#C9A9BA] font-['Cormorant_Garamond',serif] italic text-2xl sm:text-3xl leading-snug text-[#38452F]">
@@ -224,19 +224,19 @@ function GuftaguArticlePage() {
                 </blockquote>
 
                 <p className="mb-5">
-                  This is why attachment can feel so disproportionate. When someone becomes significant, they are quietly promoted — from acquaintance to <em>attachment figure</em>. They become the person you want to tell things to first, the one whose silence changes the temperature of your day. Their availability begins to regulate your nervous system the way a caregiver once did. Losing them doesn't just make you sad. It sets off an alarm designed for a child alone in the dark.
+                  This is why attachment can feel so disproportionate. When someone becomes significant, they are quietly promoted, from acquaintance to <em>attachment figure</em>. They become the person you want to tell things to first, the one whose silence changes the temperature of your day. Their availability begins to regulate your nervous system the way a caregiver once did. Losing them doesn't just make you sad. It sets off an alarm designed for a child alone in the dark.
                 </p>
 
                 <p className="mb-5">
-                  So we attach for three reasons at once. Because proximity once meant survival. Because another person's calm can physically steady us — slower breath, lower heart rate, a body borrowing regulation it cannot yet generate alone. And because attaching is how we learn who we are: a child who is responded to concludes <em>I am worth responding to</em>, and carries that conclusion into every room they will ever enter.
+                  So we attach for three reasons at once. Because proximity once meant survival. Because another person's calm can physically steady us: slower breath, lower heart rate, a body borrowing regulation it cannot yet generate alone. And because attaching is how we learn who we are: a child who is responded to concludes <em>I am worth responding to</em>, and carries that conclusion into every room they will ever enter.
                 </p>
 
                 <p className="mb-5">
-                  None of this is a sentence. The templates were built by experience, which means experience can renovate them. People who arrive in adulthood braced for abandonment can, through a long relationship with someone steady — a partner, a friend, a therapist — slowly gather evidence for a different expectation. Researchers call it earned security. It is one of the more hopeful findings in the field, and one of the slowest, because templates are updated by repetition rather than insight. You cannot think your way into feeling safe. You can only accumulate enough experiences of being met that your body stops flinching.
+                  None of this is a sentence. The templates were built by experience, which means experience can renovate them. People who arrive in adulthood braced for abandonment can, through a long relationship with someone steady (a partner, a friend, or a therapist), slowly gather evidence for a different expectation. Researchers call it earned security. It is one of the more hopeful findings in the field, and one of the slowest, because templates are updated by repetition rather than insight. You cannot think your way into feeling safe. You can only accumulate enough experiences of being met that your body stops flinching.
                 </p>
 
                 <p className="mb-0">
-                  When you ask yourself why you couldn't just let it go, why you checked the phone again, why you left before they could — notice these aren't character defects. They're strategies. Each one worked, once, for a smaller version of you who needed love to stay. Guftagu this month is an attempt to look at them without shame, and to ask something gentler than <em>what is wrong with me</em>: <em>what was this protecting me from, and do I still need it?</em>
+                  When you ask yourself why you couldn't just let it go, why you checked the phone again, why you left before they could, notice these aren't character defects. They're strategies. Each one worked, once, for a smaller version of you who needed love to stay. Guftagu this month is an attempt to look at them without shame, and to ask something gentler than <em>what is wrong with me</em>: <em>what was this protecting me from, and do I still need it?</em>
                 </p>
               </section>
 
@@ -252,7 +252,7 @@ function GuftaguArticlePage() {
                 </h2>
 
                 <p className="mb-6">
-                  Attachment theory began with Bowlby in the 1950s and became measurable through Mary Ainsworth. In her Strange Situation procedure, one-year-olds were briefly separated from their mother in an unfamiliar room. The meaningful data turned out to be in the reunion — what the child did when the caregiver came back.
+                  Attachment theory began with Bowlby in the 1950s and became measurable through Mary Ainsworth. In her Strange Situation procedure, one-year-olds were briefly separated from their mother in an unfamiliar room. The meaningful data turned out to be in the reunion: what the child did when the caregiver came back.
                 </p>
 
                 <div className="space-y-4 my-6">
@@ -262,7 +262,7 @@ function GuftaguArticlePage() {
                   </div>
                   <div className="border-l-3 border-l-[#8E6B81] pl-4 py-1">
                     <b className="font-['Cormorant_Garamond',serif] font-medium text-xl block text-[#38452F]">Anxious / ambivalent</b>
-                    <span className="text-sm text-[#5F6A54] leading-relaxed block">Highly distressed, then hard to settle — reaching to be held and arching away at once. Care has been inconsistent, so the child cannot afford to relax into it.</span>
+                    <span className="text-sm text-[#5F6A54] leading-relaxed block">Highly distressed, then hard to settle, reaching to be held and arching away at once. Care has been inconsistent, so the child cannot afford to relax into it.</span>
                   </div>
                   <div className="border-l-3 border-l-[#A88F6C] pl-4 py-1">
                     <b className="font-['Cormorant_Garamond',serif] font-medium text-xl block text-[#38452F]">Avoidant</b>
@@ -270,20 +270,20 @@ function GuftaguArticlePage() {
                   </div>
                   <div className="border-l-3 border-l-[#C9A9BA] pl-4 py-1">
                     <b className="font-['Cormorant_Garamond',serif] font-medium text-xl block text-[#38452F]">Disorganised</b>
-                    <span className="text-sm text-[#5F6A54] leading-relaxed block">Identified later by Mary Main and Judith Solomon. The child freezes, approaches then stalls, behaves contradictorily — typical where the caregiver is both the source of comfort and the source of fear.</span>
+                    <span className="text-sm text-[#5F6A54] leading-relaxed block">Identified later by Mary Main and Judith Solomon. The child freezes, approaches then stalls, behaves contradictorily, typical where the caregiver is both the source of comfort and the source of fear.</span>
                   </div>
                 </div>
 
                 <h3 className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mt-8 mb-3">From the nursery to adult love</h3>
                 <p className="mb-6">
-                  In 1987, Cindy Hazan and Phillip Shaver proposed that adult romantic love is itself an attachment process, and found that adults' descriptions of their relationships clustered into patterns recognisably similar to Ainsworth's. Decades of work since — much of it by Mario Mikulincer and Phillip Shaver — has refined this into two dimensions rather than neat boxes: <em>attachment anxiety</em> (how much you fear being abandoned or not mattering enough) and <em>attachment avoidance</em> (how uncomfortable you are with closeness and dependence). Most people sit on a gradient, not in a category.
+                  In 1987, Cindy Hazan and Phillip Shaver proposed that adult romantic love is itself an attachment process, and found that adults' descriptions of their relationships clustered into patterns recognisably similar to Ainsworth's. Decades of work since, much of it by Mario Mikulincer and Phillip Shaver, has refined this into two dimensions rather than neat boxes: <em>attachment anxiety</em> (how much you fear being abandoned or not mattering enough) and <em>attachment avoidance</em> (how uncomfortable you are with closeness and dependence). Most people sit on a gradient, not in a category.
                 </p>
 
                 <h3 className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mt-8 mb-4">Four findings worth carrying around</h3>
                 <div className="space-y-4">
                   <div className="bg-white border border-[#38452F]/15 rounded-sm p-6 shadow-xs">
                     <b className="font-['Cormorant_Garamond',serif] font-medium text-xl block text-[#38452F] mb-1">Strategies are predictable, not random</b>
-                    <p className="text-sm text-[#5F6A54] leading-relaxed m-0">Anxiety produces hyperactivating strategies — turning up the volume of the signal through protest, pursuit, monitoring. Avoidance produces deactivating strategies — suppressing the need, changing the subject, creating distance. Both manage the same fear.</p>
+                    <p className="text-sm text-[#5F6A54] leading-relaxed m-0">Anxiety produces hyperactivating strategies: turning up the volume of the signal through protest, pursuit, monitoring. Avoidance produces deactivating strategies: suppressing the need, changing the subject, creating distance. Both manage the same fear.</p>
                   </div>
                   <div className="bg-white border border-[#38452F]/15 rounded-sm p-6 shadow-xs">
                     <b className="font-['Cormorant_Garamond',serif] font-medium text-xl block text-[#38452F] mb-1">Comfort is physiological</b>
@@ -291,11 +291,11 @@ function GuftaguArticlePage() {
                   </div>
                   <div className="bg-white border border-[#38452F]/15 rounded-sm p-6 shadow-xs">
                     <b className="font-['Cormorant_Garamond',serif] font-medium text-xl block text-[#38452F] mb-1">Early patterns matter, but don't decide</b>
-                    <p className="text-sm text-[#5F6A54] leading-relaxed m-0">Longitudinal research by R. Chris Fraley and others finds moderate stability from infancy into adulthood — real, but far from destiny. Style shifts with major relational events: a long secure partnership, a loss, parenthood, therapy.</p>
+                    <p className="text-sm text-[#5F6A54] leading-relaxed m-0">Longitudinal research by R. Chris Fraley and others finds moderate stability from infancy into adulthood, real, but far from destiny. Style shifts with major relational events: a long secure partnership, a loss, parenthood, therapy.</p>
                   </div>
                   <div className="bg-white border border-[#38452F]/15 rounded-sm p-6 shadow-xs">
                     <b className="font-['Cormorant_Garamond',serif] font-medium text-xl block text-[#38452F] mb-1">It is not only about mothers</b>
-                    <p className="text-sm text-[#5F6A54] leading-relaxed m-0">Children form a hierarchy of attachments — fathers, grandparents, siblings, teachers, whoever shows up. In joint families and caregiving networks this matters enormously: one responsive figure can offset an unavailable one. Much of the founding research used small, Western samples that looked nothing like the households many of us grew up in.</p>
+                    <p className="text-sm text-[#5F6A54] leading-relaxed m-0">Children form a hierarchy of attachments: fathers, grandparents, siblings, teachers, whoever shows up. In joint families and caregiving networks this matters enormously: one responsive figure can offset an unavailable one. Much of the founding research used small, Western samples that looked nothing like the households many of us grew up in.</p>
                   </div>
                 </div>
 
@@ -326,7 +326,7 @@ function GuftaguArticlePage() {
                 </div>
 
                 <div className="text-[10px] tracking-[0.28em] uppercase text-[#A88F6C] mt-8 mb-2 font-semibold">What's actually happening</div>
-                <p className="mb-5">This is the pursue–withdraw cycle, the most documented pattern in couples research and the central target of Emotionally Focused Therapy. Ira's protest is a hyperactivating strategy: when the signal goes unanswered, she raises the volume. Veer's silence is deactivating: when flooded, he reduces contact to regain control. Each person's solution is the other person's trigger, and the loop tightens every time it runs.</p>
+                <p className="mb-5">This is the pursue-withdraw cycle, the most documented pattern in couples research and the central target of Emotionally Focused Therapy. Ira's protest is a hyperactivating strategy: when the signal goes unanswered, she raises the volume. Veer's silence is deactivating: when flooded, he reduces contact to regain control. Each person's solution is the other person's trigger, and the loop tightens every time it runs.</p>
 
                 <div className="text-[10px] tracking-[0.28em] uppercase text-[#A88F6C] mt-8 mb-2 font-semibold">What neither of them can see</div>
                 <p className="mb-5">Ira reads the delay as evidence about her worth. Veer reads her messages as evidence that he is failing. The content of the argument — response times, tone, who started it — is almost irrelevant. Underneath, both are asking the same thing: <em>am I too much, or not enough, for you?</em></p>
@@ -352,39 +352,39 @@ function GuftaguArticlePage() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="bg-[#F6EFE6] border border-[#38452F]/15 rounded-sm p-5 sm:p-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg leading-relaxed mb-3 text-[#38452F]">I stayed six months longer than I wanted to because leaving felt like admitting that all the time before it was wasted. It wasn't love by then. It was accounting.</p>
-                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">— 27, Delhi</span>
+                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">27, Delhi</span>
                   </div>
 
                   <div className="bg-[#F6EFE6] border border-[#38452F]/15 rounded-sm p-5 sm:p-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg leading-relaxed mb-3 text-[#38452F]">My parents never fought in front of us and never touched each other either. I grew up thinking that was peace. Now I can't tell the difference between calm and distance.</p>
-                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">— 31, Kochi</span>
+                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">31, Kochi</span>
                   </div>
 
                   <div className="bg-[#F6EFE6] border border-[#38452F]/15 rounded-sm p-5 sm:p-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg leading-relaxed mb-3 text-[#38452F]">I am very good at being needed. I have no idea how to be wanted. If someone stops asking me for things, I assume I've expired.</p>
-                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">— 23, Lucknow</span>
+                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">23, Lucknow</span>
                   </div>
 
                   <div className="bg-[#F6EFE6] border border-[#38452F]/15 rounded-sm p-5 sm:p-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg leading-relaxed mb-3 text-[#38452F]">She texts me every day and I still check, twice a day, whether she has blocked me. Nothing has ever happened to justify it. I just don't believe good things stay.</p>
-                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">— 29, Mumbai</span>
+                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">29, Mumbai</span>
                   </div>
 
                   <div className="bg-[#F6EFE6] border border-[#38452F]/15 rounded-sm p-5 sm:p-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg leading-relaxed mb-3 text-[#38452F]">When my grandmother died I didn't cry. I organised everything. Four years later I cried in a stranger's car because the air freshener smelled like her almirah.</p>
-                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">— 34, Prayagraj</span>
+                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">34, Prayagraj</span>
                   </div>
 
                   <div className="bg-[#F6EFE6] border border-[#38452F]/15 rounded-sm p-5 sm:p-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg leading-relaxed mb-3 text-[#38452F]">I left first. Not because I stopped loving him. Because I could survive being the one who ended it, and I wasn't sure I could survive the other version.</p>
-                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">— 26, Bengaluru</span>
+                    <span className="text-[10px] tracking-[0.22em] uppercase text-[#8E6B81] font-semibold">26, Bengaluru</span>
                   </div>
                 </div>
 
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Say the unsaid</h4>
                   <p className="text-sm text-[#5F6A54] mb-4">Something you've never told anyone about how you love, leave, or stay? Send it to us. We publish anonymously, we never print names, and we remove anything that could identify you or anyone else.</p>
-                  <a href="mailto:Saarzya@gmail.com?subject=The%20Unsaid%20—%20Issue%2002&body=Age%20and%20city%20(optional)%3A%0A%0AWhat%20I've%20never%20said%20out%20loud%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                  <a href="mailto:Saarzya@gmail.com?subject=The%20Unsaid%20%3A%20Issue%2001&body=Age%20and%20city%20(optional)%3A%0A%0AWhat%20I've%20never%20said%20out%20loud%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
                     Saarzya@gmail.com
                   </a>
                 </div>
@@ -404,7 +404,7 @@ function GuftaguArticlePage() {
                 <div className="border-t border-[#38452F]/15 divide-y divide-[#38452F]/15">
                   <div className="py-5">
                     <p className="font-['Cormorant_Garamond',serif] italic text-lg text-[#5F6A54] mb-0 before:content-['Myth'] before:block before:font-['Jost',sans-serif] before:not-italic before:text-[10px] before:tracking-[0.28em] before:uppercase before:text-[#8E6B81] before:mb-1">
-                      Your attachment style is fixed — you either got it right in childhood or you didn't.
+                      Your attachment style is fixed: you either got it right in childhood or you didn't.
                     </p>
                     <p className="text-sm leading-relaxed mt-3 mb-0 text-[#38452F] before:content-['Fact'] before:block before:text-[10px] before:tracking-[0.28em] before:uppercase before:text-[#8E9D7B] before:mb-1">
                       Attachment shows moderate stability, not permanence. Styles shift with significant relational experience: a steady partnership, parenthood, loss, therapy. A substantial minority of people show measurable change across just a few years.
@@ -473,28 +473,28 @@ function GuftaguArticlePage() {
                   <div className="pt-2">
                     <p className="font-['Cormorant_Garamond',serif] italic text-xl leading-snug text-[#38452F] mb-3">
                       I know my relationship isn't good for me. I've known for a year. Why can't I leave?
-                      <span className="block not-italic font-['Jost',sans-serif] text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-2">— Reader, 25</span>
+                      <span className="block not-italic font-['Jost',sans-serif] text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-2">Reader, 25</span>
                     </p>
-                    <p className="mb-3">Because knowing and being able to act on knowing run on different systems. Your reasoning can conclude that this is bad for you while your attachment system continues to register that person as your safety. When the same person is both the source of the injury and the place you go for comfort, leaving means walking away from your own regulation — which the body reads as danger, not liberation.</p>
+                    <p className="mb-3">Because knowing and being able to act on knowing run on different systems. Your reasoning can conclude that this is bad for you while your attachment system continues to register that person as your safety. When the same person is both the source of the injury and the place you go for comfort, leaving means walking away from your own regulation, which the body reads as danger, not liberation.</p>
                     <p className="mb-0">It's also why leaving is rarely one decision. It's usually a slow assembly of other safe places: a friend who knows the whole story, a routine that doesn't involve them, a therapist, a plan. People don't leave when they finally understand. They leave when they have somewhere to land.</p>
                   </div>
 
                   <div className="pt-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-xl leading-snug text-[#38452F] mb-3">
                       I get very attached very fast, even to friends. Is something wrong with me?
-                      <span className="block not-italic font-['Jost',sans-serif] text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-2">— Reader, 21</span>
+                      <span className="block not-italic font-['Jost',sans-serif] text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-2">Reader, 21</span>
                     </p>
-                    <p className="mb-3">Nothing is wrong with you. Fast attachment usually means your system is highly sensitive to signs of availability — someone is warm to you and the whole apparatus comes online at once. It's common in people who didn't get consistent attention early and learned to grab it when it appeared.</p>
+                    <p className="mb-3">Nothing is wrong with you. Fast attachment usually means your system is highly sensitive to signs of availability: someone is warm to you and the whole apparatus comes online at once. It's common in people who didn't get consistent attention early and learned to grab it when it appeared.</p>
                     <p className="mb-0">What helps isn't forcing yourself to care less. It's slowing the pace at which you hand over your sense of safety. Let the relationship earn the weight you're already ready to give it: watch how they behave when you're inconvenient, when you disagree, when you need something. Trust built on evidence takes longer and breaks less.</p>
                   </div>
 
                   <div className="pt-6">
                     <p className="font-['Cormorant_Garamond',serif] italic text-xl leading-snug text-[#38452F] mb-3">
-                      My partner says I shut down during arguments. I don't do it on purpose — I go blank. How do I stop?
-                      <span className="block not-italic font-['Jost',sans-serif] text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-2">— Reader, 30</span>
+                      My partner says I shut down during arguments. I don't do it on purpose: I go blank. How do I stop?
+                      <span className="block not-italic font-['Jost',sans-serif] text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-2">Reader, 30</span>
                     </p>
                     <p className="mb-3">That sounds like flooding: arousal gets high enough that the thinking parts of the brain become hard to reach. It isn't a choice, and it isn't stonewalling in the sense of punishment. It's a shutdown.</p>
-                    <p className="mb-0">The evidence-based move is to agree on a pause before you need one. Not walking out — that repeats abandonment for your partner — but a named, time-limited break: “I'm flooded, I need twenty minutes, I'll come back at 9.30 and we'll finish this.” Then actually return at 9.30. The returning is the part that heals it. If this has been running for years, couples work — particularly EFT — is designed almost exactly for it.</p>
+                    <p className="mb-0">The evidence-based move is to agree on a pause before you need one. Not walking out, that repeats abandonment for your partner, but a named, time-limited break: “I'm flooded, I need twenty minutes, I'll come back at 9.30 and we'll finish this.” Then actually return at 9.30. The returning is the part that heals it. If this has been running for years, couples work, particularly EFT, is designed almost exactly for it.</p>
                   </div>
                 </div>
 
@@ -594,9 +594,9 @@ function GuftaguArticlePage() {
                 <h2 className="font-['Cormorant_Garamond',serif] text-3xl sm:text-4xl text-[#38452F] mb-6">
                   Co-regulation
                 </h2>
-                <p className="mb-5">A baby cannot calm itself. Its nervous system has the alarm installed but not yet the brakes. So it borrows: it's picked up, and the adult's slower heartbeat, steady breathing and low voice pull the baby's system down with it. That borrowing is co-regulation — one nervous system settling another.</p>
+                <p className="mb-5">A baby cannot calm itself. Its nervous system has the alarm installed but not yet the brakes. So it borrows: it's picked up, and the adult's slower heartbeat, steady breathing and low voice pull the baby's system down with it. That borrowing is co-regulation: one nervous system settling another.</p>
                 <p className="mb-5">We never fully outgrow it. An adult who's had a terrible day and sits beside a calm friend will, measurably, settle faster than the same adult alone in a room. Which is why advice like “you shouldn't need anyone to feel okay” is biologically confused. Self-regulation is real, and it's largely built out of thousands of earlier experiences of being co-regulated. You internalise the calm you were lent.</p>
-                <p className="mb-5">Two things follow. If you find it hard to soothe yourself, it may be less about willpower than about how much soothing was available to borrow. And co-regulation runs both ways — your agitation can raise someone else's, which is why one person's panic spreads through a house, and why a steady presence in a crisis is doing something genuinely physiological, not just being nice.</p>
+                <p className="mb-5">Two things follow. If you find it hard to soothe yourself, it may be less about willpower than about how much soothing was available to borrow. And co-regulation runs both ways: your agitation can raise someone else's, which is why one person's panic spreads through a house, and why a steady presence in a crisis is doing something genuinely physiological, not just being nice.</p>
                 <p className="mb-0"><span className="font-['Cormorant_Garamond',serif] text-xl">In one line:</span> before you can hold yourself, someone has to have held you — and it is never too late to be held.</p>
               </section>
 
@@ -647,12 +647,12 @@ and did not apologise after.`}
                     <circle cx="150" cy="16" r="2" fill="#C9A9BA"/>
                   </svg>
                 </div>
-                <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] text-center mb-8 font-semibold">— Submitted by a reader, 19</p>
+                <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] text-center mb-8 font-semibold">Submitted by a reader, 19</p>
 
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Send us your voice</h4>
-                  <p className="text-sm text-[#5F6A54] mb-4">Poetry, artwork, a paragraph of your own thinking, a student perspective — Guftagu is built out of what readers send. Attach your work or paste it into the mail.</p>
-                  <a href="mailto:Saarzya@gmail.com?subject=Voices%20—%20Submission&body=Name%20or%20%22anonymous%22%3A%0AAge%2Fcity%20(optional)%3A%0A%0AMy%20submission%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                  <p className="text-sm text-[#5F6A54] mb-4">Poetry, artwork, a paragraph of your own thinking, a student perspective: Guftagu is built out of what readers send. Attach your work or paste it into the mail.</p>
+                  <a href="mailto:Saarzya@gmail.com?subject=Voices%20%3A%20Submission&body=Name%20or%20%22anonymous%22%3A%0AAge%2Fcity%20(optional)%3A%0A%0AMy%20submission%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
                     Saarzya@gmail.com
                   </a>
                 </div>
@@ -694,7 +694,7 @@ and did not apologise after.`}
                   </li>
                 </ul>
 
-                <p className="mt-4 mb-6">Reaching out early isn't an overreaction. Therapy for attachment-related difficulty is well established — individual work, and for couples, Emotionally Focused Therapy has a strong evidence base.</p>
+                <p className="mt-4 mb-6">Reaching out early isn't an overreaction. Therapy for attachment-related difficulty is well established: individual work, and for couples, Emotionally Focused Therapy has a strong evidence base.</p>
 
                 <h3 className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mt-6 mb-4">Free helplines in India</h3>
                 <div className="space-y-3">
@@ -754,7 +754,7 @@ and did not apologise after.`}
           <q className="quotes-none font-['Cormorant_Garamond',serif] italic text-3xl sm:text-4xl leading-snug block max-w-[20ch] mx-auto text-[#38452F]">
             We are only as needy as our unmet needs.
           </q>
-          <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-4 font-semibold">— John Bowlby</p>
+          <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mt-4 font-semibold">John Bowlby</p>
           <div className="flex gap-2.5 justify-center mt-8">
             <i className="w-1.5 h-1.5 rounded-full bg-[#C9A9BA]" />
             <i className="w-1.5 h-1.5 rounded-full bg-[#A88F6C]" />

@@ -78,7 +78,7 @@ function GuftaguPage() {
               On the mind, on love, on the people we can't stop thinking about.
             </p>
             <p className="text-xs tracking-wider text-[#A88F6C] max-w-[44ch] mx-auto mb-8">
-              Guftagu (گفتگو) — Hindi–Urdu for “conversation.” This is where Saarzya Psychology &amp; Wellness thinks out loud, and invites you to think along.
+              Guftagu (گفتگو), Hindi-Urdu for “conversation.” This is where Saarzya Psychology &amp; Wellness thinks out loud, and invites you to think along.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3">
@@ -168,16 +168,16 @@ function GuftaguPage() {
                   Psychology, spoken the way people actually talk.
                 </h2>
                 <p className="mb-4 text-[#38452F]/90">
-                  Guftagu is the monthly conversation space of Saarzya, Psychology &amp; Wellness. Each issue takes one theme in love, attachment, family, work or the mind, and holds it from every angle — the research, a story, a myth worth correcting, a reader's real question, and the words the community sends in but never says out loud elsewhere.
+                  Guftagu is the monthly conversation space of Saarzya, Psychology &amp; Wellness. Each issue takes one theme in love, attachment, family, work or the mind, and holds it from every angle: the research, a story, a myth worth correcting, a reader's real question, and the words the community sends in but never says out loud elsewhere.
                 </p>
                 <p className="mb-0 text-[#38452F]/90">
-                  It isn't a lecture. It's closer to a long, honest conversation — the kind you have with someone who happens to know the psychology, and asks good questions instead of handing you a diagnosis.
+                  It isn't a lecture. It's closer to a long, honest conversation, the kind you have with someone who happens to know the psychology, and asks good questions instead of handing you a diagnosis.
                 </p>
               </div>
               <div className="flex justify-center">
                 <img
                   src="/assets/image.png"
-                  alt="Guftagu — The Psychology Magazine by Saarzya"
+                  alt="Guftagu: The Psychology Magazine by Saarzya"
                   className="w-56 h-56 rounded-2xl object-cover object-center border border-[#38452F]/20 shadow-md"
                 />
               </div>
@@ -199,7 +199,7 @@ function GuftaguPage() {
               <div className="bg-[radial-gradient(120%_140%_at_20%_10%,#CBD4BC_0%,#F3E9DF_60%)] flex items-center justify-center p-10 min-h-[220px]">
                 <svg viewBox="0 0 220 200" className="w-full max-w-[230px]" role="img" aria-label="Line drawn faces forming a heart">
                   <path d="M40 175c0-46 8-74 24-90 12-12 26-16 26-28 0-9-7-14-7-23 0-10 9-17 19-17" stroke="#8E6B81" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
-                  <path d="M180 175c0-46-8-74-24-90-12-12-26-16-26-28 0-9 7-14 7-23 0-10-9-17-19-17" stroke="#8E9D7B" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+                  <path d="M180 175c0-46-8-74-24-90-12-12-26-16-26-28 0-9 7-14 7-23 0-10 9-17 19-17" stroke="#8E9D7B" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
                   <path d="M110 152c-18-14-34-26-34-40 0-11 8-18 18-18 7 0 13 4 16 10 3-6 9-10 16-10 10 0 18 7 18 18 0 14-16 26-34 40z" stroke="#A88F6C" strokeWidth="1.2" fill="none"/>
                 </svg>
               </div>
@@ -215,7 +215,7 @@ function GuftaguPage() {
                     Why do we attach?<br />Understanding love, attachment, and relationship.
                   </h3>
                   <p className="text-sm text-[#5F6A54] leading-relaxed mb-6">
-                    Why one silence can feel like a small emergency. Why we return to people who are bad for us, and struggle to accept the ones who are steady. This issue walks through the psychology of attachment — from Bowlby's earliest theories to a very ordinary 11.42 pm text — without a single ounce of shame attached to any of it.
+                    Why one silence can feel like a small emergency. Why we return to people who are bad for us, and struggle to accept the ones who are steady. This issue walks through the psychology of attachment, from Bowlby's earliest theories to a very ordinary 11.42 pm text, without a single ounce of shame attached to any of it.
                   </p>
                 </div>
 
@@ -296,7 +296,7 @@ function GuftaguPage() {
               Seven ways into the same conversation
             </h2>
             <p className="font-['Cormorant_Garamond',serif] italic text-[#5F6A54] text-lg mb-8 max-w-[60ch]">
-              Every Guftagu is built out of these recurring sections — each a different lens on the month's theme.
+              Every Guftagu is built out of these recurring sections, each a different lens on the month's theme.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-5">
@@ -312,7 +312,7 @@ function GuftaguPage() {
                 <div className="font-['Cormorant_Garamond',serif] text-2xl flex items-baseline gap-2.5 text-[#38452F]">
                   Ehsaas <small className="font-['Jost',sans-serif] text-[10px] tracking-[0.16em] uppercase text-[#5F6A54]">Emotions</small>
                 </div>
-                <p className="my-2.5 text-sm text-[#5F6A54]">What the theme actually feels like in the body — the ache, the relief, the parts psychology alone can't fully name.</p>
+                <p className="my-2.5 text-sm text-[#5F6A54]">What the theme actually feels like in the body: the ache, the relief, the parts psychology alone can't fully name.</p>
                 <a href="/guftagu/why-do-we-attach#corner" onClick={(e) => handleOpenArticle(e, "#corner")} className="text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] font-semibold no-underline hover:underline">This issue's Ehsaas →</a>
               </div>
 
@@ -320,7 +320,7 @@ function GuftaguPage() {
                 <div className="font-['Cormorant_Garamond',serif] text-2xl flex items-baseline gap-2.5 text-[#38452F]">
                   Dastaan <small className="font-['Jost',sans-serif] text-[10px] tracking-[0.16em] uppercase text-[#5F6A54]">Stories</small>
                 </div>
-                <p className="my-2.5 text-sm text-[#5F6A54]">A fictional scene, built from patterns we see often — so the theme has a face and a Tuesday evening, not just a definition.</p>
+                <p className="my-2.5 text-sm text-[#5F6A54]">A fictional scene, built from patterns we see often, so the theme has a face and a Tuesday evening, not just a definition.</p>
                 <a href="/guftagu/why-do-we-attach#real-life" onClick={(e) => handleOpenArticle(e, "#real-life")} className="text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] font-semibold no-underline hover:underline">This issue's Dastaan →</a>
               </div>
 
@@ -336,7 +336,7 @@ function GuftaguPage() {
                 <div className="font-['Cormorant_Garamond',serif] text-2xl flex items-baseline gap-2.5 text-[#38452F]">
                   Samvaad <small className="font-['Jost',sans-serif] text-[10px] tracking-[0.16em] uppercase text-[#5F6A54]">Conversations</small>
                 </div>
-                <p className="my-2.5 text-sm text-[#5F6A54]">Reader questions, answered honestly and in general terms — the questions you'd ask a psychologist if the room felt safe enough.</p>
+                <p className="my-2.5 text-sm text-[#5F6A54]">Reader questions, answered honestly and in general terms, the questions you'd ask a psychologist if the room felt safe enough.</p>
                 <a href="/guftagu/why-do-we-attach#ask" onClick={(e) => handleOpenArticle(e, "#ask")} className="text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] font-semibold no-underline hover:underline">This issue's Samvaad →</a>
               </div>
 
@@ -344,7 +344,7 @@ function GuftaguPage() {
                 <div className="font-['Cormorant_Garamond',serif] text-2xl flex items-baseline gap-2.5 text-[#38452F]">
                   Campus Guftagu <small className="font-['Jost',sans-serif] text-[10px] tracking-[0.16em] uppercase text-[#5F6A54]">Student voices</small>
                 </div>
-                <p className="my-2.5 text-sm text-[#5F6A54]">Reflections from students and young readers — because a lot of this is first learned, and first misunderstood, on campus.</p>
+                <p className="my-2.5 text-sm text-[#5F6A54]">Reflections from students and young readers, because a lot of this is first learned, and first misunderstood, on campus.</p>
                 <a href="/guftagu/why-do-we-attach#voices" onClick={(e) => handleOpenArticle(e, "#voices")} className="text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] font-semibold no-underline hover:underline">This issue's Campus Guftagu →</a>
               </div>
 
@@ -352,7 +352,7 @@ function GuftaguPage() {
                 <div className="font-['Cormorant_Garamond',serif] text-2xl flex items-baseline gap-2.5 text-[#38452F]">
                   Aaina <small className="font-['Jost',sans-serif] text-[10px] tracking-[0.16em] uppercase text-[#5F6A54]">Reflections</small>
                 </div>
-                <p className="my-2.5 text-sm text-[#5F6A54]">A simple activity or journaling prompt to sit with the theme yourself — a mirror, not a lecture.</p>
+                <p className="my-2.5 text-sm text-[#5F6A54]">A simple activity or journaling prompt to sit with the theme yourself: a mirror, not a lecture.</p>
                 <a href="/guftagu/why-do-we-attach#try" onClick={(e) => handleOpenArticle(e, "#try")} className="text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] font-semibold no-underline hover:underline">This issue's Aaina →</a>
               </div>
             </div>
@@ -369,13 +369,13 @@ function GuftaguPage() {
               Say the unsaid
             </h2>
             <p className="font-['Cormorant_Garamond',serif] italic text-[#5F6A54] text-lg mb-8 max-w-[60ch]">
-              Every issue holds space for the things our community has never told anyone. This month it's about how we love, leave, or stay — and it's waiting for your words.
+              Every issue holds space for the things our community has never told anyone. This month it's about how we love, leave, or stay, and it's waiting for your words.
             </p>
 
             <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-7 sm:p-8 max-w-[640px]">
               <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Say the unsaid</h4>
               <p className="text-sm text-[#5F6A54] mb-4">Send us something you've never said out loud. We publish anonymously, never print names, and remove anything that could identify you or anyone else.</p>
-              <a href="mailto:Saarzya@gmail.com?subject=The%20Unsaid%20—%20Issue%2002&body=Age%20and%20city%20(optional)%3A%0A%0AWhat%20I've%20never%20said%20out%20loud%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+              <a href="mailto:Saarzya@gmail.com?subject=The%20Unsaid%20%3A%20Issue%2001&body=Age%20and%20city%20(optional)%3A%0A%0AWhat%20I've%20never%20said%20out%20loud%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
                 Saarzya@gmail.com
               </a>
             </div>
@@ -395,7 +395,7 @@ function GuftaguPage() {
             <div className="border-t border-[#38452F]/15 max-w-[760px] divide-y divide-[#38452F]/15">
               <div className="py-5">
                 <p className="font-['Cormorant_Garamond',serif] italic text-lg text-[#5F6A54] mb-0 before:content-['Myth'] before:block before:font-['Jost',sans-serif] before:not-italic before:text-[10px] before:tracking-[0.28em] before:uppercase before:text-[#8E6B81] before:mb-1">
-                  Your attachment style is fixed — you either got it right in childhood or you didn't.
+                  Your attachment style is fixed: you either got it right in childhood or you didn't.
                 </p>
                 <p className="text-sm leading-relaxed mt-3 mb-0 text-[#38452F] before:content-['Fact'] before:block before:text-[10px] before:tracking-[0.28em] before:uppercase before:text-[#8E9D7B] before:mb-1">
                   Attachment shows moderate stability, not permanence. Styles shift with significant relational experience: a steady partnership, parenthood, loss, therapy.
@@ -407,7 +407,7 @@ function GuftaguPage() {
                   Needing someone is weakness. Healthy adults are independent.
                 </p>
                 <p className="text-sm leading-relaxed mt-3 mb-0 text-[#38452F] before:content-['Fact'] before:block before:text-[10px] before:tracking-[0.28em] before:uppercase before:text-[#8E9D7B] before:mb-1">
-                  Research on the dependency paradox finds the opposite — people who can rely on a partner when distressed tend to function more autonomously, not less.
+                  Research on the dependency paradox finds the opposite: people who can rely on a partner when distressed tend to function more autonomously, not less.
                 </p>
               </div>
             </div>
@@ -434,7 +434,7 @@ function GuftaguPage() {
               <p className="text-[11px] tracking-[0.24em] uppercase text-[#A88F6C] mb-2">Issue 01 · This month's theme</p>
               <h3 className="font-['Cormorant_Garamond',serif] text-3xl sm:text-4xl text-[#38452F] mb-3">Why do we attach?</h3>
               <p className="text-sm text-[#5F6A54] leading-relaxed mb-6 max-w-3xl">
-                Attachment shapes almost every close relationship we have, yet most of us never learn the language for it — so we live it out instead: the pursuit, the withdrawal, the person we keep forgiving, the closeness we keep at arm's length. Every section of this issue — Zehn, Dastaan, Nazariya, Samvaad and the rest — looks at this from a different angle, so that by the last page, the pattern feels less like a personal failing and more like something you can actually work with.
+                Attachment shapes almost every close relationship we have, yet most of us never learn the language for it, so we live it out instead: the pursuit, the withdrawal, the person we keep forgiving, the closeness we keep at arm's length. Every section of this issue, Zehn, Dastaan, Nazariya, Samvaad and the rest, looks at this from a different angle, so that by the last page, the pattern feels less like a personal failing and more like something you can actually work with.
               </p>
               <a
                 href="/guftagu/why-do-we-attach"
@@ -462,7 +462,7 @@ function GuftaguPage() {
 
             <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-7 sm:p-8 max-w-[640px]">
               <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Pitch, submit, or contribute</h4>
-              <p className="text-sm text-[#5F6A54] mb-4">Tell us what you'd like to write, or attach what you've already written. Students, alumni, clients and readers are all welcome — you don't need to be a psychologist to have something worth saying.</p>
+              <p className="text-sm text-[#5F6A54] mb-4">Tell us what you'd like to write, or attach what you've already written. Students, alumni, clients and readers are all welcome: you don't need to be a psychologist to have something worth saying.</p>
               <a href="mailto:Saarzya@gmail.com?subject=Write%20for%20Guftagu&body=What%20I'd%20like%20to%20contribute%3A%0A%0AA%20little%20about%20me%20(optional)%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
                 Saarzya@gmail.com
               </a>
@@ -482,7 +482,7 @@ function GuftaguPage() {
 
             <div className="max-w-[640px] divide-y divide-[#38452F]/15">
               <div className="flex justify-between items-baseline gap-4 py-4 border-t border-b border-[#38452F]/15">
-                <span className="font-['Cormorant_Garamond',serif] text-xl text-[#38452F]">Issue 01 — Why do we attach?</span>
+                <span className="font-['Cormorant_Garamond',serif] text-xl text-[#38452F]">Issue 01: Why do we attach?</span>
                 <a
                   href="/guftagu/why-do-we-attach"
                   onClick={(e) => handleOpenArticle(e)}
@@ -492,7 +492,7 @@ function GuftaguPage() {
                 </a>
               </div>
               <div className="flex justify-between items-baseline gap-4 py-4 border-b border-[#38452F]/15">
-                <span className="font-['Cormorant_Garamond',serif] text-xl text-[#5F6A54]">Issue 02 — coming next month</span>
+                <span className="font-['Cormorant_Garamond',serif] text-xl text-[#5F6A54]">Issue 02: coming next month</span>
                 <span className="text-[11px] tracking-[0.16em] uppercase text-[#5F6A54]">Soon</span>
               </div>
             </div>
@@ -507,7 +507,7 @@ function GuftaguPage() {
         <q className="quotes-none font-['Cormorant_Garamond',serif] italic text-3xl sm:text-4xl leading-snug block max-w-[20ch] mx-auto text-[#38452F]">
           We are only as needy as our unmet needs.
         </q>
-        <p className="text-[10px] tracking-[0.2em] uppercase text-[#A88F6C] mt-4">— John Bowlby</p>
+        <p className="text-[10px] tracking-[0.2em] uppercase text-[#A88F6C] mt-4">John Bowlby</p>
         <div className="flex gap-2.5 justify-center mt-8">
           <i className="w-1.5 h-1.5 rounded-full bg-[#C9A9BA]" />
           <i className="w-1.5 h-1.5 rounded-full bg-[#A88F6C]" />
