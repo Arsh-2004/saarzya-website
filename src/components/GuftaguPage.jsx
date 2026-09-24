@@ -267,7 +267,7 @@ function GuftaguPage() {
                   <h4 className="font-['Cormorant_Garamond',serif] text-2xl text-[#5F6A54] mb-2 font-medium">Next month's Guftagu</h4>
                   <p className="text-sm text-[#5F6A54] mb-4">A new theme is being written. Subscribe by mail to know the moment it's out.</p>
                 </div>
-                <a href="mailto:Saarzya@gmail.com?subject=Notify%20me%20—%20Next%20Guftagu" className="text-[11px] tracking-[0.16em] uppercase text-[#A88F6C] font-bold no-underline hover:underline">
+                <a href="mailto:saarzya@gmail.com?subject=Notify%20me%20:%20Next%20Guftagu" className="text-[11px] tracking-[0.16em] uppercase text-[#A88F6C] font-bold no-underline hover:underline">
                   Notify me →
                 </a>
               </div>
@@ -276,9 +276,9 @@ function GuftaguPage() {
                 <div>
                   <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-[#A88F6C] border border-[#A88F6C] rounded-xs px-2.5 py-1 font-semibold mb-3">Coming soon</span>
                   <h4 className="font-['Cormorant_Garamond',serif] text-2xl text-[#5F6A54] mb-2 font-medium">Have a theme in mind?</h4>
-                  <p className="text-sm text-[#5F6A54] mb-4">Tell us what you'd like Guftagu to talk about next — we read every suggestion.</p>
+                  <p className="text-sm text-[#5F6A54] mb-4">Tell us what you'd like Guftagu to talk about next, we read every suggestion.</p>
                 </div>
-                <a href="mailto:Saarzya@gmail.com?subject=Theme%20suggestion%20for%20Guftagu" className="text-[11px] tracking-[0.16em] uppercase text-[#A88F6C] font-bold no-underline hover:underline">
+                <a href="mailto:saarzya@gmail.com?subject=Theme%20suggestion%20for%20Guftagu" className="text-[11px] tracking-[0.16em] uppercase text-[#A88F6C] font-bold no-underline hover:underline">
                   Suggest a theme →
                 </a>
               </div>
@@ -375,8 +375,8 @@ function GuftaguPage() {
             <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-7 sm:p-8 max-w-[640px]">
               <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Say the unsaid</h4>
               <p className="text-sm text-[#5F6A54] mb-4">Send us something you've never said out loud. We publish anonymously, never print names, and remove anything that could identify you or anyone else.</p>
-              <a href="mailto:Saarzya@gmail.com?subject=The%20Unsaid%20%3A%20Issue%2001&body=Age%20and%20city%20(optional)%3A%0A%0AWhat%20I've%20never%20said%20out%20loud%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
-                Saarzya@gmail.com
+              <a href="mailto:saarzya@gmail.com?subject=The%20Unsaid%20:%20Issue%2001" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                saarzya@gmail.com
               </a>
             </div>
           </div>
@@ -463,8 +463,8 @@ function GuftaguPage() {
             <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-7 sm:p-8 max-w-[640px]">
               <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Pitch, submit, or contribute</h4>
               <p className="text-sm text-[#5F6A54] mb-4">Tell us what you'd like to write, or attach what you've already written. Students, alumni, clients and readers are all welcome: you don't need to be a psychologist to have something worth saying.</p>
-              <a href="mailto:Saarzya@gmail.com?subject=Write%20for%20Guftagu&body=What%20I'd%20like%20to%20contribute%3A%0A%0AA%20little%20about%20me%20(optional)%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
-                Saarzya@gmail.com
+              <a href="mailto:saarzya@gmail.com?subject=Write%20for%20Guftagu" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                saarzya@gmail.com
               </a>
             </div>
           </div>
@@ -519,7 +519,7 @@ function GuftaguPage() {
       <footer className="border-t border-[#38452F]/15 py-11 px-6 text-center text-[#5F6A54] text-xs">
         <p className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mb-1">Guftagu by Saarzya</p>
         <p className="text-[11px] tracking-[0.12em] uppercase">Psychology &amp; Wellness · A space for healing</p>
-        <p><a href="mailto:Saarzya@gmail.com" className="text-[#8E6B81] no-underline">Saarzya@gmail.com</a></p>
+        <p><a href="mailto:saarzya@gmail.com" className="text-[#8E6B81] no-underline">saarzya@gmail.com</a></p>
         <p className="max-w-[54ch] mx-auto mt-5 leading-relaxed text-[11px]">
           Guftagu is written for education and reflection. It is not therapy, diagnosis, or individual advice.
         </p>

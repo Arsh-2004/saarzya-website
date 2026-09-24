@@ -81,14 +81,26 @@ function GuftaguArticlePage() {
     setSaveStatus("Cleared");
   };
 
-  const handleBackToGuftagu = (e) => {
-    e.preventDefault();
-    navigateTo("/guftagu");
-  };
+  const handleMailAnswers = (e) => {
+    if (e) e.preventDefault();
+    const cleanSubject = "Try This: My attachment map";
+    const bodyText = journalText ? journalText.trim() : "";
+    
+    // Copy text to clipboard as safety backup if navigator clipboard is supported
+    if (bodyText && navigator.clipboard) {
+      navigator.clipboard.writeText(bodyText).catch(() => {});
+    }
 
-  const mailtoJournalUrl = `mailto:Saarzya@gmail.com?subject=${encodeURIComponent(
-    "Try This — My attachment map"
-  )}&body=${encodeURIComponent(journalText)}`;
+    const mailtoUrl = `mailto:saarzya@gmail.com?subject=${encodeURIComponent(cleanSubject)}${
+      bodyText ? `&body=${encodeURIComponent(bodyText)}` : ""
+    }`;
+
+    try {
+      window.location.href = mailtoUrl;
+    } catch (err) {
+      window.open(mailtoUrl, "_self");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#FAF2EA] text-[#38452F] font-['Jost',sans-serif] font-light text-[17px] leading-[1.82] selection:bg-[#C9A9BA] selection:text-[#38452F]">
@@ -129,7 +141,7 @@ function GuftaguArticlePage() {
             <a href="#cover-story" className="hidden sm:inline-block text-[11px] tracking-[0.2em] uppercase text-[#5F6A54] hover:text-[#8E6B81] no-underline">Read</a>
             <a href="#unsaid" className="hidden sm:inline-block text-[11px] tracking-[0.2em] uppercase text-[#5F6A54] hover:text-[#8E6B81] no-underline">The Unsaid</a>
             <a href="#help" className="hidden sm:inline-block text-[11px] tracking-[0.2em] uppercase text-[#5F6A54] hover:text-[#8E6B81] no-underline">Get help</a>
-            <a href="mailto:Saarzya@gmail.com?subject=Guftagu%20—%20Why%20do%20we%20attach%3F" className="border border-[#C9A9BA] rounded-sm px-3.5 py-1.5 text-[11px] tracking-[0.2em] uppercase text-[#8E6B81] hover:bg-[#8E6B81] hover:text-white transition no-underline">Write to us</a>
+            <a href="mailto:saarzya@gmail.com?subject=Guftagu%20:%20Why%20do%20we%20attach" className="border border-[#C9A9BA] rounded-sm px-3.5 py-1.5 text-[11px] tracking-[0.2em] uppercase text-[#8E6B81] hover:bg-[#8E6B81] hover:text-white transition no-underline">Write to us</a>
           </nav>
         </div>
       </header>
@@ -384,8 +396,8 @@ function GuftaguArticlePage() {
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Say the unsaid</h4>
                   <p className="text-sm text-[#5F6A54] mb-4">Something you've never told anyone about how you love, leave, or stay? Send it to us. We publish anonymously, we never print names, and we remove anything that could identify you or anyone else.</p>
-                  <a href="mailto:Saarzya@gmail.com?subject=The%20Unsaid%20%3A%20Issue%2001&body=Age%20and%20city%20(optional)%3A%0A%0AWhat%20I've%20never%20said%20out%20loud%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
-                    Saarzya@gmail.com
+                  <a href="mailto:saarzya@gmail.com?subject=The%20Unsaid%20:%20Issue%2001" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                    saarzya@gmail.com
                   </a>
                 </div>
               </section>
@@ -500,9 +512,9 @@ function GuftaguArticlePage() {
 
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Ask us anything</h4>
-                  <p className="text-sm text-[#5F6A54] mb-4">Send your question and we'll answer one in the next Guftagu. Published anonymously, answered in general terms — never as individual diagnosis or therapy.</p>
-                  <a href="mailto:Saarzya@gmail.com?subject=Ask%20Saarzya&body=My%20question%3A%0A%0AAge%20(optional)%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
-                    Saarzya@gmail.com
+                  <p className="text-sm text-[#5F6A54] mb-4">Send your question and we'll answer one in the next Guftagu. Published anonymously, answered in general terms: never as individual diagnosis or therapy.</p>
+                  <a href="mailto:saarzya@gmail.com?subject=Ask%20Saarzya" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                    saarzya@gmail.com
                   </a>
                 </div>
               </section>
@@ -570,12 +582,13 @@ function GuftaguArticlePage() {
                       >
                         Clear page
                       </button>
-                      <a
-                        href={mailtoJournalUrl}
+                      <button
+                        type="button"
+                        onClick={handleMailAnswers}
                         className="bg-[#8E6B81] border border-[#8E6B81] rounded-xs text-[#FBF5F8] text-[10px] tracking-[0.2em] uppercase px-4 py-2.5 hover:opacity-90 transition no-underline cursor-pointer"
                       >
                         Mail us your answers
-                      </a>
+                      </button>
                     </div>
                   </div>
                   <p className="text-xs text-[#5F6A54] mt-3.5 mb-0">
@@ -652,8 +665,8 @@ and did not apologise after.`}
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Send us your voice</h4>
                   <p className="text-sm text-[#5F6A54] mb-4">Poetry, artwork, a paragraph of your own thinking, a student perspective: Guftagu is built out of what readers send. Attach your work or paste it into the mail.</p>
-                  <a href="mailto:Saarzya@gmail.com?subject=Voices%20%3A%20Submission&body=Name%20or%20%22anonymous%22%3A%0AAge%2Fcity%20(optional)%3A%0A%0AMy%20submission%3A%0A" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
-                    Saarzya@gmail.com
+                  <a href="mailto:saarzya@gmail.com?subject=Voices%20:%20Submission" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                    saarzya@gmail.com
                   </a>
                 </div>
               </section>
@@ -767,7 +780,7 @@ and did not apologise after.`}
       <footer className="border-t border-[#38452F]/15 py-12 px-6 text-center text-[#5F6A54] text-xs">
         <p className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mb-1">Guftagu by Saarzya</p>
         <p className="text-xs text-[#5F6A54]">Issue 01 · Why do we attach?</p>
-        <p><a href="mailto:Saarzya@gmail.com" className="text-[#8E6B81] no-underline">Saarzya@gmail.com</a></p>
+        <p><a href="mailto:saarzya@gmail.com" className="text-[#8E6B81] no-underline">saarzya@gmail.com</a></p>
         <p className="max-w-[54ch] mx-auto mt-5 leading-relaxed text-[11px]">
           Guftagu is written for education and reflection. It is not therapy, diagnosis, or individual advice.
         </p>
