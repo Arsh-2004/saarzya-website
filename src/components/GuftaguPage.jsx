@@ -226,7 +226,7 @@ function GuftaguPage() {
                     const el = document.getElementById("archive");
                     if (el) el.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] border-b border-[#C9A9BA] pb-1 font-bold hover:text-[#7a3f4e] transition no-underline w-max"
+                  className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] border-b border-[#C9A9BA] pb-0.5 font-bold hover:text-[#7a3f4e] hover:border-[#7a3f4e] transition-colors no-underline w-max"
                 >
                   <span>Read the full Guftagu →</span>
                 </a>
@@ -375,7 +375,7 @@ function GuftaguPage() {
             <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-7 sm:p-8 max-w-[640px]">
               <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Say the unsaid</h4>
               <p className="text-sm text-[#5F6A54] mb-4">Send us something you've never said out loud. We publish anonymously, never print names, and remove anything that could identify you or anyone else.</p>
-              <a href="mailto:saarzya@gmail.com?subject=The%20Unsaid%20:%20Issue%2001" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+              <a href="mailto:saarzya@gmail.com?subject=The%20Unsaid%20:%20Issue%2001" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] hover:border-[#7a3f4e] hover:text-[#7a3f4e] transition-colors no-underline">
                 saarzya@gmail.com
               </a>
             </div>
@@ -413,7 +413,7 @@ function GuftaguPage() {
             </div>
 
             <p className="mt-6">
-              <a href="/guftagu/why-do-we-attach#myth" onClick={(e) => handleOpenArticle(e, "#myth")} className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] border-b border-[#C9A9BA] pb-1 font-bold no-underline hover:underline">
+              <a href="/guftagu/why-do-we-attach#myth" onClick={(e) => handleOpenArticle(e, "#myth")} className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] border-b border-[#C9A9BA] pb-0.5 font-bold no-underline hover:text-[#7a3f4e] hover:border-[#7a3f4e] transition-colors">
                 Read all six, this issue →
               </a>
             </p>
@@ -439,7 +439,7 @@ function GuftaguPage() {
               <a
                 href="/guftagu/why-do-we-attach"
                 onClick={(e) => handleOpenArticle(e)}
-                className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] border-b border-[#C9A9BA] pb-1 font-bold no-underline hover:underline"
+                className="inline-flex items-center gap-2 text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] border-b border-[#C9A9BA] pb-0.5 font-bold no-underline hover:text-[#7a3f4e] hover:border-[#7a3f4e] transition-colors"
               >
                 Start reading →
               </a>
@@ -463,7 +463,7 @@ function GuftaguPage() {
             <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-7 sm:p-8 max-w-[640px]">
               <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Pitch, submit, or contribute</h4>
               <p className="text-sm text-[#5F6A54] mb-4">Tell us what you'd like to write, or attach what you've already written. Students, alumni, clients and readers are all welcome: you don't need to be a psychologist to have something worth saying.</p>
-              <a href="mailto:saarzya@gmail.com?subject=Write%20for%20Guftagu" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+              <a href="mailto:saarzya@gmail.com?subject=Write%20for%20Guftagu" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] hover:border-[#7a3f4e] hover:text-[#7a3f4e] transition-colors no-underline">
                 saarzya@gmail.com
               </a>
             </div>

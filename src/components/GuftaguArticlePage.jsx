@@ -396,7 +396,7 @@ function GuftaguArticlePage() {
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Say the unsaid</h4>
                   <p className="text-sm text-[#5F6A54] mb-4">Something you've never told anyone about how you love, leave, or stay? Send it to us. We publish anonymously, we never print names, and we remove anything that could identify you or anyone else.</p>
-                  <a href="mailto:saarzya@gmail.com?subject=The%20Unsaid%20:%20Issue%2001" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                  <a href="mailto:saarzya@gmail.com?subject=The%20Unsaid%20:%20Issue%2001" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] hover:border-[#7a3f4e] hover:text-[#7a3f4e] transition-colors no-underline">
                     saarzya@gmail.com
                   </a>
                 </div>
@@ -513,7 +513,7 @@ function GuftaguArticlePage() {
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Ask us anything</h4>
                   <p className="text-sm text-[#5F6A54] mb-4">Send your question and we'll answer one in the next Guftagu. Published anonymously, answered in general terms: never as individual diagnosis or therapy.</p>
-                  <a href="mailto:saarzya@gmail.com?subject=Ask%20Saarzya" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                  <a href="mailto:saarzya@gmail.com?subject=Ask%20Saarzya" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] hover:border-[#7a3f4e] hover:text-[#7a3f4e] transition-colors no-underline">
                     saarzya@gmail.com
                   </a>
                 </div>
@@ -665,7 +665,7 @@ and did not apologise after.`}
                 <div className="bg-[#F6EFE6] border border-[#C9A9BA] rounded-sm p-6 my-8">
                   <h4 className="font-['Cormorant_Garamond',serif] font-normal text-2xl text-[#38452F] mb-2">Send us your voice</h4>
                   <p className="text-sm text-[#5F6A54] mb-4">Poetry, artwork, a paragraph of your own thinking, a student perspective: Guftagu is built out of what readers send. Attach your work or paste it into the mail.</p>
-                  <a href="mailto:saarzya@gmail.com?subject=Voices%20:%20Submission" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] no-underline hover:underline">
+                  <a href="mailto:saarzya@gmail.com?subject=Voices%20:%20Submission" className="font-['Cormorant_Garamond',serif] text-xl text-[#8E6B81] border-b border-[#C9A9BA] hover:border-[#7a3f4e] hover:text-[#7a3f4e] transition-colors no-underline">
                     saarzya@gmail.com
                   </a>
                 </div>
