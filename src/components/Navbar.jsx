@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-saarzya" },
   { label: "Services", href: "/#services" },
+  { label: "Guftagu", href: "/guftagu" },
   { label: "The Unsaid Words", href: "/unsaid-words" },
   { label: "Magazines", href: "/magazines" },
   { label: "Contact", href: "/#contact" },
@@ -25,6 +26,11 @@ function Navbar() {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     setIsOpen(false);
+
+    if (href === "/guftagu" || href === "/guftagu/") {
+      navigateTo("/guftagu");
+      return;
+    }
 
     if (href === "/about-saarzya") {
       navigateTo("/about-saarzya");

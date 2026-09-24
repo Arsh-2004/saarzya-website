@@ -20,15 +20,15 @@ function MagazinesBlogs() {
   const [activePost, setActivePost] = useState(null);
 
   useEffect(() => {
-    // Load local posts first for 0ms initial render
-    setPosts(getStoredPosts());
+    // Load local posts first for 0ms initial render (filtering out Guftagu issues)
+    setPosts(getStoredPosts().filter((p) => p.type !== "Guftagu"));
 
     // Sync remote posts from Firebase DB
     syncPostsFromRemote();
 
     // Listen for live updates from admin portal or remote sync
     const handlePostsUpdated = () => {
-      setPosts(getStoredPosts());
+      setPosts(getStoredPosts().filter((p) => p.type !== "Guftagu"));
     };
 
     window.addEventListener("saarzya_posts_updated", handlePostsUpdated);

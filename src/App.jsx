@@ -14,6 +14,8 @@ import AboutSaarzyaPage from "./components/AboutSaarzyaPage";
 import MagazinesBlogsPage from "./components/MagazinesBlogsPage";
 import FullBrochureReaderPage from "./components/FullBrochureReaderPage";
 import UnsaidWordsPage from "./components/UnsaidWordsPage";
+import GuftaguPage from "./components/GuftaguPage";
+import GuftaguArticlePage from "./components/GuftaguArticlePage";
 import { usePathname } from "./utils/router";
 
 function App() {
@@ -21,6 +23,21 @@ function App() {
 
   if (pathname === "/admin" || pathname === "/admin/") {
     return <AdminPortal />;
+  }
+
+  if (
+    pathname.startsWith("/guftagu/why-do-we-attach") ||
+    pathname.startsWith("/guftagu-article")
+  ) {
+    return <GuftaguArticlePage />;
+  }
+
+  if (
+    pathname === "/guftagu" ||
+    pathname === "/guftagu/" ||
+    pathname.startsWith("/guftagu")
+  ) {
+    return <GuftaguPage />;
   }
 
   if (

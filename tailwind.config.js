@@ -12,8 +12,10 @@ export default {
         slate: "#2D3748",
       },
       fontFamily: {
-        heading: ["Playfair Display", "serif"],
-        body: ["Plus Jakarta Sans", "sans-serif"],
+        heading: ["Playfair Display", "Georgia", "serif"],
+        serif: ["Playfair Display", "Georgia", "serif"],
+        body: ["Lato", "Plus Jakarta Sans", "sans-serif"],
+        sans: ["Lato", "Plus Jakarta Sans", "sans-serif"],
       },
       boxShadow: {
         soft: "0 20px 45px -25px rgba(45, 55, 72, 0.35)",

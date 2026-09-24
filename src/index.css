@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 :root {
   color: #2d3748;
   background-color: #f9f6f0;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Lato", "Plus Jakarta Sans", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,10 +16,15 @@
 }
 
 body {
+  font-family: "Lato", "Plus Jakarta Sans", sans-serif;
   @apply m-0 bg-cream text-slate antialiased;
   background-image: radial-gradient(circle at 8% 10%, rgba(221, 184, 146, 0.23), transparent 36%),
     radial-gradient(circle at 85% 14%, rgba(139, 168, 136, 0.2), transparent 34%),
     radial-gradient(circle at 50% 90%, rgba(226, 149, 120, 0.12), transparent 40%);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading, .font-serif {
+  font-family: "Playfair Display", Georgia, serif;
 }
 
 * {

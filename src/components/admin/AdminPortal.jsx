@@ -76,22 +76,31 @@ function AdminPortal() {
     setPasscode("");
   };
 
-  const openCreateModal = () => {
+  const [selectedFilter, setSelectedFilter] = useState("All");
+
+  const openCreateGuftaguModal = () => {
     setFormData({
       id: "",
-      type: "Magazine",
-      title: "",
-      badge: "Quarterly Edition",
-      author: "Saarzya Team",
-      image: "/assets/logo.jpg",
-      pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
-      buttonText: "Know More Or Subscribe",
-      description: "",
-      content: "",
+      type: "Guftagu",
+      title: "Why do we attach?",
+      badge: "Issue 01",
+      author: "Team Saarzya",
+      image: "/assets/about-saarzya.jpg",
+      pdfUrl: "/guftagu/why-do-we-attach",
+      buttonText: "Read Issue",
+      description: "Understanding love, attachment, and relationship...",
+      content: "Full interactive issue on Attachment & Relationships.",
     });
     setEditingPost(null);
     setIsModalOpen(true);
   };
+
+  const filteredPosts = posts.filter((p) => {
+    if (selectedFilter === "Magazine") return p.type === "Magazine";
+    if (selectedFilter === "Guftagu") return p.type === "Guftagu";
+    if (selectedFilter === "Articles") return p.type !== "Magazine" && p.type !== "Guftagu";
+    return true;
+  });
 
   const openEditModal = (post) => {
     setFormData({
@@ -272,31 +281,74 @@ function AdminPortal() {
       <main className="mx-auto max-w-7xl px-6 py-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="font-heading text-3xl text-slate">Manage Publications</h2>
+            <h2 className="font-heading text-3xl text-slate">Manage Publications &amp; Content</h2>
             <p className="mt-1 text-sm text-slate/70">
-              Create, edit, or remove magazines, articles, and resource guides live on Saarzya.
+              Create, edit, or remove magazines, Guftagu issues, articles, and resource guides live on Saarzya.
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2.5">
             <button
               onClick={handleResetDefaults}
-              className="inline-flex items-center gap-2 rounded-full border border-moss/20 bg-white px-4 py-2.5 text-xs font-semibold text-slate hover:bg-cream"
+              className="inline-flex items-center gap-1.5 rounded-full border border-moss/20 bg-white px-3.5 py-2 text-xs font-semibold text-slate hover:bg-cream"
             >
               <RotateCcw size={14} /> Reset Defaults
             </button>
             <button
-              onClick={openCreateModal}
-              className="inline-flex items-center gap-2 rounded-full bg-moss px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-sage"
+              onClick={openCreateGuftaguModal}
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#8E6B81] px-4 py-2 text-xs font-semibold text-white shadow-md transition hover:bg-[#7a3f4e]"
             >
-              <Plus size={16} /> Create New Post
+              <Plus size={15} /> Create Guftagu Issue
+            </button>
+            <button
+              onClick={() => {
+                setFormData({
+                  id: "",
+                  type: "Magazine",
+                  title: "",
+                  badge: "Quarterly Edition",
+                  author: "Saarzya Team",
+                  image: "/assets/logo.jpg",
+                  pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
+                  buttonText: "Know More Or Subscribe",
+                  description: "",
+                  content: "",
+                });
+                setEditingPost(null);
+                setIsModalOpen(true);
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-moss px-4 py-2 text-xs font-semibold text-white shadow-md transition hover:bg-sage"
+            >
+              <Plus size={15} /> Create New Post
             </button>
           </div>
         </div>
 
+        {/* Filter Tabs */}
+        <div className="mt-7 flex flex-wrap gap-2 border-b border-moss/15 pb-4">
+          {[
+            { id: "All", label: `All Posts (${posts.length})` },
+            { id: "Guftagu", label: `Guftagu Issues (${posts.filter(p => p.type === 'Guftagu').length})` },
+            { id: "Magazine", label: `Magazines (${posts.filter(p => p.type === 'Magazine').length})` },
+            { id: "Articles", label: `Articles & Resources (${posts.filter(p => p.type !== 'Magazine' && p.type !== 'Guftagu').length})` },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setSelectedFilter(tab.id)}
+              className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
+                selectedFilter === tab.id
+                  ? "bg-moss text-white shadow-sm"
+                  : "bg-white border border-moss/20 text-slate hover:bg-moss/10"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         {/* Posts Grid */}
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+          {filteredPosts.map((post) => (
             <div key={post.id} className="flex flex-col justify-between rounded-3xl border border-moss/20 bg-white p-6 shadow-sm">
               <div>
                 <div className="relative mb-4 h-[380px] sm:h-[420px] w-full overflow-hidden rounded-2xl border border-moss/10 bg-[#F5F2EC] flex items-center justify-center p-3">
@@ -374,6 +426,7 @@ function AdminPortal() {
                     className="mt-2 w-full rounded-2xl border border-moss/20 bg-cream/30 px-3 py-3 text-slate outline-none focus:border-moss"
                   >
                     <option value="Magazine">Magazine</option>
+                    <option value="Guftagu">Guftagu Issue</option>
                     <option value="Article / Blog">Article / Blog</option>
                     <option value="Resource Guide">Resource Guide</option>
                     <option value="News & Tip">News & Tip</option>
