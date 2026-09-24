@@ -81,6 +81,11 @@ function GuftaguArticlePage() {
     setSaveStatus("Cleared");
   };
 
+  const handleBackToGuftagu = (e) => {
+    if (e) e.preventDefault();
+    navigateTo("/guftagu");
+  };
+
   const handleMailAnswers = (e) => {
     if (e) e.preventDefault();
     const cleanSubject = "Try This: My attachment map";
