@@ -6,7 +6,7 @@ function UnsaidWordsPage() {
   const tallyUrl = "https://tally.so/r/68gVyJ";
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    window.scrollTo(0, 0);
   }, []);
 
   const handleBackToWebsite = (e) => {

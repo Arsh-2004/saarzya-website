@@ -4,7 +4,7 @@ import { navigateTo } from "../utils/router";
 
 function GuftaguPage() {
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    window.scrollTo(0, 0);
   }, []);
 
   const handleBackToSite = (e) => {

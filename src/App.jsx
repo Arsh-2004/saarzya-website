@@ -20,23 +20,20 @@ import { usePathname } from "./utils/router";
 
 function App() {
   const pathname = usePathname();
+  const cleanPath = (pathname || "").toLowerCase().replace(/\/+$/, "") || "/";
 
-  if (pathname === "/admin" || pathname === "/admin/") {
+  if (cleanPath === "/admin") {
     return <AdminPortal />;
   }
 
   if (
-    pathname.startsWith("/guftagu/why-do-we-attach") ||
-    pathname.startsWith("/guftagu-article")
+    cleanPath.startsWith("/guftagu/why-do-we-attach") ||
+    cleanPath.startsWith("/guftagu-article")
   ) {
     return <GuftaguArticlePage />;
   }
 
-  if (
-    pathname === "/guftagu" ||
-    pathname === "/guftagu/" ||
-    pathname.startsWith("/guftagu")
-  ) {
+  if (cleanPath.startsWith("/guftagu")) {
     return <GuftaguPage />;
   }
 
