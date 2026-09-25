@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, Heart } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, Heart, MessageCircle } from "lucide-react";
 import { navigateTo } from "../utils/router";
 
 function Footer() {
@@ -12,17 +12,29 @@ function Footer() {
               Psychology, Assessment and Wellness support for individuals seeking understanding,
               healing, and meaningful growth.
             </p>
-            <div className="mt-4">
+            <div className="mt-4 flex flex-wrap items-center gap-4 sm:gap-6">
               <a
                 href="/unsaid-words"
                 onClick={(e) => {
                   e.preventDefault();
                   navigateTo("/unsaid-words");
                 }}
-                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8c4a5b] hover:underline"
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8c4a5b] transition hover:text-[#6e3745] hover:underline"
               >
                 <Heart size={14} fill="#8c4a5b" />
                 <span>Saarzya: The Unsaid Words →</span>
+              </a>
+
+              <a
+                href="/guftagu"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateTo("/guftagu");
+                }}
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#587B6D] transition hover:text-[#38452F] hover:underline"
+              >
+                <MessageCircle size={14} fill="#587B6D" className="text-[#587B6D]" />
+                <span>Saarzya: Guftagu →</span>
               </a>
             </div>
           </div>
@@ -89,7 +101,7 @@ function Footer() {
               </a>
               <a
                 className="rounded-full border border-moss/20 p-2.5 text-moss transition hover:scale-105 hover:border-moss hover:bg-moss/10 shadow-xs"
-                href="mailto:hello@saarzya.com"
+                href="mailto:saarzya@gmail.com"
                 aria-label="Email"
               >
                 <Mail size={20} />
