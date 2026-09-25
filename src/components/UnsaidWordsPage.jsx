@@ -59,7 +59,7 @@ function UnsaidWordsPage() {
             Saarzya: The <em className="italic font-serif">Unsaid</em> Words
           </h1>
           <p className="max-w-[520px] mx-auto mb-9 text-[#6b5c54] text-lg sm:text-xl italic font-serif leading-relaxed">
-            There are things we carry quietly — thoughts, stories, fears, and feelings that never found the right words. This is your space to say them.
+            There are things we carry quietly: thoughts, stories, fears, and feelings that never found the right words. This is your space to say them.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -113,7 +113,7 @@ function UnsaidWordsPage() {
               <div className="font-serif italic text-[#8c4a5b] text-lg font-medium mb-3">ii.</div>
               <h3 className="text-base font-bold text-[#3a2e2a] mb-2">No perfect way to write it</h3>
               <p className="text-[#6b5c54] text-sm leading-relaxed">
-                A sentence, a story, a letter you never sent — write as much or as little as feels right. There's no format to get right.
+                A sentence, a story, a letter you never sent: write as much or as little as feels right. There's no format to get right.
               </p>
             </div>
 
@@ -145,7 +145,7 @@ function UnsaidWordsPage() {
               <div>
                 <h3 className="text-base font-bold text-[#3a2e2a] mb-1">Tell us what brings you here</h3>
                 <p className="text-[#6b5c54] text-sm leading-relaxed">
-                  Pick whichever feels closest — a stressful experience, a relationship, grief, or something you've never told anyone.
+                  Pick whichever feels closest: a stressful experience, a relationship, grief, or something you've never told anyone.
                 </p>
               </div>
             </div>
@@ -155,7 +155,7 @@ function UnsaidWordsPage() {
               <div>
                 <h3 className="text-base font-bold text-[#3a2e2a] mb-1">Write what you've been carrying</h3>
                 <p className="text-[#6b5c54] text-sm leading-relaxed">
-                  Your story, your thoughts, your feelings — in your own words, at your own pace.
+                  Your story, your thoughts, your feelings: in your own words, at your own pace.
                 </p>
               </div>
             </div>
@@ -199,7 +199,7 @@ function UnsaidWordsPage() {
               </li>
               <li className="flex gap-3 text-sm sm:text-base text-[#3a2e2a] leading-relaxed">
                 <span className="text-[#8c4a5b] font-bold">♡</span>
-                <span>This is an expression space, not a therapy or crisis service — and we're upfront about that.</span>
+                <span>This is an expression space, not a therapy or crisis service, and we're upfront about that.</span>
               </li>
               <li className="flex gap-3 text-sm sm:text-base text-[#3a2e2a] leading-relaxed">
                 <span className="text-[#8c4a5b] font-bold">♡</span>

@@ -106,7 +106,7 @@ function SafeSpacePromise() {
                 Saarzya: The Unsaid Words
               </h3>
               <p className="mt-1 text-xs sm:text-sm text-[#6b5c54] max-w-xl">
-                Share what you carry quietly — thoughts, stories, fears, and feelings that never found the right words. 100% anonymous & judgment-free.
+                Share what you carry quietly: thoughts, stories, fears, and feelings that never found the right words. 100% anonymous & judgment-free.
               </p>
             </div>
           </div>

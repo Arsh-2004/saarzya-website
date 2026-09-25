@@ -69,7 +69,7 @@ function GuftaguArticlePage() {
       localStorage.setItem(STORAGE_KEY, val);
       setSaveStatus("Saved on this device");
     } catch (err) {
-      setSaveStatus("Not saved — storage unavailable");
+      setSaveStatus("Not saved: storage unavailable");
     }
   };
 
@@ -94,17 +94,22 @@ function GuftaguArticlePage() {
     // Copy text to clipboard as safety backup if navigator clipboard is supported
     if (bodyText && navigator.clipboard) {
       navigator.clipboard.writeText(bodyText).catch(() => {});
+      setSaveStatus("✓ Text copied to clipboard! Opening email client...");
+    } else {
+      setSaveStatus("Opening email client...");
     }
 
     const mailtoUrl = `mailto:saarzya@gmail.com?subject=${encodeURIComponent(cleanSubject)}${
       bodyText ? `&body=${encodeURIComponent(bodyText)}` : ""
     }`;
 
-    try {
-      window.location.href = mailtoUrl;
-    } catch (err) {
-      window.open(mailtoUrl, "_self");
-    }
+    setTimeout(() => {
+      try {
+        window.location.href = mailtoUrl;
+      } catch (err) {
+        window.open(mailtoUrl, "_blank");
+      }
+    }, 150);
   };
 
   return (
@@ -338,7 +343,7 @@ function GuftaguArticlePage() {
                 <div className="font-['Cormorant_Garamond',serif] text-xl leading-[1.75] bg-[#F6EFE6] border border-[#38452F]/15 rounded-sm p-6 sm:p-7 space-y-4">
                   <p>Ira is twenty-four and has read enough psychology to narrate her own behaviour while doing it anyway. It is 11.42 pm. Veer's last message was at 6.15. It said “call you later”, and later has not happened.</p>
                   <p>She has drafted four versions. The casual one. The funny one. The one that says <em>are we okay?</em> The one she actually sends at 11.51, which is three messages long and ends with “sorry, ignore me, I'm being weird.”</p>
-                  <p>Across the city, Veer has seen all of them. He has also had an eleven-hour day and a conversation with his manager he is still chewing on. What he feels when the phone lights up isn't indifference — it's pressure. A familiar tightening, the sense that someone needs something from him that he does not currently have. So he does what he has always done: puts the phone face down and tells himself he'll reply properly in the morning, when he can do it well.</p>
+                  <p>Across the city, Veer has seen all of them. He has also had an eleven-hour day and a conversation with his manager he is still chewing on. What he feels when the phone lights up isn't indifference, it's pressure. A familiar tightening, the sense that someone needs something from him that he does not currently have. So he does what he has always done: puts the phone face down and tells himself he'll reply properly in the morning, when he can do it well.</p>
                   <p className="mb-0">By morning, Ira has concluded something about herself. Veer has concluded something about relationships. Neither of them said a single untrue word.</p>
                 </div>
 
@@ -346,10 +351,10 @@ function GuftaguArticlePage() {
                 <p className="mb-5">This is the pursue-withdraw cycle, the most documented pattern in couples research and the central target of Emotionally Focused Therapy. Ira's protest is a hyperactivating strategy: when the signal goes unanswered, she raises the volume. Veer's silence is deactivating: when flooded, he reduces contact to regain control. Each person's solution is the other person's trigger, and the loop tightens every time it runs.</p>
 
                 <div className="text-[10px] tracking-[0.28em] uppercase text-[#A88F6C] mt-8 mb-2 font-semibold">What neither of them can see</div>
-                <p className="mb-5">Ira reads the delay as evidence about her worth. Veer reads her messages as evidence that he is failing. The content of the argument — response times, tone, who started it — is almost irrelevant. Underneath, both are asking the same thing: <em>am I too much, or not enough, for you?</em></p>
+                <p className="mb-5">Ira reads the delay as evidence about her worth. Veer reads her messages as evidence that he is failing. The content of the argument (response times, tone, who started it) is almost irrelevant. Underneath, both are asking the same thing: <em>am I too much, or not enough, for you?</em></p>
 
                 <div className="text-[10px] tracking-[0.28em] uppercase text-[#A88F6C] mt-8 mb-2 font-semibold">What would change it</div>
-                <p className="mb-0">Not better self-control. Naming the cycle as a third thing in the room. “When I don't hear from you I start building a story. It isn't about your phone — I just need to know we're okay.” And from Veer: “When I'm overloaded I go quiet, and I know that reads as leaving. It isn't. Give me an hour and I'll come back.” The pattern loses most of its power the moment both people stop treating it as a character trial and start treating it as a loop they're caught in together.</p>
+                <p className="mb-0">Not better self-control. Naming the cycle as a third thing in the room. “When I don't hear from you I start building a story. It isn't about your phone, I just need to know we're okay.” And from Veer: “When I'm overloaded I go quiet, and I know that reads as leaving. It isn't. Give me an hour and I'll come back.” The pattern loses most of its power the moment both people stop treating it as a character trial and start treating it as a loop they're caught in together.</p>
               </section>
 
               <hr className="my-11 border-0 flex items-center justify-center gap-3.5 before:content-[''] before:h-[1px] before:w-16 before:bg-[#38452F]/15 after:content-[''] after:h-[1px] after:w-16 after:bg-[#38452F]/15" />
@@ -442,7 +447,7 @@ function GuftaguArticlePage() {
                       Secure attachment means never feeling insecure.
                     </p>
                     <p className="text-sm leading-relaxed mt-3 mb-0 text-[#38452F] before:content-['Fact'] before:block before:text-[10px] before:tracking-[0.28em] before:uppercase before:text-[#8E9D7B] before:mb-1">
-                      Security isn't the absence of distress — it's having a reliable route back from it. Secure people get jealous, hurt and scared. What distinguishes them is that they can say so and expect the relationship to hold.
+                      Security isn't the absence of distress, it's having a reliable route back from it. Secure people get jealous, hurt and scared. What distinguishes them is that they can say so and expect the relationship to hold.
                     </p>
                   </div>
 
@@ -451,7 +456,7 @@ function GuftaguArticlePage() {
                       Needing someone is weakness. Healthy adults are independent.
                     </p>
                     <p className="text-sm leading-relaxed mt-3 mb-0 text-[#38452F] before:content-['Fact'] before:block before:text-[10px] before:tracking-[0.28em] before:uppercase before:text-[#8E9D7B] before:mb-1">
-                      Research on the dependency paradox finds the opposite: people who can rely on a partner when distressed tend to function more autonomously, not less. A dependable base is what makes exploring possible — true at one, still true at forty.
+                      Research on the dependency paradox finds the opposite: people who can rely on a partner when distressed tend to function more autonomously, not less. A dependable base is what makes exploring possible, true at one, still true at forty.
                     </p>
                   </div>
 
@@ -535,14 +540,14 @@ function GuftaguArticlePage() {
                   The attachment map
                 </h2>
                 <p className="text-sm text-[#5F6A54] mb-6">
-                  Fifteen minutes, one honest page. Do it when you're calm — not mid-argument.
+                  Fifteen minutes, one honest page. Do it when you're calm, not mid-argument.
                 </p>
 
                 <ol className="space-y-5 list-none p-0 counter-reset-s my-6">
                   <li className="relative pl-12">
                     <span className="absolute left-0 -top-1 w-8 text-center font-['Cormorant_Garamond',serif] text-2xl text-[#8E6B81] border-b border-[#C9A9BA]">1</span>
                     <b className="font-normal font-['Cormorant_Garamond',serif] text-xl block text-[#38452F]">Pick one moment, not one relationship</b>
-                    <span className="text-sm text-[#5F6A54]">Choose a single recent moment when the ground shifted with someone — an unanswered message, a tone you didn't like, a plan that changed. Specific beats general.</span>
+                    <span className="text-sm text-[#5F6A54]">Choose a single recent moment when the ground shifted with someone: an unanswered message, a tone you didn't like, a plan that changed. Specific beats general.</span>
                   </li>
                   <li className="relative pl-12">
                     <span className="absolute left-0 -top-1 w-8 text-center font-['Cormorant_Garamond',serif] text-2xl text-[#8E6B81] border-b border-[#C9A9BA]">2</span>
@@ -552,23 +557,23 @@ function GuftaguArticlePage() {
                   <li className="relative pl-12">
                     <span className="absolute left-0 -top-1 w-8 text-center font-['Cormorant_Garamond',serif] text-2xl text-[#8E6B81] border-b border-[#C9A9BA]">3</span>
                     <b className="font-normal font-['Cormorant_Garamond',serif] text-xl block text-[#38452F]">Find the old sentence</b>
-                    <span className="text-sm text-[#5F6A54]">Look at what you told yourself it meant — “they're getting tired of me”, “I'm too much”, “I have to handle this alone”. How old is that sentence? Whose voice said it first? You're not hunting for a memory, only a recognition.</span>
+                    <span className="text-sm text-[#5F6A54]">Look at what you told yourself it meant: “they're getting tired of me”, “I'm too much”, “I have to handle this alone”. How old is that sentence? Whose voice said it first? You're not hunting for a memory, only a recognition.</span>
                   </li>
                   <li className="relative pl-12">
                     <span className="absolute left-0 -top-1 w-8 text-center font-['Cormorant_Garamond',serif] text-2xl text-[#8E6B81] border-b border-[#C9A9BA]">4</span>
                     <b className="font-normal font-['Cormorant_Garamond',serif] text-xl block text-[#38452F]">Name the protection</b>
-                    <span className="text-sm text-[#5F6A54]">What did your reaction protect you from? Withdrawing protects from rejection. Over-explaining protects from being misunderstood. Leaving first protects from being left. Write it down with respect — it worked once.</span>
+                    <span className="text-sm text-[#5F6A54]">What did your reaction protect you from? Withdrawing protects from rejection. Over-explaining protects from being misunderstood. Leaving first protects from being left. Write it down with respect, it worked once.</span>
                   </li>
                   <li className="relative pl-12">
                     <span className="absolute left-0 -top-1 w-8 text-center font-['Cormorant_Garamond',serif] text-2xl text-[#8E6B81] border-b border-[#C9A9BA]">5</span>
                     <b className="font-normal font-['Cormorant_Garamond',serif] text-xl block text-[#38452F]">Ask the present-day question</b>
-                    <span className="text-sm text-[#5F6A54]">“Is that still true here, with this person, today?” Sometimes the answer is no, and something loosens. Sometimes it's yes — and that's important information about the relationship rather than about you.</span>
+                    <span className="text-sm text-[#5F6A54]">“Is that still true here, with this person, today?” Sometimes the answer is no, and something loosens. Sometimes it's yes, and that's important information about the relationship rather than about you.</span>
                   </li>
                 </ol>
 
                 <div className="bg-white border border-[#38452F]/15 rounded-sm p-6 shadow-xs mt-6">
                   <label htmlFor="j1" className="block text-[11px] tracking-[0.16em] uppercase text-[#5F6A54] mb-2 font-semibold">
-                    Your page — saved only in this browser, on this device
+                    Your page (saved only in this browser, on this device)
                   </label>
                   <textarea
                     id="j1"
@@ -615,7 +620,7 @@ function GuftaguArticlePage() {
                 <p className="mb-5">A baby cannot calm itself. Its nervous system has the alarm installed but not yet the brakes. So it borrows: it's picked up, and the adult's slower heartbeat, steady breathing and low voice pull the baby's system down with it. That borrowing is co-regulation: one nervous system settling another.</p>
                 <p className="mb-5">We never fully outgrow it. An adult who's had a terrible day and sits beside a calm friend will, measurably, settle faster than the same adult alone in a room. Which is why advice like “you shouldn't need anyone to feel okay” is biologically confused. Self-regulation is real, and it's largely built out of thousands of earlier experiences of being co-regulated. You internalise the calm you were lent.</p>
                 <p className="mb-5">Two things follow. If you find it hard to soothe yourself, it may be less about willpower than about how much soothing was available to borrow. And co-regulation runs both ways: your agitation can raise someone else's, which is why one person's panic spreads through a house, and why a steady presence in a crisis is doing something genuinely physiological, not just being nice.</p>
-                <p className="mb-0"><span className="font-['Cormorant_Garamond',serif] text-xl">In one line:</span> before you can hold yourself, someone has to have held you — and it is never too late to be held.</p>
+                <p className="mb-0"><span className="font-['Cormorant_Garamond',serif] text-xl">In one line:</span> before you can hold yourself, someone has to have held you, and it is never too late to be held.</p>
               </section>
 
               <hr className="my-11 border-0 flex items-center justify-center gap-3.5 before:content-[''] before:h-[1px] before:w-16 before:bg-[#38452F]/15 after:content-[''] after:h-[1px] after:w-16 after:bg-[#38452F]/15" />
@@ -632,7 +637,7 @@ function GuftaguArticlePage() {
                 <div className="font-['Cormorant_Garamond',serif] italic text-xl leading-loose whitespace-pre-line text-[#38452F] mb-2">
 {`Inheritance
 
-My mother learned love as labour —
+My mother learned love as labour:
 hot rotis, cold hands, no sentence
 beginning with I.
 
@@ -642,7 +647,7 @@ the grammar of a sigh.
 
 Now someone asks me what I need
 and I answer like a witness
-under oath — carefully, in case
+under oath, carefully, in case
 it is used against me.
 
 I am trying. I am unlearning
@@ -650,11 +655,11 @@ the arithmetic of deserving.
 Yesterday I said stay
 and did not apologise after.`}
                 </div>
-                <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mb-8 font-semibold">— Anonymous, 22, M.A. Psychology</p>
+                <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mb-8 font-semibold">Anonymous, 22, M.A. Psychology</p>
 
                 <h3 className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mb-2">A student reflection</h3>
-                <p className="mb-2">“I used to think I was bad at relationships. Then I noticed I'm the same in every one of them: I get close, I get scared, I get busy. Same three steps, different person. That was depressing for about a week and then it was actually a relief — because a pattern is something you can work with. A curse isn't.”</p>
-                <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mb-8 font-semibold">— Third-year undergraduate, Prayagraj</p>
+                <p className="mb-2">“I used to think I was bad at relationships. Then I noticed I'm the same in every one of them: I get close, I get scared, I get busy. Same three steps, different person. That was depressing for about a week and then it was actually a relief, because a pattern is something you can work with. A curse isn't.”</p>
+                <p className="text-[10px] tracking-[0.22em] uppercase text-[#A88F6C] mb-8 font-semibold">Third-year undergraduate, Prayagraj</p>
 
                 <h3 className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mb-2">Untitled, ink on paper</h3>
                 <div className="max-w-[320px] mx-auto my-4">
@@ -696,7 +701,7 @@ and did not apologise after.`}
                     Fear of abandonment is affecting your sleep, appetite, work or studies for weeks at a time.
                   </li>
                   <li className="relative pl-7 py-2.5 text-[0.97rem] before:content-[''] before:absolute before:left-0.5 before:top-[19px] before:w-2 before:h-2 before:rounded-full before:border before:border-[#8E6B81]">
-                    You can't function when a relationship is uncertain — or you can't feel anything at all.
+                    You can't function when a relationship is uncertain, or you can't feel anything at all.
                   </li>
                   <li className="relative pl-7 py-2.5 text-[0.97rem] before:content-[''] before:absolute before:left-0.5 before:top-[19px] before:w-2 before:h-2 before:rounded-full before:border before:border-[#8E6B81]">
                     You're staying somewhere you feel unsafe, controlled, financially trapped, or frightened of the other person's reaction.
@@ -705,7 +710,7 @@ and did not apologise after.`}
                     You're using alcohol, substances, food restriction or self-harm to manage relational distress.
                   </li>
                   <li className="relative pl-7 py-2.5 text-[0.97rem] before:content-[''] before:absolute before:left-0.5 before:top-[19px] before:w-2 before:h-2 before:rounded-full before:border before:border-[#8E6B81]">
-                    A loss — a breakup, a death, an estrangement — hasn't eased at all over many months.
+                    A loss (a breakup, a death, or an estrangement) hasn't eased at all over many months.
                   </li>
                   <li className="relative pl-7 py-2.5 text-[0.97rem] before:content-[''] before:absolute before:left-0.5 before:top-[19px] before:w-2 before:h-2 before:rounded-full before:border before:border-[#8E6B81]">
                     You're having thoughts of ending your life, or feel people would be better off without you.
@@ -758,7 +763,7 @@ and did not apologise after.`}
                 </div>
 
                 <p className="text-xs text-[#5F6A54] mt-5 mb-0">
-                  If you or someone else is in immediate danger, contact local emergency services or go to the nearest hospital. Helpline numbers change occasionally — worth confirming the current one before you need it.
+                  If you or someone else is in immediate danger, contact local emergency services or go to the nearest hospital. Helpline numbers change occasionally, worth confirming the current one before you need it.
                 </p>
               </section>
 

@@ -9,7 +9,7 @@ const DEFAULT_POSTS = [
   {
     id: "post-1",
     type: "Magazine",
-    title: "Quarterly Magazine — Ψ-COLOGY (Issue 01)",
+    title: "Quarterly Magazine: Ψ-COLOGY (Issue 01)",
     description:
       "Subscribe to our quarterly magazine dedicated to psychology and mental health which keeps you up-to-date in latest psychology trends, research, ongoing opportunities, and fun activities.",
     content: `Welcome to the inaugural edition of Ψ-COLOGY by Saarzya!
@@ -40,10 +40,10 @@ Read the full interactive PDF issue below or download your copy!`,
     type: "Article / Blog",
     title: "Finding Your Core in a Noisy World",
     description:
-      "Practical psychological insights on peeling back external pressures and returning to what truly matters—your core self.",
+      "Practical psychological insights on peeling back external pressures and returning to what truly matters: your core self.",
     content: `In a world filled with constant notifications, social comparisons, and endless expectations, it’s easy to feel disconnected from who you truly are.
 
-The concept of 'Saarzya' centers around essence—returning to your core truth. When we strip away the noise of external validation, we give ourselves permission to tune into our genuine feelings, values, and needs.
+The concept of 'Saarzya' centers around essence, returning to your core truth. When we strip away the noise of external validation, we give ourselves permission to tune into our genuine feelings, values, and needs.
 
 Three Ways to Reconnect with Your Core Self:
 1. Practice Mindful Pauses: Dedicate 5 minutes every day to silence without screens or distractions.

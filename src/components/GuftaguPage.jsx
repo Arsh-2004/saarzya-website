@@ -250,7 +250,7 @@ function GuftaguPage() {
                 <div>
                   <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-[#8E6B81] border border-[#C9A9BA] rounded-xs px-2.5 py-1 font-semibold mb-3">Issue 01</span>
                   <h4 className="font-['Cormorant_Garamond',serif] text-2xl text-[#38452F] mb-2 font-medium">Why do we attach?</h4>
-                  <p className="text-sm text-[#5F6A54] mb-4">Understanding love, attachment, and relationship — the cover story, the science, the unsaid.</p>
+                  <p className="text-sm text-[#5F6A54] mb-4">Understanding love, attachment, and relationship: the cover story, the science, the unsaid.</p>
                 </div>
                 <a
                   href="/guftagu/why-do-we-attach"
