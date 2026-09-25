@@ -110,27 +110,43 @@ function Navbar() {
               onError={handleLogoFallback}
             />
             <div className="flex flex-col">
-              <span className="font-serif text-xl font-bold tracking-tight text-moss sm:text-2xl">
+              <span className="font-serif text-xl font-bold tracking-[0.02em] text-moss sm:text-2xl">
                 Saarzya
               </span>
-              <p className="m-0 text-[9px] font-medium uppercase tracking-[0.14em] text-slate/70 sm:text-[10px] sm:tracking-[0.16em]">
+              <p className="m-0 font-jakarta text-[9px] font-semibold uppercase tracking-[0.16em] text-moss/80 sm:text-[10px] sm:tracking-[0.18em]">
                 Psychology • Assessment • Wellness
               </p>
             </div>
           </a>
 
-          <ul className="hidden items-center gap-8 md:flex">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-sm font-semibold text-slate/85 transition hover:text-moss"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+          <ul className="hidden items-center gap-6 lg:gap-8 md:flex">
+            {navLinks.map((link) => {
+              const currentPath = typeof window !== "undefined" ? window.location.pathname : "/";
+              const isActive =
+                link.href === "/"
+                  ? currentPath === "/"
+                  : currentPath.startsWith(link.href.replace("/#", "/"));
+              return (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className={`group relative text-[0.925rem] font-medium tracking-[0.02em] font-jakarta transition-colors duration-200 py-1 ${
+                      isActive ? "text-moss font-semibold" : "text-[#38452F]/85 hover:text-moss"
+                    }`}
+                  >
+                    {link.label}
+                    <span
+                      className={`absolute bottom-0 left-0 h-[2px] rounded-full bg-moss transition-all duration-300 ${
+                        isActive
+                          ? "w-full opacity-100"
+                          : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100"
+                      }`}
+                    />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <button
@@ -194,7 +210,7 @@ function Navbar() {
                       <li key={link.label}>
                         <a
                           href={link.href}
-                          className="group flex items-center justify-between rounded-2xl border border-moss/15 bg-white px-6 py-4 text-lg font-bold text-slate shadow-sm transition hover:border-moss hover:bg-moss hover:text-white active:scale-[0.98]"
+                          className="group flex items-center justify-between rounded-2xl border border-moss/15 bg-white px-6 py-4 text-base font-semibold font-jakarta tracking-[0.02em] text-slate shadow-sm transition hover:border-moss hover:bg-moss hover:text-white active:scale-[0.98]"
                           onClick={(e) => handleNavClick(e, link.href)}
                         >
                           <span>{link.label}</span>

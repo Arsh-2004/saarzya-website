@@ -14,8 +14,11 @@ export default {
       fontFamily: {
         heading: ["Playfair Display", "Georgia", "serif"],
         serif: ["Playfair Display", "Georgia", "serif"],
-        body: ["Lato", "Plus Jakarta Sans", "sans-serif"],
-        sans: ["Lato", "Plus Jakarta Sans", "sans-serif"],
+        cormorant: ["Cormorant Garamond", "Georgia", "serif"],
+        jost: ["Jost", "sans-serif"],
+        jakarta: ["Plus Jakarta Sans", "sans-serif"],
+        body: ["Plus Jakarta Sans", "Lato", "sans-serif"],
+        sans: ["Plus Jakarta Sans", "Lato", "sans-serif"],
       },
       boxShadow: {
         soft: "0 20px 45px -25px rgba(45, 55, 72, 0.35)",
