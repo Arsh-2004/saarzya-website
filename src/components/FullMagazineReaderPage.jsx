@@ -72,7 +72,7 @@ function FullMagazineReaderPage() {
                 {magazine.title}
               </h1>
               <span className="text-[10px] text-white/60 uppercase tracking-wider hidden sm:block">
-                {magazine.date || "July 2026"} • {magazine.badge || "Quarterly Edition"}
+                {magazine.date || "Sep 19, 2026"} • {magazine.badge || "Quarterly Edition"}
               </span>
             </div>
           </div>

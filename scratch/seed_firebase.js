@@ -9,7 +9,7 @@ const defaultPosts = [
     image: "/assets/logo.jpg",
     pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
     buttonText: "Know More Or Subscribe",
-    date: "July 2026",
+    date: "Sep 19, 2026",
     author: "Saarzya Editorial Team",
     downloadable: true
   },

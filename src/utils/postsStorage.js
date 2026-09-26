@@ -31,7 +31,7 @@ Read the full interactive PDF issue below or download your copy!`,
     image: "/assets/saarzya_magazine_cover.jpg",
     pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
     buttonText: "Know More",
-    date: "July 2026",
+    date: "Sep 19, 2026",
     author: "Saarzya Editorial Team",
     downloadable: true,
   },
@@ -92,8 +92,8 @@ export async function syncPostsFromRemote() {
     const remotePosts = await res.json();
 
     if (Array.isArray(remotePosts) && remotePosts.length > 0) {
-      // Ensure post-1 uses new magazine cover
-      const updated = remotePosts.map(p => p.id === 'post-1' ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More" } : p);
+      // Ensure post-1 uses new magazine cover & date
+      const updated = remotePosts.map(p => (p.id === 'post-1' || p.date === 'July 2026') ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More", date: "Sep 19, 2026" } : p);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       window.dispatchEvent(new Event("saarzya_posts_updated"));
       return updated;
@@ -158,7 +158,7 @@ export function getStoredPosts() {
       return DEFAULT_POSTS;
     }
     const parsed = JSON.parse(raw);
-    const updated = parsed.map(p => p.id === 'post-1' ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More" } : p);
+    const updated = parsed.map(p => (p.id === 'post-1' || p.date === 'July 2026') ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More", date: "Sep 19, 2026" } : p);
     return updated;
   } catch (err) {
     console.error("Failed to read stored posts:", err);

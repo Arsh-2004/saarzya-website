@@ -70,7 +70,7 @@ function MagazineDetail({ magazine, onBack }) {
             {/* Right Info */}
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-moss/20 bg-moss/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-moss">
-                <BookOpen size={14} /> {magazine.date || "July 2026"} • Edition 1
+                <BookOpen size={14} /> {magazine.date || "Sep 19, 2026"} • Edition 1
               </div>
 
               <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate leading-tight">
