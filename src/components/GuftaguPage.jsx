@@ -177,8 +177,8 @@ function GuftaguPage() {
               <div className="flex justify-center">
                 <img
                   src="/assets/image.png"
-                  alt="Guftagu: The Psychology Magazine by Saarzya"
-                  className="w-56 h-56 rounded-2xl object-cover object-center border border-[#38452F]/20 shadow-md"
+                  alt="Guftagu: A blog by Saarzya"
+                  className="w-64 sm:w-72 h-auto rounded-2xl border border-[#38452F]/20 shadow-md object-contain bg-[#F5EFE6]"
                 />
               </div>
             </div>
