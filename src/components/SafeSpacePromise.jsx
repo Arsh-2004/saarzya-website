@@ -15,7 +15,7 @@ const pillars = [
     description: "Express your thoughts and emotions freely without fear of judgment, shame, or bias.",
     icon: Fingerprint,
     accent: "border-sage/40 bg-sage/10",
-    iconBg: "bg-[#436256] text-white",
+    iconBg: "bg-[#7A3F4E] text-white",
   },
   {
     title: "Personalized Care",
@@ -29,7 +29,7 @@ const pillars = [
     description: "Compassionate practitioners who prioritize genuine human connection and healing above all else.",
     icon: Heart,
     accent: "border-sage/40 bg-sage/10",
-    iconBg: "bg-[#3A554A] text-white",
+    iconBg: "bg-[#6E3544] text-white",
   },
 ];
 

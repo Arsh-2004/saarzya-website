@@ -119,7 +119,7 @@ function MagazinesBlogs() {
                   }}
                   className={`w-full inline-flex items-center justify-center gap-2 rounded-full py-3.5 px-5 text-sm font-bold shadow-md transition active:scale-95 ${
                     isMagazine
-                      ? "bg-moss text-white hover:bg-[#3D5A4E]"
+                      ? "bg-moss text-white hover:bg-[#7A3F4E]"
                       : "bg-moss/10 text-moss hover:bg-moss hover:text-white"
                   }`}
                 >

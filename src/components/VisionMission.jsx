@@ -52,7 +52,7 @@ function VisionMission() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 z-10 relative overflow-hidden rounded-3xl bg-gradient-to-br from-moss via-sage to-[#587B6D] p-8 sm:p-10 text-center text-white shadow-xl lg:-mr-10 flex flex-col justify-center min-h-[200px] lg:min-h-[280px]"
+            className="lg:col-span-5 z-10 relative overflow-hidden rounded-3xl bg-gradient-to-br from-moss via-sage to-[#7A3F4E] p-8 sm:p-10 text-center text-white shadow-xl lg:-mr-10 flex flex-col justify-center min-h-[200px] lg:min-h-[280px]"
           >
             <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/15 blur-xl" />
             <div className="pointer-events-none absolute -left-12 -bottom-12 h-40 w-40 rounded-full bg-black/10 blur-xl" />
@@ -129,7 +129,7 @@ function VisionMission() {
 
             {/* Pillar 3 */}
             <div className="flex flex-col items-center text-center p-4">
-              <VideoIcon src="/assets/download.mp4" bgClass="bg-[#d7ddd2]" scaleClass="scale-[1.4] translate-y-3" />
+              <VideoIcon src="/assets/download.mp4" bgClass="bg-[#F2E5E8]" scaleClass="scale-[1.4] translate-y-3" />
               <p className="mt-2 text-sm sm:text-base text-slate/75 leading-relaxed">
                 Advocate learning, guidance, practical exposure, and growth opportunities for psychology students and emerging professionals, helping strengthen the bridge between education and meaningful real-world impact.
               </p>

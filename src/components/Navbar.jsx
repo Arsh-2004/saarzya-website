@@ -132,7 +132,7 @@ function Navbar() {
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={`group relative text-[0.925rem] font-medium tracking-[0.02em] font-jakarta transition-colors duration-200 py-1 ${
-                      isActive ? "text-moss font-semibold" : "text-[#38452F]/85 hover:text-moss"
+                      isActive ? "text-moss font-semibold" : "text-slate/85 hover:text-moss"
                     }`}
                   >
                     {link.label}

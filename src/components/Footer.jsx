@@ -31,9 +31,9 @@ function Footer() {
                   e.preventDefault();
                   navigateTo("/guftagu");
                 }}
-                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#587B6D] transition hover:text-[#38452F] hover:underline"
+                className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#8C4A5B] transition hover:text-[#7A3F4E] hover:underline"
               >
-                <MessageCircle size={14} fill="#587B6D" className="text-[#587B6D]" />
+                <MessageCircle size={14} fill="#8C4A5B" className="text-[#8C4A5B]" />
                 <span>Saarzya: Guftagu →</span>
               </a>
             </div>

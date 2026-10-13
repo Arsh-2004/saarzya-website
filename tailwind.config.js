@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        sage: "#8BA888",
-        moss: "#587B6D",
+        sage: "#B88291",
+        moss: "#8C4A5B",
         cream: "#F9F6F0",
         blush: "#E29578",
         clay: "#DDB892",
@@ -22,10 +22,10 @@ export default {
       },
       boxShadow: {
         soft: "0 20px 45px -25px rgba(45, 55, 72, 0.35)",
-        glow: "0 0 0 1px rgba(139, 168, 136, 0.25), 0 12px 40px -20px rgba(88, 123, 109, 0.45)",
+        glow: "0 0 0 1px rgba(140, 74, 91, 0.25), 0 12px 40px -20px rgba(122, 63, 78, 0.45)",
       },
       backgroundImage: {
-        "radial-calm": "radial-gradient(circle at 20% 15%, rgba(221, 184, 146, 0.35), transparent 42%), radial-gradient(circle at 78% 18%, rgba(139, 168, 136, 0.30), transparent 42%)",
+        "radial-calm": "radial-gradient(circle at 20% 15%, rgba(221, 184, 146, 0.35), transparent 42%), radial-gradient(circle at 78% 18%, rgba(184, 130, 145, 0.30), transparent 42%)",
       },
       keyframes: {
         float: {

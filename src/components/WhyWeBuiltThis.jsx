@@ -32,7 +32,7 @@ function WhyWeBuiltThis() {
   return (
     <section
       id="why-we-built-this"
-      className="relative w-full bg-gradient-to-b from-[#4A6B5E] via-[#587B6D] to-[#436256] py-20 px-4 sm:px-8 text-white shadow-xl overflow-hidden my-12"
+      className="relative w-full bg-gradient-to-b from-[#6E3544] via-[#8C4A5B] to-[#5A2935] py-20 px-4 sm:px-8 text-white shadow-xl overflow-hidden my-12"
     >
       {/* Subtle background ambient glows */}
       <div className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-white/10 blur-3xl" />

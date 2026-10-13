@@ -8,7 +8,7 @@ function CtaBanner() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
-        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-moss via-sage to-[#73958A] px-7 py-10 text-white shadow-glow sm:px-10"
+        className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-moss via-sage to-[#7A3F4E] px-7 py-10 text-white shadow-glow sm:px-10"
       >
         <div className="absolute -right-10 -top-12 h-36 w-36 rounded-full bg-white/15 blur-2xl" />
         <div className="absolute -bottom-14 left-8 h-32 w-32 rounded-full bg-blush/35 blur-2xl" />
