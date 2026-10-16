@@ -7,6 +7,34 @@ const FIREBASE_PASSCODE_URL = "https://saarzya-61994-default-rtdb.firebaseio.com
 
 const DEFAULT_POSTS = [
   {
+    id: "post-1791059675999",
+    type: "Magazine",
+    title: "The Saarzya Insights: Issue 03",
+    badge: "Week - 3",
+    author: "Saarzya Team",
+    date: "Oct 4, 2026",
+    description: "Understanding Your Emotions: More Than “Good” or “Bad”",
+    image: "/assets/saarzya_magazine_cover.jpg",
+    pdfUrl: "https://drive.google.com/file/d/1j-xNPlMZLZgs1F3aLn3w-LXsR_aBgXAJ/view?usp=drive_link",
+    buttonText: "Know More",
+    content: `Welcome to the third edition of The Saarzya Insights!
+
+OUR VISION:
+• Filling the Gap: Bridging practical and theoretical psychological knowledge with real-world updates.
+• Research & Insights: Promoting psychology research among youth and experts.
+• Mirror of Youth & Psychologist: Giving opportunities to young minds to express themselves.
+• Fun Corner: Interactive games, quizzes, and psychological facts.
+
+PURPOSE & ROLE:
+• Latest Psychology Trends & News
+• Research Highlights in Mental Health
+• Critical Thinking & Case Studies
+• Youth Opportunities & Professional Branding
+
+Read the full interactive PDF issue below or download your copy!`,
+    downloadable: true,
+  },
+  {
     id: "post-1790431792757",
     type: "Magazine",
     title: "The Saarzya Insights - Issue 02",
@@ -62,53 +90,6 @@ PURPOSE & ROLE:
 Read the full interactive PDF issue below or download your copy!`,
     downloadable: true,
   },
-  {
-    id: "post-2",
-    type: "Article / Blog",
-    title: "Finding Your Core in a Noisy World",
-    description:
-      "Practical psychological insights on peeling back external pressures and returning to what truly matters: your core self.",
-    content: `In a world filled with constant notifications, social comparisons, and endless expectations, it’s easy to feel disconnected from who you truly are.
-
-The concept of 'Saarzya' centers around essence, returning to your core truth. When we strip away the noise of external validation, we give ourselves permission to tune into our genuine feelings, values, and needs.
-
-Three Ways to Reconnect with Your Core Self:
-1. Practice Mindful Pauses: Dedicate 5 minutes every day to silence without screens or distractions.
-2. Separate Thoughts from Identity: Recognize that anxious or self-critical thoughts are temporary experiences, not your absolute truth.
-3. Align Actions with Values: Focus on small choices that align with your personal well-being rather than societal perfection.
-
-Remember, self-growth isn't about becoming someone new; it's about returning home to your true self.`,
-    badge: "Popular Read",
-    image: "/assets/sanyukta.jpg",
-    pdfUrl: "",
-    buttonText: "Read Article",
-    date: "Sep 2026",
-    author: "Sanyukta Sherry",
-    downloadable: false,
-  },
-  {
-    id: "post-3",
-    type: "Resource Guide",
-    title: "Mindfulness & Daily Balance Handbook",
-    description:
-      "Actionable self-care tools, reflection prompts, and stress management routines tailored for young seekers.",
-    content: `This practical handbook is designed to equip you with simple, evidence-based tools for emotional regulation and mental clarity.
-
-What's Inside:
-• 5-Minute Morning Grounding Rituals
-• The 4-7-8 Breathing Technique for Anxiety Management
-• Daily Journal Prompts for Self-Reflection
-• Healthy Sleep Hygiene Checklist for Busy Minds
-
-Download or bookmark this guide to keep essential wellness practices accessible whenever you need a moment of calm.`,
-    badge: "Free Download",
-    image: "/assets/aarzoo.jpg",
-    pdfUrl: "",
-    buttonText: "View Handbook",
-    date: "Sep 2026",
-    author: "Aarzoo Singh",
-    downloadable: false,
-  },
 ];
 
 // Asynchronously sync remote posts from Firebase DB
@@ -124,8 +105,10 @@ export async function syncPostsFromRemote() {
     const remotePosts = await res.json();
 
     if (Array.isArray(remotePosts) && remotePosts.length > 0) {
+      // Filter out unwanted dummy blog/handbook posts (post-2 and post-3)
+      const filtered = remotePosts.filter(p => p.id !== 'post-2' && p.id !== 'post-3');
       // Ensure post-1 uses new magazine cover & date
-      const updated = remotePosts.map(p => (p.id === 'post-1' || p.date === 'July 2026') ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More", date: "Sep 19, 2026" } : p);
+      const updated = filtered.map(p => (p.id === 'post-1' || p.date === 'July 2026') ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More", date: "Sep 19, 2026" } : p);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       window.dispatchEvent(new Event("saarzya_posts_updated"));
       return updated;
@@ -196,14 +179,16 @@ export function getStoredPosts() {
       return DEFAULT_POSTS;
     }
     const parsed = JSON.parse(raw);
-    const existingIds = new Set(parsed.map(p => p.id));
+    // Purge unwanted legacy dummy blog posts (post-2 and post-3) from localStorage
+    const cleaned = parsed.filter(p => p.id !== 'post-2' && p.id !== 'post-3');
+    const existingIds = new Set(cleaned.map(p => p.id));
     const missingDefaults = DEFAULT_POSTS.filter(d => !existingIds.has(d.id));
 
     // Normalize any legacy post-1 cover & date
-    const updated = parsed.map(p => (p.id === 'post-1' || p.date === 'July 2026') ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More", date: "Sep 19, 2026" } : p);
+    const updated = cleaned.map(p => (p.id === 'post-1' || p.date === 'July 2026') ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More", date: "Sep 19, 2026" } : p);
 
     // Merge any missing default publications so all devices (mobile/desktop) see all issues
-    if (missingDefaults.length > 0) {
+    if (missingDefaults.length > 0 || cleaned.length !== parsed.length) {
       const merged = [...missingDefaults, ...updated];
       localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
       return merged;
