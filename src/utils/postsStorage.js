@@ -7,12 +7,17 @@ const FIREBASE_PASSCODE_URL = "https://saarzya-61994-default-rtdb.firebaseio.com
 
 const DEFAULT_POSTS = [
   {
-    id: "post-1",
+    id: "post-1790431792757",
     type: "Magazine",
-    title: "Quarterly Magazine: Ψ-COLOGY (Issue 01)",
-    description:
-      "Subscribe to our quarterly magazine dedicated to psychology and mental health which keeps you up-to-date in latest psychology trends, research, ongoing opportunities, and fun activities.",
-    content: `Welcome to the inaugural edition of Ψ-COLOGY by Saarzya!
+    title: "The Saarzya Insights - Issue 02",
+    badge: "Week-2",
+    author: "Saarzya Editorial Team",
+    date: "Sep 26, 2026",
+    description: "Why Do We Overthink?\nThe Psychology Behind It",
+    image: "/assets/saarzya_magazine_cover.jpg",
+    pdfUrl: "https://drive.google.com/file/d/1hSrzNrceCZWgKmQZMv6fT8llZuQWIUll/view?usp=drive_link",
+    buttonText: "Know More Or Subscribe",
+    content: `Welcome to the second edition of The Saarzya Insights!
 
 OUR VISION:
 • Filling the Gap: Bridging practical and theoretical psychological knowledge with real-world updates.
@@ -27,12 +32,34 @@ PURPOSE & ROLE:
 • Youth Opportunities & Professional Branding
 
 Read the full interactive PDF issue below or download your copy!`,
-    badge: "Quarterly Magazine",
-    image: "/assets/saarzya_magazine_cover.jpg",
-    pdfUrl: "/assets/saarzya-magazine-issue-01.pdf",
-    buttonText: "Know More",
-    date: "Sep 19, 2026",
+    downloadable: true,
+  },
+  {
+    id: "post-1",
+    type: "Magazine",
+    title: "The Saarzya Insights: Issue 01",
+    badge: "Week-1",
     author: "Saarzya Editorial Team",
+    date: "Sep 19, 2026",
+    description: "Understanding Anxiety &\nThe Nervous System",
+    image: "/assets/saarzya_magazine_cover.jpg",
+    pdfUrl: "https://drive.google.com/file/d/1Gp6FmfTq1yAE5oEfXuXh3YCMi5gACq9f/view?usp=drive_link",
+    buttonText: "Know More",
+    content: `Welcome to the inaugural edition of The Saarzya Insights!
+
+OUR VISION:
+• Filling the Gap: Bridging practical and theoretical psychological knowledge with real-world updates.
+• Research & Insights: Promoting psychology research among youth and experts.
+• Mirror of Youth & Psychologist: Giving opportunities to young minds to express themselves.
+• Fun Corner: Interactive games, quizzes, and psychological facts.
+
+PURPOSE & ROLE:
+• Latest Psychology Trends & News
+• Research Highlights in Mental Health
+• Critical Thinking & Case Studies
+• Youth Opportunities & Professional Branding
+
+Read the full interactive PDF issue below or download your copy!`,
     downloadable: true,
   },
   {
@@ -88,7 +115,12 @@ Download or bookmark this guide to keep essential wellness practices accessible 
 export async function syncPostsFromRemote() {
   try {
     const res = await fetch(FIREBASE_POSTS_URL);
-    if (!res.ok) return;
+    if (!res.ok) {
+      if (res.status === 401) {
+        console.warn("Firebase Realtime Database rules have expired (401 Unauthorized). Set .read: true in Firebase Console to enable cloud sync across devices.");
+      }
+      return;
+    }
     const remotePosts = await res.json();
 
     if (Array.isArray(remotePosts) && remotePosts.length > 0) {
@@ -126,15 +158,21 @@ if (typeof window !== "undefined") {
   syncPasscodeFromRemote();
 }
 
-async function pushPostsToRemote(posts) {
+export async function pushPostsToRemote(posts) {
   try {
-    await fetch(FIREBASE_POSTS_URL, {
+    const res = await fetch(FIREBASE_POSTS_URL, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(posts),
     });
+    if (!res.ok) {
+      console.warn("Firebase posts push responded with status:", res.status);
+      return { success: false, status: res.status };
+    }
+    return { success: true };
   } catch (err) {
     console.error("Failed to push posts to Firebase DB:", err);
+    return { success: false, error: err.message };
   }
 }
 
@@ -158,7 +196,19 @@ export function getStoredPosts() {
       return DEFAULT_POSTS;
     }
     const parsed = JSON.parse(raw);
+    const existingIds = new Set(parsed.map(p => p.id));
+    const missingDefaults = DEFAULT_POSTS.filter(d => !existingIds.has(d.id));
+
+    // Normalize any legacy post-1 cover & date
     const updated = parsed.map(p => (p.id === 'post-1' || p.date === 'July 2026') ? { ...p, image: "/assets/saarzya_magazine_cover.jpg", buttonText: "Know More", date: "Sep 19, 2026" } : p);
+
+    // Merge any missing default publications so all devices (mobile/desktop) see all issues
+    if (missingDefaults.length > 0) {
+      const merged = [...missingDefaults, ...updated];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+      return merged;
+    }
+
     return updated;
   } catch (err) {
     console.error("Failed to read stored posts:", err);

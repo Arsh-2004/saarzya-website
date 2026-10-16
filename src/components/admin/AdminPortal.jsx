@@ -7,6 +7,7 @@ import {
   getAdminPasscode,
   setAdminPasscode,
   compressImage,
+  pushPostsToRemote,
 } from "../../utils/postsStorage";
 import { navigateTo } from "../../utils/router";
 import {
@@ -22,6 +23,9 @@ import {
   Image as ImageIcon,
   CheckCircle2,
   X,
+  Cloud,
+  AlertTriangle,
+  RefreshCw,
 } from "lucide-react";
 
 function AdminPortal() {
@@ -190,6 +194,29 @@ function AdminPortal() {
     }, 1500);
   };
 
+  const [cloudSyncStatus, setCloudSyncStatus] = useState(null);
+  const [isSyncing, setIsSyncing] = useState(false);
+
+  const handleSyncToCloud = async () => {
+    setIsSyncing(true);
+    setCloudSyncStatus({ type: "info", msg: "Syncing current publications to Firebase Cloud Database..." });
+    const currentPosts = getStoredPosts();
+    const res = await pushPostsToRemote(currentPosts);
+    setIsSyncing(false);
+    if (res && res.success) {
+      setCloudSyncStatus({
+        type: "success",
+        msg: "All publications successfully synced to cloud! They are now live on all mobile phones & devices worldwide."
+      });
+      setTimeout(() => setCloudSyncStatus(null), 6000);
+    } else {
+      setCloudSyncStatus({
+        type: "error",
+        msg: "Firebase Rules Expired (401 Unauthorized): Please go to Firebase Console > Realtime Database > Rules, change .read & .write to true, click Publish, and click 'Sync to Cloud' again."
+      });
+    }
+  };
+
   // Login Screen
   if (!isAuthenticated) {
     return (
@@ -254,7 +281,16 @@ function AdminPortal() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <button
+              onClick={handleSyncToCloud}
+              disabled={isSyncing}
+              className="inline-flex items-center gap-1.5 rounded-full bg-moss px-4 py-2 text-xs font-semibold text-white shadow-sm hover:opacity-90 active:scale-95 disabled:opacity-50"
+              title="Sync all magazines and publications from this computer to Firebase cloud database so they show on phones"
+            >
+              <Cloud size={14} className={isSyncing ? "animate-pulse" : ""} />
+              <span>{isSyncing ? "Syncing..." : "Sync to Cloud"}</span>
+            </button>
             <button
               onClick={() => navigateTo("/")}
               className="inline-flex items-center gap-1.5 rounded-full border border-moss/20 px-4 py-2 text-xs font-semibold text-slate hover:bg-moss/10"
@@ -276,6 +312,45 @@ function AdminPortal() {
           </div>
         </div>
       </header>
+
+      {/* Cloud Sync Status Alert Banner */}
+      {cloudSyncStatus && (
+        <div className={`mx-auto max-w-7xl px-6 pt-6`}>
+          <div
+            className={`flex items-start justify-between gap-3 rounded-2xl p-4 text-sm font-medium shadow-sm ${
+              cloudSyncStatus.type === "success"
+                ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+                : cloudSyncStatus.type === "info"
+                ? "bg-blue-50 text-blue-800 border border-blue-200"
+                : "bg-amber-50 text-amber-900 border border-amber-300"
+            }`}
+          >
+            <div className="flex items-start gap-2.5">
+              {cloudSyncStatus.type === "success" ? (
+                <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-emerald-600" />
+              ) : cloudSyncStatus.type === "info" ? (
+                <RefreshCw size={18} className="mt-0.5 shrink-0 text-blue-600 animate-spin" />
+              ) : (
+                <AlertTriangle size={18} className="mt-0.5 shrink-0 text-amber-600" />
+              )}
+              <div className="space-y-1">
+                <p className="m-0 font-semibold">{cloudSyncStatus.msg}</p>
+                {cloudSyncStatus.type === "error" && (
+                  <p className="m-0 text-xs text-amber-800/90 leading-relaxed pt-1">
+                    👉 Go to <a href="https://console.firebase.google.com/" target="_blank" rel="noreferrer" className="underline font-bold text-amber-950 hover:text-black">Firebase Console</a> &gt; <b>Realtime Database</b> &gt; <b>Rules</b> tab. Set <code>&quot;.read&quot;: true, &quot;.write&quot;: true</code> and click <b>Publish</b>. Then click <b>Sync to Cloud</b> above!
+                  </p>
+                )}
+              </div>
+            </div>
+            <button
+              onClick={() => setCloudSyncStatus(null)}
+              className="text-slate/40 hover:text-slate shrink-0 p-1"
+            >
+              <X size={16} />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="mx-auto max-w-7xl px-6 py-10">
