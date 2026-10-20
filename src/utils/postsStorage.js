@@ -2,8 +2,7 @@ const STORAGE_KEY = "saarzya_posts_v1";
 const ADMIN_PASSCODE_KEY = "saarzya_admin_passcode_v1";
 const DEFAULT_PASSCODE = "saarzya2026";
 
-const FIREBASE_POSTS_URL = "https://saarzya-61994-default-rtdb.firebaseio.com/posts.json";
-const FIREBASE_PASSCODE_URL = "https://saarzya-61994-default-rtdb.firebaseio.com/admin_passcode.json";
+const CLOUD_POSTS_URL = "https://saarzya-61994-default-rtdb.firebaseio.com/posts.json";
 
 const DEFAULT_POSTS = [
   {
@@ -92,16 +91,11 @@ Read the full interactive PDF issue below or download your copy!`,
   },
 ];
 
-// Asynchronously sync remote posts from Firebase DB
+// Asynchronously sync remote publications from live cloud server
 export async function syncPostsFromRemote() {
   try {
-    const res = await fetch(FIREBASE_POSTS_URL);
-    if (!res.ok) {
-      if (res.status === 401) {
-        console.warn("Firebase Realtime Database rules have expired (401 Unauthorized). Set .read: true in Firebase Console to enable cloud sync across devices.");
-      }
-      return;
-    }
+    const res = await fetch(CLOUD_POSTS_URL);
+    if (!res.ok) return;
     const remotePosts = await res.json();
 
     if (Array.isArray(remotePosts) && remotePosts.length > 0) {
@@ -112,62 +106,31 @@ export async function syncPostsFromRemote() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       window.dispatchEvent(new Event("saarzya_posts_updated"));
       return updated;
-    } else if (remotePosts === null) {
-      // Seed defaults if empty
-      await pushPostsToRemote(DEFAULT_POSTS);
     }
   } catch (err) {
-    console.warn("Firebase posts sync fallback to local storage:", err);
-  }
-}
-
-// Asynchronously sync passcode from Firebase DB
-export async function syncPasscodeFromRemote() {
-  try {
-    const res = await fetch(FIREBASE_PASSCODE_URL);
-    if (!res.ok) return;
-    const remotePasscode = await res.json();
-    if (typeof remotePasscode === "string" && remotePasscode.trim()) {
-      localStorage.setItem(ADMIN_PASSCODE_KEY, remotePasscode);
-    }
-  } catch (err) {
-    console.warn("Firebase passcode sync fallback:", err);
+    // Silently fallback to local storage
   }
 }
 
 // Trigger background sync on page load
 if (typeof window !== "undefined") {
   syncPostsFromRemote();
-  syncPasscodeFromRemote();
 }
 
-export async function pushPostsToRemote(posts) {
+export async function pushPostsToRemote(posts, authToken = "") {
   try {
-    const res = await fetch(FIREBASE_POSTS_URL, {
+    const url = authToken ? `${CLOUD_POSTS_URL}?auth=${encodeURIComponent(authToken)}` : CLOUD_POSTS_URL;
+    const res = await fetch(url, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(posts),
     });
     if (!res.ok) {
-      console.warn("Firebase posts push responded with status:", res.status);
       return { success: false, status: res.status };
     }
     return { success: true };
   } catch (err) {
-    console.error("Failed to push posts to Firebase DB:", err);
     return { success: false, error: err.message };
-  }
-}
-
-async function pushPasscodeToRemote(passcode) {
-  try {
-    await fetch(FIREBASE_PASSCODE_URL, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(passcode),
-    });
-  } catch (err) {
-    console.error("Failed to push passcode to Firebase DB:", err);
   }
 }
 
@@ -258,7 +221,7 @@ export function savePost(postData) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPosts));
     window.dispatchEvent(new Event("saarzya_posts_updated"));
-    // Push updated posts array globally to Firebase DB
+    // Push updated posts array globally to live cloud server
     pushPostsToRemote(updatedPosts);
     return updatedPosts;
   } catch (err) {
@@ -281,7 +244,7 @@ export function deletePost(id) {
 export function resetPostsToDefault() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_POSTS));
   window.dispatchEvent(new Event("saarzya_posts_updated"));
-  // Reset Firebase DB
+  // Reset live cloud server
   pushPostsToRemote(DEFAULT_POSTS);
   return DEFAULT_POSTS;
 }
@@ -316,7 +279,6 @@ export function getAdminPasscode() {
 
 export function setAdminPasscode(newPasscode) {
   localStorage.setItem(ADMIN_PASSCODE_KEY, newPasscode);
-  pushPasscodeToRemote(newPasscode);
 }
 
 

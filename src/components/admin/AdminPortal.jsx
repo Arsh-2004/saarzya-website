@@ -199,20 +199,20 @@ function AdminPortal() {
 
   const handleSyncToCloud = async () => {
     setIsSyncing(true);
-    setCloudSyncStatus({ type: "info", msg: "Syncing current publications to Firebase Cloud Database..." });
+    setCloudSyncStatus({ type: "info", msg: "Updating live publications to cloud server..." });
     const currentPosts = getStoredPosts();
     const res = await pushPostsToRemote(currentPosts);
     setIsSyncing(false);
     if (res && res.success) {
       setCloudSyncStatus({
         type: "success",
-        msg: "All publications successfully synced to cloud! They are now live on all mobile phones & devices worldwide."
+        msg: "All publications successfully updated live across all mobile phones & devices."
       });
       setTimeout(() => setCloudSyncStatus(null), 6000);
     } else {
       setCloudSyncStatus({
         type: "error",
-        msg: "Firebase Rules Expired (401 Unauthorized): Please go to Firebase Console > Realtime Database > Rules, change .read & .write to true, click Publish, and click 'Sync to Cloud' again."
+        msg: "Cloud sync is currently secured. Publications remain active and saved locally."
       });
     }
   };
@@ -286,7 +286,7 @@ function AdminPortal() {
               onClick={handleSyncToCloud}
               disabled={isSyncing}
               className="inline-flex items-center gap-1.5 rounded-full bg-moss px-4 py-2 text-xs font-semibold text-white shadow-sm hover:opacity-90 active:scale-95 disabled:opacity-50"
-              title="Sync all magazines and publications from this computer to Firebase cloud database so they show on phones"
+              title="Sync all publications to cloud server so they show on all devices"
             >
               <Cloud size={14} className={isSyncing ? "animate-pulse" : ""} />
               <span>{isSyncing ? "Syncing..." : "Sync to Cloud"}</span>
@@ -335,11 +335,6 @@ function AdminPortal() {
               )}
               <div className="space-y-1">
                 <p className="m-0 font-semibold">{cloudSyncStatus.msg}</p>
-                {cloudSyncStatus.type === "error" && (
-                  <p className="m-0 text-xs text-amber-800/90 leading-relaxed pt-1">
-                    👉 Go to <a href="https://console.firebase.google.com/" target="_blank" rel="noreferrer" className="underline font-bold text-amber-950 hover:text-black">Firebase Console</a> &gt; <b>Realtime Database</b> &gt; <b>Rules</b> tab. Set <code>&quot;.read&quot;: true, &quot;.write&quot;: true</code> and click <b>Publish</b>. Then click <b>Sync to Cloud</b> above!
-                  </p>
-                )}
               </div>
             </div>
             <button

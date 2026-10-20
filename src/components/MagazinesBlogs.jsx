@@ -23,7 +23,7 @@ function MagazinesBlogs() {
     // Load local posts first for 0ms initial render (filtering out Guftagu issues)
     setPosts(getStoredPosts().filter((p) => p.type !== "Guftagu"));
 
-    // Sync remote posts from Firebase DB
+    // Sync remote posts from cloud server
     syncPostsFromRemote();
 
     // Listen for live updates from admin portal or remote sync
