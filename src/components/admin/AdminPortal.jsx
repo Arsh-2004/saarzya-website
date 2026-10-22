@@ -89,7 +89,7 @@ function AdminPortal() {
       title: "Why do we attach?",
       badge: "Issue 01",
       author: "Team Saarzya",
-      image: "/assets/about-saarzya.jpg",
+      image: "/assets/image.png",
       pdfUrl: "/guftagu/why-do-we-attach",
       buttonText: "Read Issue",
       description: "Understanding love, attachment, and relationship...",

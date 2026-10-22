@@ -58,9 +58,9 @@ function AboutSaarzya() {
         >
           <div className="w-full h-full overflow-hidden shadow-2xl rounded-none">
             <img
-              src="/assets/about-saarzya.jpg"
-              alt="About Saarzya - Same mind, Kind heart, Better tomorrow"
-              className="w-full h-full object-cover object-center scale-[1.04] origin-center min-h-[380px] lg:min-h-[520px]"
+              src="/assets/image copy.png"
+              alt="About Saarzya - A Space for Healing, Psychology & Wellness"
+              className="w-full h-full object-cover object-top min-h-[380px] lg:min-h-[500px]"
             />
           </div>
         </motion.div>
