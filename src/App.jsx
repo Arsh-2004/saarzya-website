@@ -16,6 +16,7 @@ import FullBrochureReaderPage from "./components/FullBrochureReaderPage";
 import UnsaidWordsPage from "./components/UnsaidWordsPage";
 import GuftaguPage from "./components/GuftaguPage";
 import GuftaguArticlePage from "./components/GuftaguArticlePage";
+import GuftaguIssue02Page from "./components/GuftaguIssue02Page";
 import { usePathname } from "./utils/router";
 
 function App() {
@@ -27,8 +28,20 @@ function App() {
   }
 
   if (
+    cleanPath.startsWith("/guftagu/who-am-i-really") ||
+    cleanPath.startsWith("/guftagu/issue-02") ||
+    cleanPath.startsWith("/guftagu/issue-2") ||
+    cleanPath.startsWith("/guftagu-issue-02") ||
+    cleanPath.startsWith("/guftagu-issue-2")
+  ) {
+    return <GuftaguIssue02Page />;
+  }
+
+  if (
     cleanPath.startsWith("/guftagu/why-do-we-attach") ||
-    cleanPath.startsWith("/guftagu-article")
+    cleanPath.startsWith("/guftagu-article") ||
+    cleanPath.startsWith("/guftagu/issue-01") ||
+    cleanPath.startsWith("/guftagu/issue-1")
   ) {
     return <GuftaguArticlePage />;
   }

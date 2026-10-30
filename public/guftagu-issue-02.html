@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Who am I, really? — Guftagu by Saarzya</title>
+<meta name="description" content="Guftagu by Saarzya — understanding self-awareness and identity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF2EA; --paper-2:#F3E9DF; --card:#FFFFFF; --card-tint:#F6EFE6;
+  --ink:#38452F; --ink-soft:#5F6A54;
+  --sage:#8E9D7B; --sage-pale:#CBD4BC;
+  --plum:#8E6B81; --plum-pale:#C9A9BA;
+  --gold:#A88F6C;
+  --rule:rgba(56,69,47,.16);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#1B1F18; --paper-2:#232821; --card:#232821; --card-tint:#262C23;
+    --ink:#E9E2D6; --ink-soft:#BEC0B0;
+    --sage:#A7B793; --sage-pale:#5E6B50; --plum:#C7A2B7; --plum-pale:#7A5C6D;
+    --gold:#C5A97F; --rule:rgba(233,226,214,.18);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1B1F18; --paper-2:#232821; --card:#232821; --card-tint:#262C23;
+  --ink:#E9E2D6; --ink-soft:#BEC0B0; --sage:#A7B793; --sage-pale:#5E6B50;
+  --plum:#C7A2B7; --plum-pale:#7A5C6D; --gold:#C5A97F; --rule:rgba(233,226,214,.18);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(78px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Jost',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-weight:300;font-size:17px;line-height:1.82}
+a{color:var(--plum)}
+::selection{background:var(--plum-pale);color:var(--ink)}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400}
+p{margin:0 0 1.3em}
+
+.shell{max-width:1120px;margin:0 auto;padding:0 24px}
+.col{max-width:680px}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--plum);z-index:60}
+
+.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule)}
+.site-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.mark{width:34px;height:34px;border-radius:50%;background:var(--card-tint);border:1px solid var(--plum-pale);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;line-height:1}
+.brand-name small{display:block;font-family:'Jost',sans-serif;font-size:.56rem;
+  letter-spacing:.32em;color:var(--ink-soft);margin-top:3px}
+.site nav{margin-left:auto;display:flex;gap:22px;align-items:center}
+.site nav a{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none}
+.site nav .write{border:1px solid var(--plum-pale);border-radius:2px;padding:8px 14px;color:var(--plum)}
+@media (max-width:720px){.site nav a:not(.write){display:none}}
+
+.hero{padding:64px 0 40px;border-bottom:1px solid var(--rule)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:2px;padding:5px 11px}
+.chip.on{color:var(--plum);border-color:var(--plum-pale)}
+h1{font-size:clamp(2.5rem,8vw,4.2rem);line-height:1.05;margin:0 0 .22em;font-weight:300}
+h1 em{font-style:italic}
+.standfirst{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);
+  font-size:clamp(1.15rem,3.4vw,1.45rem);line-height:1.55;max-width:34ch;margin:0 0 1.4em}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;font-size:.76rem;
+  letter-spacing:.1em;color:var(--ink-soft)}
+.meta .sep{width:4px;height:4px;border-radius:50%;background:var(--gold)}
+
+.body-grid{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:1000px){
+  .body-grid{grid-template-columns:190px minmax(0,680px);gap:56px;align-items:start}
+  .rail{position:sticky;top:calc(96px + env(safe-area-inset-top,0px));padding-top:60px}
+}
+.rail{display:none}
+@media (min-width:1000px){.rail{display:block}}
+.rail p{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.rail a{display:block;text-decoration:none;color:var(--ink-soft);font-size:.86rem;padding:6px 0 6px 14px;
+  border-left:1px solid var(--rule);line-height:1.4}
+.rail a:hover{color:var(--plum);border-left-color:var(--plum)}
+
+article{padding:50px 0 20px}
+article section{padding:36px 0}
+.kicker{display:flex;align-items:center;gap:11px;font-size:.64rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--sage);margin-bottom:4px}
+h2{font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.14;margin:.1em 0 .6em}
+.dropcap::first-letter{font-family:'Cormorant Garamond',serif;float:left;font-size:3.6rem;line-height:.82;
+  padding:6px 10px 0 0;color:var(--plum)}
+blockquote{margin:2em 0;padding:0 0 0 20px;border-left:2px solid var(--plum-pale);
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.25rem,3.8vw,1.5rem);
+  line-height:1.45}
+.note{font-size:.87rem;color:var(--ink-soft);line-height:1.7}
+hr.leafy{border:0;display:flex;align-items:center;justify-content:center;gap:14px;margin:40px 0}
+hr.leafy::before,hr.leafy::after{content:"";height:1px;width:70px;background:var(--rule)}
+
+.card{background:var(--card);border:1px solid var(--rule);border-radius:3px;padding:22px 20px}
+.stack{display:grid;gap:14px}
+.card b{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:1.15rem;display:block;margin-bottom:.3em}
+
+.scene{font-family:'Cormorant Garamond',serif;font-size:1.18rem;line-height:1.7;
+  background:var(--card-tint);border:1px solid var(--rule);border-radius:3px;padding:24px 22px}
+.scene p:last-child{margin-bottom:0}
+.beat{font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin:1.8em 0 .5em}
+
+.mailbox{background:var(--card-tint);border:1px solid var(--plum-pale);border-radius:3px;
+  padding:24px 22px;margin:20px 0}
+.mailbox h4{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.4rem;margin:0 0 .4em}
+.mailbox p{margin-bottom:1em}
+.mailbox .addr{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--plum);
+  text-decoration:none;border-bottom:1px solid var(--plum-pale)}
+.env{font-size:1.4rem;margin-bottom:10px}
+
+.mf{border-top:1px solid var(--rule)}
+.mf-row{padding:18px 0;border-bottom:1px solid var(--rule)}
+.mf-row p{margin:0}
+.myth{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.12rem;color:var(--ink-soft)}
+.myth::before{content:"Myth";display:block;font-family:'Jost',sans-serif;font-style:normal;
+  font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--plum);margin-bottom:5px}
+.fact{font-size:.94rem;line-height:1.7;margin-top:10px!important}
+.fact::before{content:"Fact";display:block;font-size:.6rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--sage);margin-bottom:5px}
+
+.qa{border-bottom:1px solid var(--rule);padding:22px 0}
+.qa:last-of-type{border-bottom:none}
+.q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;line-height:1.5;margin-bottom:.8em}
+.asker{display:block;font-style:normal;font-family:'Jost',sans-serif;font-size:.64rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:.5em}
+
+.steps{counter-reset:s;list-style:none;padding:0;margin:22px 0 0}
+.steps li{counter-increment:s;position:relative;padding:0 0 18px 44px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-2px;width:28px;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--plum);border-bottom:1px solid var(--plum-pale)}
+.steps b{font-weight:400;font-family:'Cormorant Garamond',serif;font-size:1.12rem;display:block}
+.journal label{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);margin-bottom:9px}
+.journal textarea{width:100%;min-height:130px;resize:vertical;background:var(--paper);color:var(--ink);
+  border:1px solid var(--rule);border-radius:3px;padding:14px 16px;
+  font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.7}
+.journal-foot{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-top:12px}
+.btn{display:inline-block;background:none;border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink-soft);font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.2em;
+  text-transform:uppercase;padding:10px 16px;cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--plum);color:var(--plum)}
+.btn.primary{background:var(--plum);border-color:var(--plum);color:#FBF5F8}
+.saved{font-size:.72rem;letter-spacing:.08em;color:var(--sage)}
+
+.lastpage{background:var(--paper-2);border-top:1px solid var(--rule);margin-top:36px;
+  padding:76px 24px;text-align:center}
+.lastpage q{quotes:none;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1.6rem,5.2vw,2.3rem);line-height:1.35;display:block;max-width:20ch;margin:0 auto}
+.dots{display:flex;gap:10px;justify-content:center;margin-top:30px}
+.dots i{width:5px;height:5px;border-radius:50%;background:var(--plum-pale)}
+.dots i:nth-child(2){background:var(--gold)}
+.dots i:nth-child(3){background:var(--sage)}
+
+footer{border-top:1px solid var(--rule);padding:44px 24px calc(50px + env(safe-area-inset-bottom,0px));text-align:center}
+footer p{font-size:.76rem;letter-spacing:.12em;color:var(--ink-soft);margin:.5em 0}
+footer .big{font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:0;color:var(--ink)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="prog" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="site-in">
+    <a class="brand" href="/guftagu" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+      <span class="mark">🌿</span>
+      <span class="brand-name">Guftagu<small>BY SAARZYA</small></span>
+    </a>
+    <nav>
+      <a href="#cover-story">Read</a>
+      <a href="#unsaid">The Unsaid</a>
+      <a href="#last">Last Page</a>
+      <a class="write" href="mailto:saarzya@gmail.com?subject=Guftagu%20—%20Who%20am%20I%2C%20really%3F">Write to us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="shell">
+  <div class="hero col">
+    <div class="chips">
+      <span class="chip on">Issue 02</span>
+      <span class="chip">Identity</span>
+      <span class="chip">Self-Awareness</span>
+    </div>
+    <h1>Who am I, <em>really?</em></h1>
+    <p class="standfirst">Understanding, self-awareness &amp; identity.</p>
+    <div class="meta">
+      <span>By <b>Team Saarzya</b></span><span class="sep"></span>
+      <span>10 min read</span><span class="sep"></span>
+      <span>Psychology &amp; Wellness</span>
+    </div>
+  </div>
+</div>
+
+<div class="shell">
+  <div class="body-grid">
+    <aside class="rail" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#cover-story">The cover story</a>
+      <a href="#psychology">The psychology behind it</a>
+      <a href="#real-life">In real life</a>
+      <a href="#unsaid">The unsaid 💌</a>
+      <a href="#myth">Myth vs fact</a>
+      <a href="#ask-us">Ask us anything</a>
+      <a href="#ask">Ask Saarzya</a>
+      <a href="#try">Try this 🌱</a>
+      <a href="#corner">The psychology corner</a>
+      <a href="#last">The last page</a>
+    </aside>
+
+    <article class="col">
+
+      <section id="cover-story">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 13C1 7 5 2 13 1c0 8-5 12-11 12z" stroke="currentColor"/></svg>The cover story</div>
+        <h2>The question that arrives at 2am</h2>
+
+        <p class="dropcap">There's a version of this question that visits almost everyone eventually. Not loudly. Usually while brushing your teeth, or staring at a ceiling fan at 2am, or sitting in a meeting nodding at something you don't quite believe. <em>Who am I, really?</em> Not the job title. Not the role of daughter, partner, employee, the "responsible one." The version underneath all of that — if there even is one.</p>
+
+        <p>We tend to think of identity as something we discover once, like finding a birthmark we'd never noticed. But identity behaves less like a fact and more like a practice. It's built, session by session, out of the roles we're handed, the approval we chase, and — slowly, if we're paying attention — the choices we finally make on our own terms.</p>
+
+        <p>Most people don't wake up one day fully split from who they were raised to be. It happens in smaller moments: agreeing to a plan you didn't want, performing enthusiasm you didn't feel, realising you can describe yourself perfectly to a stranger but go blank when someone asks what you actually enjoy. Self-awareness is what turns the blankness into information instead of shame.</p>
+
+        <blockquote>Identity confusion isn't a malfunction. It's usually the sound of a self that's outgrowing its old container.</blockquote>
+
+        <p>This issue is about that outgrowing — the gap between the self we perform and the self we suspect is underneath, and what it actually takes to close it without pretending the question was ever simple.</p>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="psychology">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor"/><path d="M7 1v12M1 7h12" stroke="currentColor" opacity=".5"/></svg>The psychology behind it</div>
+        <h2>What the research actually says</h2>
+
+        <p>Erik Erikson framed adolescence around a central task he called "identity vs. role confusion" — but later researchers, particularly James Marcia, showed the process rarely finishes on schedule. Marcia described four identity statuses based on two things: whether a person has explored different values and roles, and whether they've committed to any of them. Most people cycle through these statuses more than once across a lifetime — after a breakup, a career change, a move, a loss, becoming a parent.</p>
+
+        <div class="stack">
+          <div class="card"><b>Diffusion</b><p class="note" style="margin:0">No real exploration, no commitment — often mistaken for laziness, but usually reflects overwhelm rather than apathy.</p></div>
+          <div class="card"><b>Foreclosure</b><p class="note" style="margin:0">Commitment without exploration — values adopted wholesale from parents or culture, never actually tested against one's own experience.</p></div>
+          <div class="card"><b>Moratorium</b><p class="note" style="margin:0">Active exploration, no commitment yet — the uncomfortable but necessary middle where most real growth happens.</p></div>
+          <div class="card"><b>Achievement</b><p class="note" style="margin:0">Exploration followed by a self-chosen commitment — not permanent, and often revisited later in life.</p></div>
+        </div>
+
+        <p style="margin-top:1.6em">Self-awareness research adds another layer, distinguishing between <em>internal</em> self-awareness — how clearly you see your own values and patterns — and <em>external</em> self-awareness — how accurately you read others' perception of you. Organisational psychologist Tasha Eurich's research found these two capacities don't automatically move together: people who are highly attuned to how others see them are sometimes the least connected to what they actually want, because so much bandwidth goes toward managing the external picture.</p>
+
+        <p class="note" style="margin-top:1.4em">One caution: identity status isn't a label to diagnose yourself with permanently. The useful question isn't "which category am I," but "where, right now, am I performing a commitment I never actually chose?"</p>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="real-life">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 3h10v8H2z" stroke="currentColor"/><path d="M2 3l5 4 5-4" stroke="currentColor"/></svg>In real life</div>
+        <h2>The question with no rehearsed answer</h2>
+        <p class="note" style="margin-bottom:1.6em">A fictional scenario, built from patterns we see often.</p>
+
+        <div class="scene">
+          <p>Rhea is 27 and has a fully rehearsed answer for almost anything anyone could ask her — her plans, her opinions on other people's plans, what she thinks her parents want, what her manager expects by Friday. She is, by every external measure, extremely put-together.</p>
+          <p>At dinner, a colleague asks, half-joking, "Okay but what do you actually like doing — just for you, no one watching?" Rhea opens her mouth. Nothing arrives. She laughs it off, changes the subject, orders dessert. But the question follows her home.</p>
+          <p>That night she doesn't have a breakdown. She just sits with the discomfort of realising she has a complete answer for who she is <em>to</em> everyone else, and almost nothing for who she is when no one's grading the performance.</p>
+        </div>
+
+        <p class="beat">What's actually happening</p>
+        <p>Rhea likely sits closer to foreclosure than she'd guess — competent, decisive, but running on commitments she inherited rather than chose. The blank space isn't a deficit; it's simply unexplored territory, because exploration was never modelled or made safe for her.</p>
+
+        <p class="beat">What would change it</p>
+        <p>Not a dramatic reinvention. Just permission to answer badly at first — to say "I don't know yet" about something small, and let that be enough for one evening.</p>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="unsaid">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 12S1.6 8.6 1.6 5.2A2.9 2.9 0 017 3.6a2.9 2.9 0 015.4 1.6C12.4 8.6 7 12 7 12z" stroke="currentColor"/></svg>The unsaid 💌</div>
+        <h2>Say the unsaid</h2>
+        <div class="mailbox">
+          <div class="env">💌</div>
+          <h4>Something you've never told anyone</h4>
+          <p>Something you've never told anyone about how you love, leave, or stay? Send it to us. We publish anonymously, we never print names, and we remove anything that could identify you or anyone else.</p>
+          <a class="addr" href="mailto:saarzya@gmail.com?subject=The%20Unsaid%20—%20Issue%2002">saarzya@gmail.com</a>
+        </div>
+        <p class="note">Anonymous community experiences on this issue's theme will appear here in the next Guftagu.</p>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="myth">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M2 4h10M2 10h10" stroke="currentColor"/></svg>Myth vs fact</div>
+        <h2>Correcting common misconceptions</h2>
+        <div class="mf">
+          <div class="mf-row"><p class="myth">You should "find yourself" once, and know exactly who you are forever after.</p><p class="fact">Identity evolves across life stages. Revisiting the question at 35 or 55 is growth, not a relapse into confusion.</p></div>
+          <div class="mf-row"><p class="myth">Feeling unsure of who you are means something is wrong with you.</p><p class="fact">Identity confusion is a common, often necessary phase — especially after major transitions.</p></div>
+          <div class="mf-row"><p class="myth">Self-awareness means constantly analysing every thought and feeling.</p><p class="fact">Real self-awareness is calmer than that — noticing patterns over time, not narrating every moment.</p></div>
+          <div class="mf-row"><p class="myth">If your identity changes, your past self was "fake."</p><p class="fact">Every earlier version of you was genuine for the context it existed in. Growth adds to a self; it doesn't erase one.</p></div>
+        </div>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="ask-us">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor"/></svg>Ask us anything</div>
+        <h2>We'll answer one, next issue</h2>
+        <div class="mailbox">
+          <p>Send your question and we'll answer one in the next Guftagu. Published anonymously, answered in general terms — never as individual diagnosis or therapy.</p>
+          <a class="addr" href="mailto:saarzya@gmail.com?subject=Ask%20Us%20Anything">saarzya@gmail.com</a>
+        </div>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="ask">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor"/></svg>Ask Saarzya</div>
+        <h2>Reader questions</h2>
+        <div class="qa">
+          <p class="q">How do I know if I actually like something, or I've just always been told I should?<span class="asker">— Reader</span></p>
+          <p>Notice how you feel <em>after</em> doing it when nobody else knows. Genuine preference tends to hold up in private; borrowed preference often needs an audience to feel worthwhile.</p>
+        </div>
+        <div class="qa">
+          <p class="q">I feel like a different person around my family than with my friends. Is that a problem?<span class="asker">— Reader</span></p>
+          <p>Not necessarily — context shifts everyone slightly. It's worth exploring only if one version is costing you something real, like honesty or peace.</p>
+        </div>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="try">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 13V5M7 5C7 2.8 8.8 1 11 1c0 2.2-1.8 4-4 4zM7 7C7 5.3 5.3 4 3.4 4c0 1.9 1.4 3 3.6 3z" stroke="currentColor"/></svg>Try this 🌱</div>
+        <h2>Five honest minutes</h2>
+        <p class="note" style="margin-bottom:1.4em">Do it when you're calm, and don't edit your answers to sound better.</p>
+        <ol class="steps">
+          <li><b>When completely alone, I actually enjoy…</b>Not what impresses anyone. Just what you'd do with the door closed.</li>
+          <li><b>A belief I hold that isn't really mine</b>Something inherited rather than chosen — trace whose voice it first belonged to.</li>
+          <li><b>People would describe me as ___, but I secretly feel more like ___</b>Notice the gap without rushing to close it.</li>
+          <li><b>One small thing I could do this week, just for the "me" underneath the roles</b>Small is the point. This isn't a life overhaul.</li>
+        </ol>
+        <div class="card journal" style="margin-top:8px">
+          <label for="j1">Your page — saved only in this browser, on this device</label>
+          <textarea id="j1" placeholder="Write your answers here…"></textarea>
+          <div class="journal-foot">
+            <span class="saved" id="saved-note" aria-live="polite"></span>
+            <span style="display:flex;gap:10px;flex-wrap:wrap">
+              <button type="button" class="btn" id="clear-j">Clear page</button>
+              <a class="btn primary" id="mail-j" href="mailto:saarzya@gmail.com?subject=Try%20This%20—%20My%20reflection">Mail us your answers</a>
+            </span>
+          </div>
+          <p class="note" style="margin:12px 0 0">Nothing is sent anywhere unless you choose to mail it.</p>
+        </div>
+      </section>
+
+      <hr class="leafy">
+
+      <section id="corner">
+        <div class="kicker"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 1h4v4H1zM9 9h4v4H9zM5 5h4v4H5z" stroke="currentColor"/></svg>The psychology corner</div>
+        <h2>The performed self vs. the private self</h2>
+        <p>Psychologists sometimes describe a gap between our "public self" — the version we manage for others — and our "private self," the one we experience alone. A little gap is normal and even useful; a wide, permanent one is exhausting, because maintaining a performance takes energy that never gets to rest.</p>
+        <p>Closing the gap doesn't mean abandoning every role you play. It means occasionally checking whether the role still fits, or whether you're simply afraid of what happens if you stop playing it.</p>
+        <div class="mailbox">
+          <h4>Share what you discovered</h4>
+          <p>Did the reflection above surface something unexpected? Mail us your answers — your insight might become part of a future Guftagu, always anonymously.</p>
+          <a class="addr" href="mailto:saarzya@gmail.com?subject=Psychology%20Corner%20—%20My%20reflection">saarzya@gmail.com</a>
+        </div>
+      </section>
+    </article>
+  </div>
+</div>
+
+<section class="lastpage" id="last">
+  <div class="kicker" style="justify-content:center;margin-bottom:24px">The last page</div>
+  <q>You don't find yourself. You build yourself out of what you choose to keep.</q>
+  <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+</section>
+</main>
+
+<footer>
+  <p class="big">Guftagu by Saarzya</p>
+  <p>Issue 02 · Who am I, really?</p>
+  <p><a href="mailto:saarzya@gmail.com">saarzya@gmail.com</a></p>
+  <p style="max-width:54ch;margin:1.4em auto 0;line-height:1.7">Guftagu is written for education and reflection. It is not therapy, diagnosis, or individual advice.</p>
+</footer>
+
+<script>
+(function(){
+  var prog=document.getElementById('prog');
+  function onScroll(){
+    var h=document.documentElement;
+    var pct=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);
+    prog.style.width=(pct*100)+'%';
+  }
+  document.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var ta=document.getElementById('j1'),note=document.getElementById('saved-note'),
+      btn=document.getElementById('clear-j'),mail=document.getElementById('mail-j'),
+      KEY='guftagu-issue02-map',t;
+  if(!ta) return;
+  try{var v=localStorage.getItem(KEY); if(v){ta.value=v;note.textContent='Saved on this device';}}catch(e){}
+  function syncMail(){
+    mail.href='mailto:saarzya@gmail.com?subject='+encodeURIComponent('Try This — My reflection')
+      +'&body='+encodeURIComponent(ta.value);
+  }
+  ta.addEventListener('input',function(){
+    clearTimeout(t);
+    t=setTimeout(function(){
+      try{localStorage.setItem(KEY,ta.value);note.textContent='Saved on this device';}
+      catch(e){note.textContent='Not saved — storage unavailable';}
+      syncMail();
+    },400);
+  });
+  btn.addEventListener('click',function(){
+    ta.value='';try{localStorage.removeItem(KEY);}catch(e){}
+    note.textContent='Cleared';syncMail();ta.focus();
+  });
+  syncMail();
+})();
+</script>
+</body>
+</html>

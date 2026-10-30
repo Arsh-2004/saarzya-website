@@ -556,14 +556,14 @@ function AdminPortal() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-slate/70">
-                    Full Magazine PDF (Google Drive Link or File)
+                    {formData.type === "Guftagu" ? "Guftagu Link (e.g. /guftagu/who-am-i-really) or PDF" : "Full Magazine PDF (Google Drive Link or File)"}
                   </label>
                   <div className="mt-2 space-y-2">
                     <input
                       type="text"
                       value={formData.pdfUrl}
                       onChange={(e) => setFormData({ ...formData, pdfUrl: e.target.value })}
-                      placeholder="Paste Google Drive link or PDF URL here..."
+                      placeholder={formData.type === "Guftagu" ? "e.g. /guftagu/who-am-i-really or article link..." : "Paste Google Drive link or PDF URL here..."}
                       className="w-full rounded-2xl border border-moss/20 bg-cream/30 px-4 py-2.5 text-xs outline-none focus:border-moss"
                     />
                     <div className="flex items-center gap-2">
@@ -577,7 +577,7 @@ function AdminPortal() {
                     </div>
                   </div>
                   <p className="mt-1 text-[10px] text-moss font-semibold">
-                    ✓ Google Drive share links (e.g. https://drive.google.com/file/d/...) work automatically!
+                    {formData.type === "Guftagu" ? "✓ For Guftagu issues, enter page paths like /guftagu/who-am-i-really or upload a file" : "✓ Google Drive share links (e.g. https://drive.google.com/file/d/...) work automatically!"}
                   </p>
                 </div>
 

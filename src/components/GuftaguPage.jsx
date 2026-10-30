@@ -12,10 +12,13 @@ function GuftaguPage() {
     navigateTo("/");
   };
 
-  const handleOpenArticle = (e, targetHash = "") => {
+  const handleOpenArticle = (e, targetPathOrHash = "/guftagu/why-do-we-attach") => {
     if (e) e.preventDefault();
-    const targetPath = targetHash ? `/guftagu/why-do-we-attach${targetHash}` : "/guftagu/why-do-we-attach";
-    navigateTo(targetPath);
+    if (targetPathOrHash.startsWith("#")) {
+      navigateTo(`/guftagu/why-do-we-attach${targetPathOrHash}`);
+    } else {
+      navigateTo(targetPathOrHash);
+    }
   };
 
   return (
@@ -261,9 +264,24 @@ function GuftaguPage() {
                 </a>
               </div>
 
+              <div className="bg-white border border-[#3A2E2A]/15 rounded-sm p-6 flex flex-col justify-between shadow-xs">
+                <div>
+                  <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-[#8E6B81] border border-[#C9A9BA] rounded-xs px-2.5 py-1 font-semibold mb-3">Issue 02</span>
+                  <h4 className="font-['Cormorant_Garamond',serif] text-2xl text-[#3A2E2A] mb-2 font-medium">Who am I, really?</h4>
+                  <p className="text-sm text-[#6B5C54] mb-4">Understanding, self-awareness &amp; identity: the cover story, the research, the unsaid.</p>
+                </div>
+                <a
+                  href="/guftagu/who-am-i-really"
+                  onClick={(e) => handleOpenArticle(e, "/guftagu/who-am-i-really")}
+                  className="text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] font-bold no-underline hover:underline"
+                >
+                  Read now →
+                </a>
+              </div>
+
               <div className="bg-white border border-[#3A2E2A]/15 rounded-sm p-6 flex flex-col justify-between opacity-75 shadow-xs">
                 <div>
-                  <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-[#A88F6C] border border-[#A88F6C] rounded-xs px-2.5 py-1 font-semibold mb-3">Issue 02</span>
+                  <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-[#A88F6C] border border-[#A88F6C] rounded-xs px-2.5 py-1 font-semibold mb-3">Issue 03</span>
                   <h4 className="font-['Cormorant_Garamond',serif] text-2xl text-[#6B5C54] mb-2 font-medium">Next month's Guftagu</h4>
                   <p className="text-sm text-[#6B5C54] mb-4">A new theme is being written. Subscribe by mail to know the moment it's out.</p>
                 </div>
@@ -492,7 +510,17 @@ function GuftaguPage() {
                 </a>
               </div>
               <div className="flex justify-between items-baseline gap-4 py-4 border-b border-[#3A2E2A]/15">
-                <span className="font-['Cormorant_Garamond',serif] text-xl text-[#6B5C54]">Issue 02: coming next month</span>
+                <span className="font-['Cormorant_Garamond',serif] text-xl text-[#3A2E2A]">Issue 02: Who am I, really?</span>
+                <a
+                  href="/guftagu/who-am-i-really"
+                  onClick={(e) => handleOpenArticle(e, "/guftagu/who-am-i-really")}
+                  className="text-[11px] tracking-[0.16em] uppercase text-[#8E6B81] font-bold no-underline hover:underline"
+                >
+                  Read →
+                </a>
+              </div>
+              <div className="flex justify-between items-baseline gap-4 py-4 border-b border-[#3A2E2A]/15">
+                <span className="font-['Cormorant_Garamond',serif] text-xl text-[#6B5C54]">Issue 03: coming next month</span>
                 <span className="text-[11px] tracking-[0.16em] uppercase text-[#6B5C54]">Soon</span>
               </div>
             </div>
